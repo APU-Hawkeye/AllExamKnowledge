@@ -10,7 +10,6 @@
     scroll-behavior: smooth; }
 
 body {
-    font-family: 'Basier Circle';
     color: #191c1f;
     background: #F8F9FB; }
 
@@ -50,6 +49,15 @@ section h2 {
     font-weight: bold; }
 section p {
     font-size: 24px; }
+
+.notifications {
+    height: 300px;
+    overflow-y: auto;
+}
+.notifications-carousel {
+    height: 200px;
+    overflow-y: auto;
+}
 
 .back-to-top {
     position: fixed;
@@ -128,8 +136,7 @@ section p {
     justify-content: space-between;
     padding: 7px 0px 7px 0px;
     font-family: "Nunito", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15px;
     color: #191c1f;
     white-space: nowrap;
     transition: 0.3s;
@@ -140,8 +147,7 @@ section p {
     justify-content: space-between;
     padding: 7px 0px 7px 0px;
     font-family: "Nunito", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15px;
     color: #191c1f;
     white-space: nowrap;
     transition: 0.3s; }
@@ -212,6 +218,20 @@ section p {
 section p {
     font-size: 17px;
     width: 80%;
+}
+.card-header.cardHeading {
+    background-color: #00124c !important;
+    border: 1px solid #00124c;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 8px 20px;
+    margin-left: 0px;
+    color: #fff;
+    height: 70px;
+}
+h5 {
+    line-height: 2.2;
 }
 
 @media (max-width: 991px) {
@@ -757,7 +777,7 @@ section p {
     .hero h1 {
         font-size: 32px; }
     .hero h2 {
-        font-size: 24px; }
+        font-size: 36px; }
     .hero .hero-img {
         display: none; }
     .hero .hero-img img {
