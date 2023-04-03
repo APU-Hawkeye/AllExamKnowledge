@@ -49,16 +49,10 @@
 <?php echo $this->element("footer"); ?>
 <!-- End Footer -->
 
-<!--    <nav class="top-nav">-->
-<!--        -->
-<!--    </nav>-->
-<!--    <main class="main">-->
-<!--        <div class="container">-->
-<!--            --><?//= $this->Flash->render() ?>
-<!--            --><?//= $this->fetch('content') ?>
-<!--        </div>-->
-<!--    </main>-->
-<!--    <footer>-->
-<!--    </footer>-->
+<?php echo $this->Html->script([
+    'jquery.min',
+    'bootstrap.min',
+]); ?>
+<?php echo $this->fetch('js'); ?>
 </body>
 </html>
