@@ -8,8 +8,10 @@
         <nav id="navbar" class="navbar">
             <ul></ul>
             <ul>
-                <li>call</li>
-                <li>email</li>
+                <li class="nav-item theme-color"><b><small>Call- +91 9778539234</small></b></li>
+                <li></li>
+                <li></li>
+                <li class="nav-item theme-color"><b><small>Email- contact@allexamknowledge.com</small></b></li>
             </ul>
             <ul></ul>
         </nav>
@@ -26,6 +28,8 @@
                 <li class="nav-item active"><a class="nav-link" href="#"><?php echo __('Home')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><?php echo __('About us')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Videos')?></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Downloads')?></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Test Yourself')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Contact Us')?></a></li>
             </ul>
             <ul class="d-none d-md-flex d-lg-flex">
