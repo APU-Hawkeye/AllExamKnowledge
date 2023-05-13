@@ -26,11 +26,17 @@
             ]); ?>"><?php echo $this->Html->image('logo.png', ['alt'=>'alk', 'class' => 'img-fluid']);?> </a>
             <ul>
                 <li class="nav-item active"><a class="nav-link" href="#"><?php echo __('Home')?></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><?php echo __('About us')?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'aboutUs'
+                ])?>"><?php echo __('About us')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Videos')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Downloads')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Test Yourself')?></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><?php echo __('Contact Us')?></a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'contactUs'
+                ])?>"><?php echo __('Contact Us')?></a></li>
             </ul>
             <ul class="d-none d-md-flex d-lg-flex">
                 <li class="nav-item"><a href="<?php echo $this->Url->build([
