@@ -25,7 +25,6 @@
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     <?php echo $this->Html->css([
         '/lib/bootstrap/css/bootstrap.min',
         '/lib/bootstrap-icons/bootstrap-icons',
