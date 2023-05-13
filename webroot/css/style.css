@@ -4,14 +4,15 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&display=swap');
 
 :root {
     scroll-behavior: smooth; }
 
 body {
     color: #191c1f;
-    background: #F8F9FB; }
+    background: #F8F9FB;
+    font-family: 'Inter', sans-serif;}
 
 a {
     color: #191c1f;
@@ -20,29 +21,29 @@ a:hover {
     color: #717ff5;
     text-decoration: none; }
 
-h1 {
-    font-family: 'Basier Circle'; }
+/*h1 {*/
+/*    font-family: 'Basier Circle'; }*/
 
-h2 {
-    font-family: 'Basier Circle'; }
+/*h2 {*/
+/*    font-family: 'Basier Circle'; }*/
 
-h3 {
-    font-family: 'Basier Circle'; }
+/*h3 {*/
+/*    font-family: 'Basier Circle'; }*/
 
-h4 {
-    font-family: 'Basier Circle'; }
+/*h4 {*/
+/*    font-family: 'Basier Circle'; }*/
 
-h5 {
-    font-family: 'Basier Circle'; }
+/*h5 {*/
+/*    font-family: 'Basier Circle'; }*/
 
-h6 {
-    font-family: 'Basier Circle'; }
+/*h6 {*/
+/*    font-family: 'Basier Circle'; }*/
 
 section {
     padding: 70px 0;
     overflow: hidden; }
 section h4 {
-    font-size: 24px; }
+    font-size: 20px; }
 section h2 {
     font-size: 70px;
     line-height: 1;
@@ -234,6 +235,10 @@ h5 {
     line-height: 2.2;
 }
 
+.video-bg {
+    background: url("../img/new-video-backround.png");
+}
+
 @media (max-width: 991px) {
     .navbar ul {
         display: none; } }
@@ -340,7 +345,6 @@ h5 {
     width: 100vw;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
     color: #fff;
     font-weight: 200;
     display: -webkit-box;
@@ -474,16 +478,45 @@ h5 {
         -ms-transform: translate(-50%);
         transform: translate(-50%); } }
 
+.button-primary {
+    margin-top: 30px;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background-color: #00124c !important;
+    border: 1px solid #00124c;
+    border-radius: 10px;
+}
+.button-primary span{
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.button-primary i{
+    margin-left: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
 .hero {
     width: 100%;
     height: 60vh;
     position: relative; }
 .hero h1 {
     margin: 0;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     color: #191c1f;
+    text-transform: uppercase;
     line-height: 1; }
+.hero-dot
+{
+    position: absolute;
+    right: 10px;
+    transform: rotate(90deg);
+}
 .hero h2 {
     color: #191c1f;
     margin: 15px 0 0 0;
@@ -736,12 +769,12 @@ h5 {
 
 /*============footer section==========*/
 .footer {
-    background: #2C373E;
+    background: #04091c;
     padding: 60px 0 50px 0;
     font-size: 18px;
     color: #fff; }
 .footer .footer-top {
-    padding: 60px;
+    padding: 10px;
     text-align: center; }
 .footer .footer-top h2 {
     font-size: 70px;
@@ -751,7 +784,7 @@ h5 {
     border-radius: 10px;
     font-size: 18px;
     font-weight: 600;
-    padding: 10px 30px; }
+    padding: 10px 10px; }
 .footer .footer-bottom {
     padding: 50px 0; }
 .footer .footer-bottom ul {
@@ -1166,7 +1199,21 @@ account balance page css
     text-align: center;
     flex-grow: 1;
     width: calc(100% * (1/6) - 10px - 1px); }
-
+.theme-btn
+{
+    margin-top: 30px;
+    padding: 12px 34px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background-color: #00124c !important;
+    border: 1px solid #00124c;
+    border-radius: 10px;
+}
+.theme-color
+{
+    color: #00124c;
+}
 @media (min-width: 991px) {
     .d-md-none {
         display: none !important; }
