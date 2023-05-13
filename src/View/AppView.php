@@ -15,6 +15,8 @@ declare(strict_types=1);
  */
 namespace App\View;
 
+use App\View\Helper\BackButtonHelper;
+use App\View\Helper\PaginationControlHelper;
 use Cake\View\View;
 
 /**
@@ -23,6 +25,8 @@ use Cake\View\View;
  * Your application's default view class
  *
  * @link https://book.cakephp.org/4/en/views.html#the-app-view
+ * @property PaginationControlHelper $PaginationControl
+ * @property BackButtonHelper $BackButton
  */
 class AppView extends View
 {
@@ -37,5 +41,15 @@ class AppView extends View
      */
     public function initialize(): void
     {
+        $this->Paginator->setTemplates([
+            'nextActive' => '<li class="page-item"><a class="page-link" href="{{url}}"><i class="mdi mdi-chevron-right"></i></a></li>',
+            'nextDisabled' => '<li class="page-item disabled"><a class="page-link" disabled href="javascript:;"><i class="mdi mdi-chevron-right"></i></a></li>',
+            'prevActive' => '<li class="page-item"><a class="page-link" href="{{url}}"><i class="mdi mdi-chevron-left"></i></a></li>',
+            'prevDisabled' => '<li class="page-item disabled"><a class="page-link" disabled href="javascript:;"><i class="mdi mdi-chevron-left"></i></a></li>',
+            'number' => '<li class="page-item"><a class="page-link" href="{{url}}">{{text}}</a></li>',
+            'current' => '<li class="page-item disabled"><a class="page-link" disabled href="javascript:;">{{text}}</a></li>',
+        ]);
+        $this->loadHelper('PaginationControl');
+        $this->loadHelper("BackButton");
     }
 }
