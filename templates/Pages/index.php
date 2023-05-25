@@ -74,7 +74,7 @@
     }
     .theme-border-left
     {
-        border-left: 2px dashed #fe2e2d;
+        border-left: 2px solid #fe2e2d;
     }
 </style>
 <section id="hero" class="hero d-flex align-items-center top-header landing-banner">
