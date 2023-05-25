@@ -25,7 +25,10 @@
                 "action" => "index"
             ]); ?>"><?php echo $this->Html->image('logo.png', ['alt'=>'alk', 'class' => 'img-fluid']);?> </a>
             <ul>
-                <li class="nav-item active"><a class="nav-link" href="#"><?php echo __('Home')?></a></li>
+                <li class="nav-item active"><a class="nav-link" href="<?php echo $this->Url->build([
+                        'controller' => 'Pages',
+                        'action' => 'index'
+                    ])?>"><?php echo __('Home')?></a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo $this->Url->build([
                     'controller' => 'Pages',
                     'action' => 'aboutUs'
