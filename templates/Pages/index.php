@@ -82,11 +82,8 @@
     <div class="container banner-cont">
         <div class="row">
             <div class="col-lg-7 d-flex flex-column justify-content-center">
-                <h1 data-aos="fade-up" class="mb-4">Lorem Ipsum is simply
-                    dummy</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the industry's standard dummy text
-                    ever since the 1500s
+                <h1 data-aos="fade-up" class="mb-4">Welcome to All Exam Knowledge!</h1>
+                <p>All Exam Knowledge is a one-stop online education platform that provides comprehensive exam preparation services for SSC, UPSC, RAILWAY, Banking, JEE and many more.
                 </p>
                 <div data-aos="fade-up" data-aos-delay="600">
                     <div class="text-lg-start">
@@ -128,7 +125,7 @@
                                             </div>
                                             <div class="col-lg-3 pt-4">
                                                 <h4>New Videos are coming on GK-GS</h4>
-                                                <p>Lorem Ipsum simple text dummy of the printing</p>
+                                                <p>Prepare for you recent exam, watch the video</p>
                                             </div>
                                             <div class="col-lg-4 pt-4">
                                                 <div class="row">
@@ -186,15 +183,15 @@
                     </div>
                     <div class="card-body notifications">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
-                            <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
-                            <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
                         </ul>
                     </div>
                 </div>
@@ -206,15 +203,15 @@
                     </div>
                     <div class="card-body notifications">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                            <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
+                            <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
                         </ul>
                     </div>
                 </div>
@@ -252,10 +249,10 @@
                                         </div>
                                         <div class="card-body .notifications-carousel">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right"><img src="img/download-icon.png"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -267,10 +264,10 @@
                                         </div>
                                         <div class="card-body .notifications-carousel">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right"><img src="img/download-icon.png"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -282,10 +279,10 @@
                                         </div>
                                         <div class="card-body .notifications-carousel">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right"><img src="img/download-icon.png"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -301,10 +298,10 @@
                                         </div>
                                         <div class="card-body .notifications-carousel">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right"><img src="img/download-icon.png"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -316,10 +313,10 @@
                                         </div>
                                         <div class="card-body .notifications-carousel">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right"><img src="img/download-icon.png"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -331,10 +328,10 @@
                                         </div>
                                         <div class="card-body .notifications-carousel">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Cras justo odio<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Dapibus ac facilisis in<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Vestibulum at eros<a href="#" class="float-right">click here</a></li>
-                                                <li class="list-group-item">Cras justo odio<a href="" class="float-right">click here</a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Dapibus ac facilisis in<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Vestibulum at eros<a href="#" class="float-right"><img src="img/download-icon.png"></a></li>
+                                                <li class="list-group-item"><img src="img/notification-icon.svg" alt="">Cras justo odio<a href="" class="float-right"><img src="img/download-icon.png"></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -362,18 +359,23 @@
         <div class="row">
             <div class="col-lg-7 d-flex flex-column justify-content-center">
                 <h2 data-aos="fade-up" class="mb-4">About Us</h2>
-                <p><b>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </b></p>
+                <p><b>All Exam Knowledge is an educational platform for all competitive exam aspirants from India. We have been preparing candidates for various state and central examinations for over a decade.
+                        Throughout our journey we have consistently followed our ideology of making competitive exam coaching accessible and affordable for all Indian students.
+                    </b>
+                </p>
                 <div data-aos="fade-up" data-aos-delay="600">
                     <div class="text-lg-start mb-5">
-                        <a href="#" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                        <a href="<?php echo $this->Url->build([
+                            'controller' => 'Pages',
+                            'action' => 'aboutUs'
+                        ])?>" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                             <span><?php echo __('know More') ?></span>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
-                <img src="img/content-with-us.png" alt="">
+                <img src="img/teacher-img.png" alt="">
             </div>
         </div>
     </div>
@@ -382,7 +384,7 @@
     <div class="container">
         <div class="mb-5 mt-5">
             <h3 class="heading"><b>Why Content with us</b></h3>
-            <p>lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p> Comprehensive Study Material,Expert Faculty at Your Disposal, Interactive Learning Experience, Convenience at Your Fingertips</p>
         </div>
         <div class="row">
             <div class="col-lg-6">
@@ -439,7 +441,7 @@
         </div>
     </div>
 </section>
-<section id="hero" class="hero d-flex align-items-center">
+<section id="hero" class="hero d-flex align-items-center top-header">
     <div class="my-5 text-center container">
         <div class="row mb-2">
             <div class="col text-center mb-4">
