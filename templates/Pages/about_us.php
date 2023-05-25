@@ -79,7 +79,11 @@
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center">
                 <h3 data-aos="fade-up" class="mb-4">About Us</h3>
-                <p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <p>All Exam Knowledge is an educational platform for all competitive exam aspirants from India.
+                    We have been preparing candidates for various state and central examinations for over a decade. Throughout our journey we have consistently followed our ideology of making competitive exam coaching accessible and affordable for all Indian students.
+                </p>
+                <p>At All Exam Knowledge we dedicatedly work to make course syllabus fun and easily understandable so that students can qualify the exam like SSC, UPSC, Banking, Railway with flying colours. In addition, our professionally experienced faculties also help aspiring Engineers from India crack JEE through digital classes.
+                    We strive to transform our passion for Education into action by giving you the best possible experience on our platform.
                 </p>
             </div>
             <div class="col-lg-6">
@@ -95,7 +99,7 @@
                 <img src="img/girl-studying.png" alt="">
             </div>
             <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <p class="mb-5">when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <p class="mb-5">Our content is carefully curated to help you achieve your goal smoothly. Whether you are a student preparing for a civil services exam or aiming to crack highly competitive college entrance exams, All Exam Knowledge is there to help you.
                 </p>
                 <div class="row">
                     <div class="col-lg-5 pl-5">
