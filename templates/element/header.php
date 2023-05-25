@@ -8,10 +8,10 @@
         <nav id="navbar" class="navbar">
             <ul></ul>
             <ul>
-                <li class="nav-item theme-color"><b><small>Call- +91 9778539234</small></b></li>
+                <li class="nav-item theme-color"><img src="img/call-icon.svg" alt=""><b><small>Call- +91 9778539234</small></b></li>
                 <li></li>
                 <li></li>
-                <li class="nav-item theme-color"><b><small>Email- contact@allexamknowledge.com</small></b></li>
+                <li class="nav-item theme-color"><img src="img/email-icon.svg" alt=""><b><small>Email- contact@allexamknowledge.com</small></b></li>
             </ul>
             <ul></ul>
         </nav>
@@ -25,7 +25,7 @@
                 "action" => "index"
             ]); ?>"><?php echo $this->Html->image('logo.png', ['alt'=>'alk', 'class' => 'img-fluid']);?> </a>
             <ul>
-                <li class="nav-item active"><a class="nav-link" href="<?php echo $this->Url->build([
+                <li class="nav-item"><a class="nav-link" href="<?php echo $this->Url->build([
                         'controller' => 'Pages',
                         'action' => 'index'
                     ])?>"><?php echo __('Home')?></a></li>
