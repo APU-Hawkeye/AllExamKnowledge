@@ -3,64 +3,63 @@
  * @var App\View\AppView $this
  */
 ?>
-<style>
-    .col-md-2 {
-        -ms-flex: 0 0 10.666667%;
-        flex: 0 0 10.666667%;
-    }
-    .heading {
-        font-family: Helvetica;
-    }
-</style>
-<footer id="footer" class="footer">
-    <div class="footer-top">
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-newsletter">
         <div class="container">
-            <h1 class="heading pb-5"><?php echo __('Stay In Touch')?></h1>
-            <form class="form-inline justify-content-center">
-                <div class="form-group mr-sm-3 mb-2">
-                    <input type="text" class="form-control" placeholder="john@example.com">
-                    <button type="submit" class="btn btn-outline-secondary pl-2"><?php echo __('Subscibe')?></button>
-                </div>
-            </form>
-        </div><!---->
-    </div><!--//footer top-->
-    <div class="footer-bottom">
-        <div class="container pt-4">
             <div class="row justify-content-center">
-                <div class="col-md-2">
-                    <p><a href="#" class="text-white"><?php echo __('Home')?></a></p>
+                <div class="col-lg-6">
+                    <h4>Stay In Touch</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                    </form>
                 </div>
-                <div class="col-md-2">
-                    <p><a href="#" class="text-white"><?php echo __('About Us')?></a></p>
-                </div>
-                <div class="col-md-2">
-                    <p><a href="#" class="text-white"><?php echo __('Videos')?></a></p>
-                </div>
-                <div class="col-md-2">
-                    <p><a href="#" class="text-white"><?php echo __('Downloads')?></a></p>
-                </div>
-                <div class="col-md-2">
-                    <p><a href="#" class="text-white"><?php echo __('About Us')?></a></p>
-                </div>
-                <div class="col-md-2">
-                    <p><a href="#" class="text-white"><?php echo __('Contact Us')?></a></p>
-                </div>
-            </div>
-            <div class="row mt-5 justify-content-center">
-                <h1 class="heading"><?php echo __('Get In touch with us')?></h1>
-            </div>
-            <div class="row mt-3 mb-5 justify-content-center">
-                <div class="col-md-3">
-                    <p><img src="img/whats-app-icon.svg" alt="">  (+91)9876543210</p>
-                </div>
-                <div class="col-md-3">
-                    <p>contact@allexamknowledge.com</p>
-                </div>
-            </div>
-            <hr width="90%" align="middle" color="#0f6674" />
-            <div class="row mt-4 justify-content-center">
-                <p>Copyright 2022 @copyright allexamknowledge Pvt. Ltd.</p>
             </div>
         </div>
     </div>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="w-100 text-center">
+                        <ul class="footer-menu">
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>HVideo</li>
+                            <li>Downloads</li>
+                            <li>Contact Us</li>
+                            <li>Login</li>
+                        </ul>
+                    </div>
+                    <div class="w-100 text-center">
+                        <h4>Get In Touch with Us</h4>
+                        <div class="footer-contact">
+                            <span><i><img src="img/social-icon/whatsapp.png" width="20" alt=""></i> (+91) 9999999999</span>
+                            <span><i><img src="img/social-icon/email.png" width="20" alt=""></i> Contact@allexamknowledge.com</span>
+                            <span>
+                  <a href="#"><img src="img/social-icon/linkedin.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/social-icon/instagram.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/social-icon/twitter.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/social-icon/youtube.png" width="20" alt=""></a>
+                </span>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+<footer class="bottom-footer">
+    <div class="container py-4">
+        <div class="copyright">
+            &copy; Copyright 2023<strong> <span>allexamknowledge </span></strong>Pvt. Ltd.
+        </div>
+
+    </div>
 </footer>
+
