@@ -45,4 +45,8 @@ class PagesController extends AppController
     {
 
     }
+    public function downloadPdf()
+    {
+
+    }
 }
