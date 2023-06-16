@@ -15,7 +15,10 @@
 <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo "><a href="#"><img src="img/logo.png" alt=""></a></h1>
+        <h1 class="logo "><a href="<?php echo $this->Url->build([
+                'controller' => 'Pages',
+                'action' => 'index',
+            ])?>"><?php echo $this->Html->image('logo.png', ['alt'=>'alk', 'class' => 'img-fluid']);?></a></h1>
         <nav id="navbar" class="navbar order-3 order-lg-2">
             <ul>
                 <li><a class="nav-link active" href="<?php echo $this->Url->build([
