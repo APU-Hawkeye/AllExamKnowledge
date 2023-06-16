@@ -3,75 +3,70 @@
  * @var App\View\AppView $this
  */
 ?>
-<style>
-    .heros {
-        width: 100%;
-        position: relative; }
-    .heros h1 {
-        margin: 0;
-        font-size: 40px;
-        font-weight: bold;
-        color: #191c1f;
-        text-transform: uppercase;
-        line-height: 1; }
-    .hero-dot
-    {
-        position: absolute;
-        right: 10px;
-        transform: rotate(90deg);
-    }
-    .heros h2 {
-        color: #191c1f;
-        margin: 15px 0 0 0;
-        font-size: 24px;
-        line-height: 1.5;
-        font-weight: 500; }
-    .heros .btn-get-started {
-        margin-top: 30px;
-        padding: 15px 40px;
-        border-radius: 4px;
-        transition: 0.5s;
-        color: #fff;
-        background-color: #00124c !important;
-        border: 1px solid #00124c;
-        border-radius: 10px; }
-    .heros .btn-get-started span {
-        font-family: inherit;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 1px; }
-    .heros .btn-get-started i {
-        margin-left: 5px;
-        font-size: 18px;
-        transition: 0.3s; }
-    .heros .btn-get-started:hover i {
-        transform: translateX(5px); }
-    .heros.hero-img {
-        background-image: url("img/contact-us-banner.png");
-        position: relative;
-        background-size: cover;
-        padding: 40px 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: 100%;
-        top: 0; }
 
-    .heading {
-        font-family: Helvetica;
-    }
-    .theme-border-left
-    {
-        border-left: 2px solid #fe2e2d;
-    }
-    .color-background {
-        background: #eaefff;
-    }
-</style>
+<main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="text-center col-lg-6">
+                    <h2 class="fw-bold text-black"><span>Contact Us</span></h2>
+                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6">
+                    <div class="info-box mb-4">
+                        <i class="bx bx-map"></i>
+                        <h3>Our Address</h3>
+                        <p>A108 Adam Street, New York, NY 535022</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <i class="bx bx-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>contact@allexamknowledge.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <i class="bx bx-phone-call"></i>
+                        <h3>Call Us</h3>
+                        <p>+1 5589 55488 55</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 ">
+                    <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                </div>
+                <div class="col-lg-6">
+                    <form action="#" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Contact Section -->
 
-<section class="heros hero-img">
-    <div class="container">
-        <h1 style="color: white" class="mb-3">CONTACT US</h1>
-        <p style="color: black">HOME | CONTACT US</p>
-    </div>
-</section>
+</main><!-- End #main -->
