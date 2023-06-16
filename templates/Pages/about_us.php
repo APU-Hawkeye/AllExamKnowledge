@@ -3,219 +3,145 @@
  * @var App\View\AppView $this
  */
 ?>
-<style>
-    .heros {
-        width: 100%;
-        position: relative; }
-    .heros h1 {
-        margin: 0;
-        font-size: 40px;
-        font-weight: bold;
-        color: #191c1f;
-        text-transform: uppercase;
-        line-height: 1; }
-    .hero-dot
-    {
-        position: absolute;
-        right: 10px;
-        transform: rotate(90deg);
-    }
-    .heros h2 {
-        color: #191c1f;
-        margin: 15px 0 0 0;
-        font-size: 24px;
-        line-height: 1.5;
-        font-weight: 500; }
-    .heros .btn-get-started {
-        margin-top: 30px;
-        padding: 15px 40px;
-        border-radius: 4px;
-        transition: 0.5s;
-        color: #fff;
-        background-color: #00124c !important;
-        border: 1px solid #00124c;
-        border-radius: 10px; }
-    .heros .btn-get-started span {
-        font-family: inherit;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 1px; }
-    .heros .btn-get-started i {
-        margin-left: 5px;
-        font-size: 18px;
-        transition: 0.3s; }
-    .heros .btn-get-started:hover i {
-        transform: translateX(5px); }
-    .heros.hero-img {
-        background-image: url("img/about-us-banner.png");
-        position: relative;
-        background-size: cover;
-        padding: 40px 0;
-        width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: 100%;
-        top: 0; }
 
-    .heading {
-        font-family: Helvetica;
-    }
-    .theme-border-left
-    {
-        border-left: 2px solid #fe2e2d;
-    }
-    .color-background {
-        background: #eaefff;
-    }
-</style>
-<section class="heros hero-img">
-    <div class="container">
-        <h1 style="color: white" class="mb-3">ABOUT US</h1>
-        <p style="color: black">HOME | ABOUT US</p>
-    </div>
-</section>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <h3 data-aos="fade-up" class="mb-4">About Us</h3>
-                <p>All Exam Knowledge is an educational platform for all competitive exam aspirants from India.
-                    We have been preparing candidates for various state and central examinations for over a decade. Throughout our journey we have consistently followed our ideology of making competitive exam coaching accessible and affordable for all Indian students.
-                </p>
-                <p>At All Exam Knowledge we dedicatedly work to make course syllabus fun and easily understandable so that students can qualify the exam like SSC, UPSC, Banking, Railway with flying colours. In addition, our professionally experienced faculties also help aspiring Engineers from India crack JEE through digital classes.
-                    We strive to transform our passion for Education into action by giving you the best possible experience on our platform.
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <img src="img/about-us-img.png" alt="">
+<main id="main">
+    <section class="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h4 class="mb-4 fw-bold">About Us</h4>
+                    <p>
+                        All Exam Knowledge is an educational platform for all competitive exam aspirants from India.
+                        We have been preparing candidates for various state and central examinations for over a decade. Throughout our journey we have consistently followed our ideology of making competitive exam coaching accessible and affordable for all Indian students.
+                    </p>
+                    <p>
+                        At All Exam Knowledge we dedicatedly work to make course syllabus fun and easily understandable so that students can qualify the exam like SSC, UPSC, Banking, Railway with flying colours. In addition, our professionally experienced faculties also help aspiring Engineers from India crack JEE through digital classes.
+                        We strive to transform our passion for Education into action by giving you the best possible experience on our platform.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="img/about-us-img.png" class="img-fluid" alt="">
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="color-background">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="img/girl-studying.png" alt="">
-            </div>
-            <div class="col-lg-6 d-flex flex-column justify-content-center">
-                <p class="mb-5">Our content is carefully curated to help you achieve your goal smoothly. Whether you are a student preparing for a civil services exam or aiming to crack highly competitive college entrance exams, All Exam Knowledge is there to help you.
-                </p>
-                <div class="row">
-                    <div class="col-lg-5 pl-5">
-                        <div class="row">
-                            <div class="pl-4 theme-border-left">
-                                <img src="img/rankone.svg"><br>
-                                <div class="pt-2">
-                                    <h4>RANKED #1</h4>
-                                </div>
-                                <div class="pt-2">
-                                    <p class="mb-0">Best Learning Platform</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pt-5">
-                            <div class="pl-4 theme-border-left">
-                                <img src="img/100ksubcribers.svg"><br>
-                                <div class="pt-2">
-                                    <h4>100K+</h4>
-                                </div>
-                                <div class="pt-2">
-                                    <p class="mb-0">Youtube subscribers</p>
-                                </div>
-                            </div>
+    </section>
+    <section class="feature-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 position-relative">
+                    <img src="img/shape1.png" class="feature-shape" alt="">
+                    <img src="img/feature-img.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-8 ps-5">
+                    <div class="row mb-5">
+                        <div class="col-lg-12">
+                            <p>
+                                Our content is carefully curated to help you achieve your goal smoothly. Whether you are a student preparing for a civil services exam or aiming to crack highly competitive college entrance exams, All Exam Knowledge is there to help you.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-5 pl-5">
-                        <div class="row">
-                            <div class="pl-4 theme-border-left">
-                                <img src="img/onemilion.svg"><br>
-                                <div class="pt-2">
-                                    <h4>1M+</h4>
-                                </div>
-                                <div class="pt-2">
-                                    <p class="mb-0">Monthly Active User</p>
-                                </div>
+                    <div class="row mb-5">
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span> <img src="img/Ranked1.png" width="45" alt=""></span>
                             </div>
+                            <h6 class="text-dark text-uppercase fw-bold">Ranked #1</h6>
+                            <p class="mb-0">
+                                Best Learning Platform
+                            </p>
                         </div>
-                        <div class="row pt-5">
-                            <div class="pl-4 theme-border-left">
-                                <img src="img/500students.svg"><br>
-                                <div class="pt-2">
-                                    <h4>500+</h4>
-                                </div>
-                                <div class="pt-2">
-                                    <p class="mb-0">Student Selections</p>
-                                </div>
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span><img src="img/youtube.png" width="45" alt=""></span>
                             </div>
+                            <h6 class="text-dark text-uppercase fw-bold">100k +</h6>
+                            <p class="mb-0">
+                                Youtube Subscribers
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span><img src="img/active-user.png" width="45" alt=""></span>
+                            </div>
+                            <h6 class="text-dark text-uppercase fw-bold">1M +</h6>
+                            <p class="mb-0">
+                                Monthly Active User
+                            </p>
+                        </div>
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span><img src="img/student.png" width="45" alt=""></span>
+                            </div>
+                            <h6 class="text-dark text-uppercase fw-bold">500+</h6>
+                            <p class="mb-0">
+                                Student Selections
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="why-us">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-10">
+                    <h2 class="fw-bold text-black">Why Content with us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non fuga voluptas officiis sunt! Accusamus earum deleniti labore libero illum quo exercitationem asperiores dolorum. Dicta ullam porro repudiandae itaque asperiores!</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4">
+                    <img src="img/why-img.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-8 ps-5">
+                    <div class="row mb-5">
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span class="bi bi-bank"></span>
+                            </div>
+                            <h6 class="text-dark text-uppercase fw-bold">Government Exams</h6>
+                            <p class="mb-0">
+                                Banking, SSC, Railways, Defence, Teaching & Many more
+                            </p>
+                        </div>
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span><img src="img/support-icon.png" alt=""></span>
+                            </div>
+                            <h6 class="text-dark text-uppercase fw-bold">Mentor Supports</h6>
+                            <p class="mb-0">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span><img src="img/download-icon.png" width="43" alt=""></span>
+                            </div>
+                            <h6 class="text-dark text-uppercase fw-bold">Download PDF</h6>
+                            <p class="mb-0">
+                                Download Answer Key, Solution, GKGS & Many more
+                            </p>
+                        </div>
+                        <div class="col-lg-6 why-column">
+                            <div class="mb-2">
+                                <span><img src="img/test-icon.png" alt=""></span>
+                            </div>
+                            <h6 class="text-dark text-uppercase fw-bold">Test yourself</h6>
+                            <p class="mb-0">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
-<section>
-    <div class="container">
-        <div class="mb-5 mt-5">
-            <h3 class="heading"><b>Why Content with us</b></h3>
-            <p>lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="img/content-with-us.png" alt="">
-            </div>
-            <div class="col-lg-3 pl-5">
-                <div class="row">
-                    <div class="pl-4 theme-border-left">
-                        <img src="img/gov-exam.svg"><br>
-                        <div class="pt-2">
-                            <h4>GOVERNMENT EXAMS</h4>
-                        </div>
-                        <div class="pt-2">
-                            <p class="mb-0">Banking,SSC,Railway Exams & Many more</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-5">
-                    <div class="pl-4 theme-border-left">
-                        <img src="img/download-pdf.svg"><br>
-                        <div class="pt-2">
-                            <h4>DOWNLOAD PDF</h4>
-                        </div>
-                        <div class="pt-2">
-                            <p class="mb-0">Download Answer Keys,Solutions,GK GS & Many more</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 pl-5">
-                <div class="row">
-                    <div class="pl-4 theme-border-left">
-                        <img src="img/mentor-support.svg"><br>
-                        <div class="pt-2">
-                            <h4>MENTOR SUPPORTS</h4>
-                        </div>
-                        <div class="pt-2">
-                            <p class="mb-0">Banking,SSC,Railway Exams & Many more</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-5">
-                    <div class="pl-4 theme-border-left">
-                        <img src="img/test-yourself.svg"><br>
-                        <div class="pt-2">
-                            <h4>TEST YOURSELF</h4>
-                        </div>
-                        <div class="pt-2">
-                            <p class="mb-0">Download Answer Keys,Solutions,GK GS & Many more</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
