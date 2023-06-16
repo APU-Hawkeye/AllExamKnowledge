@@ -26,9 +26,11 @@
     <?= $this->Html->meta('icon') ?>
 
     <?php echo $this->Html->css([
-        '/lib/bootstrap/css/bootstrap.min',
-        '/lib/bootstrap-icons/bootstrap-icons',
-        '/lib/flagstrap/css/flags',
+        '/library/aos/aos',
+        '/library/bootstrap/css/bootstrap.min',
+        '/library/bootstrap-icons/bootstrap-icons',
+        '/library/boxicons/css/boxicons.min',
+        '/library/swiper/swiper-bundle.min',
         'style',
     ])?>
     <?php echo $this->fetch('css')?>
@@ -47,10 +49,20 @@
 <!-- ======= Footer ======= -->
 <?php echo $this->element("footer"); ?>
 <!-- End Footer -->
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
 
 <?php echo $this->Html->script([
-    'jquery.min',
-    'bootstrap.min',
+    '/library/purecounter/purecounter_vanilla',
+    '/library/aos/aos',
+    '/library/bootstrap/js/bootstrap.bundle.min',
+    '/library/isotope-layout/isotope.pkgd.min',
+    '/library/swiper/swiper-bundle.min',
+    '/library/waypoints/noframework.waypoints',
+    '/library/php-email-form/validate',
+    'main',
 ]); ?>
 <?php echo $this->fetch('js'); ?>
 </body>
