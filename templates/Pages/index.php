@@ -83,15 +83,23 @@
                         </div>
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">Odisha PSC Cuttack </span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/OdishaPscCuttack.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">Sashastra Seema Bal </span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/SashastraSeemaBal.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -103,15 +111,16 @@
                         </div>
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>
+                                <span class="text-center">Coming Soon</span>
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -133,34 +142,22 @@
                             <div class="swiper-slide">
                                 <div class="card card-border mb-3 w-100">
                                     <div class="card-header cardHeading">
-                                        <h5 class="text-center">MCQ</h5>
+                                        <h5 class="text-center">MCG Question Papers</h5>
                                     </div>
                                     <div class="card-body notifications-carousel">
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt=""><?php echo $this->Html->link('MCQ', '/files/mcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                        </ul>
-                                        <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-border mb-3 w-100">
-                                    <div class="card-header cardHeading">
-                                        <h5 class="text-center">Reasoning</h5>
-                                    </div>
-                                    <div class="card-body notifications-carousel">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">MCQ Questions 1</span><span class="float-end"><?php echo $this->Html->link('View', '/files/mcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">Geogtaphy 1000 MCQ Questions</span><span class="float-end"><?php echo $this->Html->link('View', '/files/mcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">MCQ Questions 2</span>
+                                            </li>
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">MCQ Questions 2</span><span class="float-end">
+                                            </li>
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
                                             <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
@@ -174,12 +171,13 @@
                                         <h5 class="text-center">Reasoning</h5>
                                     </div>
                                     <div class="card-body notifications-carousel">
+                                        <span class="text-center">Coming Soon</span>
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
                                             <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
@@ -190,15 +188,16 @@
                             <div class="swiper-slide">
                                 <div class="card card-border mb-3 w-100">
                                     <div class="card-header cardHeading">
-                                        <h5 class="text-center">Reasoning</h5>
+                                        <h5 class="text-center">Current Affairs</h5>
                                     </div>
-                                    <div class="card-body .notifications-carousel">
+                                    <div class="card-body notifications-carousel">
+                                        <span class="text-center">Coming Soon</span>
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
                                             <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
@@ -206,44 +205,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="card card-border mb-3 w-100">
-                                    <div class="card-header cardHeading">
-                                        <h5 class="text-center">Reasoning</h5>
-                                    </div>
-                                    <div class="card-body .notifications-carousel">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                        </ul>
-                                        <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-border mb-3 w-100">
-                                    <div class="card-header cardHeading">
-                                        <h5 class="text-center">Reasoning</h5>
-                                    </div>
-                                    <div class="card-body .notifications-carousel">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>
-                                        </ul>
-                                        <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div class="swiper-slide">-->
+<!--                                <div class="card card-border mb-3 w-100">-->
+<!--                                    <div class="card-header cardHeading">-->
+<!--                                        <h5 class="text-center">Reasoning</h5>-->
+<!--                                    </div>-->
+<!--                                    <div class="card-body .notifications-carousel">-->
+<!--                                        <ul class="list-group list-group-flush">-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
+<!--                                        </ul>-->
+<!--                                        <div class="w-100 d-flex align-items-center justify-content-center">-->
+<!--                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
