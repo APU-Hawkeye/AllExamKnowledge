@@ -85,7 +85,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
                                     <span class="float-left">Odisha PSC Cuttack </span>
-                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/OdishaPscCuttack.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/OdisaPscCuttack.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
                                 </li>
                                 <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
                                     <span class="float-left">Sashastra Seema Bal </span>
