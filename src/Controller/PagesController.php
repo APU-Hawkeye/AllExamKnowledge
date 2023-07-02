@@ -38,15 +38,24 @@ class PagesController extends AppController
 
     public function aboutUs()
     {
-
+        $this->set('titleForLayout', __('About Us'));
     }
 
     public function contactUs()
     {
-
+        $this->set('titleForLayout', __('Contact Us'));
     }
+
     public function downloadPdf()
     {
 
     }
+
+//    public function downloadMcq($filename)
+//    {
+//        $filePath = WWW_ROOT . 'pdfs' . DS . $filename;
+//        $this->response = $this->response->withFile($filePath);
+//
+//        return $this->response;
+//    }
 }
