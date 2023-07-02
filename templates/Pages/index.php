@@ -147,16 +147,13 @@
                                     <div class="card-body notifications-carousel">
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">Odisha High Court ASO Preliminary Questions 2023</span><span class="float-end"><?php echo $this->Html->link('View', '/files/OdishaHighCourtASOPreliminaryQuestions2023.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
                                                 <span class="float-left">MCQ Questions 1</span><span class="float-end"><?php echo $this->Html->link('View', '/files/mcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
                                             </li>
                                             <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">Geogtaphy 1000 MCQ Questions</span><span class="float-end"><?php echo $this->Html->link('View', '/files/mcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">MCQ Questions 2</span>
-                                            </li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">MCQ Questions 2</span><span class="float-end">
+                                                <span class="float-left">Geography 1000 MCQ Questions</span><span class="float-end"><?php echo $this->Html->link('View', '/files/DishaThousandMcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
                                             </li>
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
