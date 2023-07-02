@@ -79,7 +79,7 @@
                 <div class="col-md-6">
                     <div class="card card-border mb-3 w-100">
                         <div class="card-header cardHeading">
-                            <h5 class="text-center">Latest Jobs</h5>
+                            <h5 class="text-center">Latest Government Jobs</h5>
                         </div>
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
