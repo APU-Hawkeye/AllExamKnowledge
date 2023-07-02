@@ -12,6 +12,7 @@
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
+ *  @var string $titleForLayout
  */
 
 ?>
@@ -20,10 +21,9 @@
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        <?= $this->fetch('title') ?>
-    </title>
-    <?= $this->Html->meta('icon') ?>
+
+    <title><?php echo $titleForLayout; ?></title>
+    <?php echo $this->Html->meta('favicon.ico', '/img/logo.png', ['type' => 'icon']); ?>
 
     <?php echo $this->Html->css([
         '/library/aos/aos',
