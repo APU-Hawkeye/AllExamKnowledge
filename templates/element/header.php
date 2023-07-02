@@ -8,7 +8,7 @@
     <div class="container d-flex justify-content-center">
         <div class="contact-info d-flex align-items-center">
             <i class="bi bi-telephone d-flex align-items-center"><span>+91 97785 39234</span></i>
-            <i class="bi bi-envelope d-flex align-items-center ms-4"><a href="mailto:contact@example.com">contact@allexamknoledge.com</a></i>
+            <i class="bi bi-envelope d-flex align-items-center ms-4"><a href="mailto:contact@example.com">contact@allexamknowledge.com</a></i>
         </div>
     </div>
 </section>
@@ -53,7 +53,7 @@
 <!--                        <li><a href="#">Drop Down 4</a></li>-->
 <!--                    </ul>-->
                 </li>
-                <li><a class="nav-link" href="#">Test your self</a></li>
+<!--                <li><a class="nav-link" href="#">Test your self</a></li>-->
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
                         'controller' => 'Pages',
                         'action' => 'contactUs',
