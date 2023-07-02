@@ -11,8 +11,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <h4>Stay In Touch</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.</p>
+                    <p>We have been preparing candidates for various state and central examinations for over a decade</p>
                     <form action="" method="post">
                         <input type="email" name="email"><input type="submit" value="Subscribe">
                     </form>
@@ -37,8 +36,8 @@
                     <div class="w-100 text-center">
                         <h4>Get In Touch with Us</h4>
                         <div class="footer-contact">
-                            <span><i><img src="img/social-icon/whatsapp.png" width="20" alt=""></i> (+91) 9999999999</span>
-                            <span><i><img src="img/social-icon/email.png" width="20" alt=""></i> Contact@allexamknowledge.com</span>
+                            <span><i><img src="img/social-icon/whatsapp.png" width="20" alt=""></i> (+91) +91 97785 39234</span>
+                            <span><i><img src="img/social-icon/email.png" width="20" alt=""></i> contact@allexamknowledge.com</span>
                             <span>
                   <a href="#"><img src="img/social-icon/linkedin.png" width="20" alt=""></a>
                   <a href="#"><img src="img/social-icon/instagram.png" width="20" alt=""></a>
