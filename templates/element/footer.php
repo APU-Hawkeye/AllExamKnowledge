@@ -27,7 +27,7 @@
                         <ul class="footer-menu">
                             <li>Home</li>
                             <li>About Us</li>
-                            <li>HVideo</li>
+                            <li>Video</li>
                             <li>Downloads</li>
                             <li>Contact Us</li>
                             <li>Login</li>
