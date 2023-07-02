@@ -9,7 +9,7 @@
     <div class="footer-newsletter">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <h4>Stay In Touch</h4>
                     <p>We have been preparing candidates for various state and central examinations for over a decade</p>
                     <form action="" method="post">
