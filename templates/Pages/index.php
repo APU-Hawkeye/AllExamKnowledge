@@ -79,7 +79,7 @@
                 <div class="col-md-6">
                     <div class="card card-border mb-3 w-100">
                         <div class="card-header cardHeading">
-                            <h5 class="text-center">Announcements</h5>
+                            <h5 class="text-center">Latest Jobs</h5>
                         </div>
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
@@ -318,8 +318,7 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <h2 class="fw-bold text-black">Uploaded Today Video</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s,</p>
+                    <p></p>
                 </div>
             </div>
             <div class="row">
