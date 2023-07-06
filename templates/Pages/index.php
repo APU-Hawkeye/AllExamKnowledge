@@ -168,13 +168,11 @@
                                         <h5 class="text-center">Reasoning</h5>
                                     </div>
                                     <div class="card-body notifications-carousel">
-                                        <span class="text-center">Coming Soon</span>
                                         <ul class="list-group list-group-flush">
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">Reasoning Analogy Questions Answer</span><span class="float-end"><?php echo $this->Html->link('View', '/files/ReasoningAnalogyQA.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
 <!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
                                             <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
@@ -185,16 +183,27 @@
                             <div class="swiper-slide">
                                 <div class="card card-border mb-3 w-100">
                                     <div class="card-header cardHeading">
-                                        <h5 class="text-center">Current Affairs</h5>
+                                        <h5 class="text-center">Previous Year QA</h5>
                                     </div>
                                     <div class="card-body notifications-carousel">
-                                        <span class="text-center">Coming Soon</span>
                                         <ul class="list-group list-group-flush">
+
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">ARI AMIN SFS-2021</span><span class="float-end"><?php echo $this->Html->link('View', '/files/ARIAMINSFS-2021.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
+
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">Excise Constable 2014</span><span class="float-end"><?php echo $this->Html->link('View', '/files/Excise-Constable-2014.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
+
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">Excise Constable 2018</span><span class="float-end"><?php echo $this->Html->link('View', '/files/Excise-Constable-2018.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
+
+                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                <span class="float-left">ICDS Supervisor 2016 Paper1</span><span class="float-end"><?php echo $this->Html->link('View', '/files/ICDS-Supervisor-2016-Paper1.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                            </li>
 <!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
                                             <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
