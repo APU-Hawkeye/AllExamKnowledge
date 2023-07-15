@@ -31,8 +31,20 @@
                 ])?>">About Us</a></li>
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
                     'controller' => 'Pages',
-                    'action' => 'videos',
-                ])?>">Video</a></li>
+                    'action' => 'downloadPdf',
+                ])?>">GK Section</a></li>
+                <li><a class="nav-link" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'downloadPdf',
+                ])?>">Current Affairs</a></li>
+                <li><a class="nav-link" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'downloadPdf',
+                ])?>">Syllabus</a></li>
+                <li><a class="nav-link" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'downloadPdf',
+                ])?>">Previous Year QS</a></li>
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
                     'controller' => 'Pages',
                     'action' => 'downloadPdf',
