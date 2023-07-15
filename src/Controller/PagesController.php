@@ -48,7 +48,7 @@ class PagesController extends AppController
 
     public function downloadPdf()
     {
-
+        $this->set('titleForLayout', __('Download PDF'));
     }
 
 //    public function downloadMcq($filename)
