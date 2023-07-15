@@ -157,7 +157,10 @@
                                             </li>
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
+                                            <a href="<?php echo $this->Url->build([
+                                                'controller' => 'Pages',
+                                                'action' => 'downloadPdf'
+                                            ])?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +178,10 @@
 <!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
+                                            <a href="<?php echo $this->Url->build([
+                                                'controller' => 'Pages',
+                                                'action' => 'downloadPdf'
+                                            ])?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +212,10 @@
 <!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
                                         </ul>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
+                                            <a href="<?php echo $this->Url->build([
+                                                'controller' => 'Pages',
+                                                'action' => 'downloadPdf'
+                                            ])?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
