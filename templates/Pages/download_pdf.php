@@ -106,7 +106,7 @@
                                         <p class="mb-0"></p>
                                         <button class="btn btn-theme p-2 py-1">
                                             <span class="ms-2 bi bi-eye">
-                                                <?php echo $this->Html->link('view', '/files/DishaThousandMcq-2021.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?>
+                                                <?php echo $this->Html->link('view', '/files/DishaThousandMcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?>
                                             </span>
                                         </button>
                                     </div>
