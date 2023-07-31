@@ -16,11 +16,8 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
-use Cake\Core\Configure;
-use Cake\Http\Exception\ForbiddenException;
-use Cake\Http\Exception\NotFoundException;
-use Cake\Http\Response;
-use Cake\View\Exception\MissingTemplateException;
+use Cake\Event\EventInterface;
+use Cake\ORM\TableRegistry;
 
 /**
  * Static content controller
@@ -28,12 +25,40 @@ use Cake\View\Exception\MissingTemplateException;
  * This controller will render views from templates/Pages/
  *
  * @link https://book.cakephp.org/4/en/controllers/pages-controller.html
+ * @property \App\Model\Table\StudyMaterialsTable $StudyMaterials
  */
 class PagesController extends AppController
 {
+    /**
+     * @param EventInterface $event
+     * @return \Cake\Http\Response|void|null
+     */
+    public function beforeFilter(EventInterface $event)
+    {
+        /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
+        $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
+        $this->StudyMaterials = $studyMaterials;
+        parent::beforeFilter($event);
+    }
+
     public function index()
     {
         $this->set('titleForLayout', __('All Exam Knowledge'));
+    }
+
+    /**
+     * @param string|null $id Study Material ID
+     * @return string
+     */
+    public function pdfView(?string $id = null)
+    {
+        $pdfFile = $this->StudyMaterials->get($id);
+        /** @var \Cake\Http\Response $response */
+        $response = $this->response;
+        $response = $response->withType('application/pdf');
+        $response = $response->getBody()->getContents($pdfFile->file);
+
+        return $response;
     }
 
     public function aboutUs()
