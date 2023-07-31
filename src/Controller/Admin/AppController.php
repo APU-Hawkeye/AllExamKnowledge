@@ -13,7 +13,7 @@ use Psr\Http\Message\ResponseInterface;
  * @package App\Controller\Admin
  *
  * @property AuthenticationComponent $Authentication
- * @property ResponseInterface $response
+ * @property \Psr\Http\Message\ResponseInterface $response
  */
 class AppController extends BaseController
 {

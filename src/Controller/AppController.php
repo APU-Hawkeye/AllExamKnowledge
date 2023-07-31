@@ -25,6 +25,7 @@ use Cake\Controller\Controller;
  * will inherit them.
  *
  * @link https://book.cakephp.org/4/en/controllers.html#the-app-controller
+ * @property \Psr\Http\Message\ResponseInterface $response
  */
 class AppController extends Controller
 {
