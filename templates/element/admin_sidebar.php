@@ -24,17 +24,31 @@
                 'action' => 'dashboard'
             ]); ?>" class="waves-effect"><i class="fa fa-home"></i><span><?php echo __('Dashboard')?></span></a></li>
         <li><a href="<?php echo $this->Url->build([
-                'controller' => 'Categories',
+                'controller' => 'Announcements',
                 'action' => 'index'
             ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Announcements')?></span></a></li>
         <li><a href="<?php echo $this->Url->build([
-                'controller' => 'Categories',
+                'controller' => 'News',
                 'action' => 'index'
             ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('News')?></span></a></li>
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'Categories',
                 'action' => 'index'
-            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Notes')?></span></a></li>
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Main Categories')?></span>
+            </a>
+        </li>
+        <li><a href="<?php echo $this->Url->build([
+                'controller' => 'SubCategories',
+                'action' => 'index'
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Sub Categories')?></span>
+            </a>
+        </li>
+        <li><a href="<?php echo $this->Url->build([
+                'controller' => 'StudyMaterials',
+                'action' => 'index'
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Study Materials')?></span>
+            </a>
+        </li>
 
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'Users',
