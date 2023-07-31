@@ -26,11 +26,11 @@
     <?php echo $this->Html->meta('favicon.ico', '/img/logo.png', ['type' => 'icon']); ?>
 
     <?php echo $this->Html->css([
-        '/library/aos/aos',
-        '/library/bootstrap/css/bootstrap.min',
-        '/library/bootstrap-icons/bootstrap-icons',
-        '/library/boxicons/css/boxicons.min',
-        '/library/swiper/swiper-bundle.min',
+        '/lib/aos/aos',
+        '/lib/bootstrap/css/bootstrap.min',
+        '/lib/bootstrap-icons/bootstrap-icons',
+        '/lib/boxicons/css/boxicons.min',
+        '/lib/swiper/swiper-bundle.min',
         'style',
     ])?>
     <?php echo $this->fetch('css')?>
@@ -55,13 +55,13 @@
 </a>
 
 <?php echo $this->Html->script([
-    '/library/purecounter/purecounter_vanilla',
-    '/library/aos/aos',
-    '/library/bootstrap/js/bootstrap.bundle.min',
-    '/library/isotope-layout/isotope.pkgd.min',
-    '/library/swiper/swiper-bundle.min',
-    '/library/waypoints/noframework.waypoints',
-    '/library/php-email-form/validate',
+    '/lib/purecounter/purecounter_vanilla',
+    '/lib/aos/aos',
+    '/lib/bootstrap/js/bootstrap.bundle.min',
+    '/lib/isotope-layout/isotope.pkgd.min',
+    '/lib/swiper/swiper-bundle.min',
+    '/lib/waypoints/noframework.waypoints',
+    '/lib/php-email-form/validate',
     'main',
 ]); ?>
 <?php echo $this->fetch('js'); ?>
