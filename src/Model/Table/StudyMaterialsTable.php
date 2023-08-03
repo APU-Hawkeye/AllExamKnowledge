@@ -86,8 +86,8 @@ class StudyMaterialsTable extends Table
                     'message' => __('Please upload PDF only'),
                 ],
                 'fileSize' => [
-                    'rule' => [ 'fileSize', '<=', '50MB' ],
-                    'message' => __('PDF file size should be less than 50MB.'),
+                    'rule' => [ 'fileSize', '<=', '64MB' ],
+                    'message' => __('PDF file size should be less than 64MB.'),
                 ],
             ]);
 

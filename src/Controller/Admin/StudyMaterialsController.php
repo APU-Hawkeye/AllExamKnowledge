@@ -84,4 +84,19 @@ class StudyMaterialsController extends AppController
         $this->set('titleForLayout', $studyMaterial->title);
         $this->set('studyMaterial', $studyMaterial);
     }
+
+    /**
+     * @param string|null $id Study Material ID
+     * @return string
+     */
+    public function file(?string $id = null)
+    {
+        $pdfFile = $this->StudyMaterials->get($id);
+        /** @var \Cake\Http\Response $response */
+        $response = $this->response;
+        $response = $response->withType('application/pdf');
+        $response = $response->getBody()->getContents($pdfFile->file);
+
+        return $response;
+    }
 }
