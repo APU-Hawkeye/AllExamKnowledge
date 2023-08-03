@@ -509,7 +509,7 @@ return getSize;
     if ( ElemProto.matchesSelector ) {
       return 'matchesSelector';
     }
-    // check library prefixes
+    // check lib prefixes
     var prefixes = [ 'webkit', 'moz', 'ms', 'o' ];
 
     for ( var i=0; i < prefixes.length; i++ ) {
@@ -827,7 +827,7 @@ var transitionEndEvent = {
   transition: 'transitionend'
 }[ transitionProperty ];
 
-// cache all library properties that could have library prefix
+// cache all lib properties that could have lib prefix
 var vendorProperties = {
   transform: transformProperty,
   transition: transitionProperty,
@@ -891,7 +891,7 @@ proto.css = function( style ) {
   var elemStyle = this.element.style;
 
   for ( var prop in style ) {
-    // use library property if available
+    // use lib property if available
     var supportedProp = vendorProperties[ prop ] || prop;
     elemStyle[ supportedProp ] = style[ prop ];
   }
@@ -1326,7 +1326,7 @@ return Item;
 
 /*!
  * Outlayer v2.1.1
- * the brains and guts of a layout library
+ * the brains and guts of a layout lib
  * MIT license
  */
 
@@ -2502,7 +2502,7 @@ return Item;
 
 /*!
  * Masonry v4.2.1
- * Cascading grid layout library
+ * Cascading grid layout lib
  * https://masonry.desandro.com
  * MIT License
  * by David DeSandro
