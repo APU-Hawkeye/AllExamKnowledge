@@ -205,4 +205,61 @@ function getWords($sentence, $count = 10) {
             </div>
         </div>
     </div>
-</div>
+</div><?php $this->Html->scriptStart([ 'block' => 'scriptBottom' ]); ?>
+$(function(){
+    $('#addModal').find('form').eq(0).submit(function(event){
+        event.preventDefault();
+        let form = this;
+        let data = new FormData(form);
+        $(form).find('.was-validated').removeClass('was-validated');
+        $(form).find('.error').removeClass('error');
+        $(form).removeClass('was-validated');
+        $(form).find('.invalid-feedback').removeClass('d-block').text('');
+        $.ajax({
+            url: $(this).attr("action"),
+            method: 'POST',
+            type: 'POST',
+            data: data,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                window.location.reload();
+            },
+            complete: function(jqXHR, statusText) {
+                $(form).find('.ui.dimmer').removeClass('active');
+            },
+            error: function(jqXHR, statusText) {
+            if (jqXHR.status === 400) {
+            $(form).addClass("was-validated");
+            let errors = jqXHR.responseJSON;
+            $.each(errors, function(field, error){
+            if (typeof error === "object") {
+            $.each(error, function(f, e) {
+            let input = $('[name="'+field+'['+f+']"]').eq(0);
+            input.get(0).setCustomValidity('error');
+            input.parents(".form-group").addClass("was-validated");
+            if (input.parents(".ui.dropdown").length > 0) {
+            input.parents('.ui.dropdown').eq(0).addClass("error");
+            input.parents('.ui.dropdown').eq(0).siblings('.invalid-feedback').addClass('d-block').text(e);
+            } else {
+            input.siblings('.invalid-feedback').text(e);
+            input.addClass("is-invalid");
+            }
+            });
+            } else {
+            let input = $('[name="'+field+'"]').eq(0);
+            input.get(0).setCustomValidity('error');
+            input.siblings('.invalid-feedback').text(error);
+            input.parents(".form-group").addClass("was-validated");
+            input.addClass("is-invalid");
+            }
+            });
+            } else if (jqXHR.status === 401) {
+            window.location.reload(true);
+            } else {
+            }
+            }
+        });
+    });
+});
+<?php $this->Html->scriptEnd(); ?>
