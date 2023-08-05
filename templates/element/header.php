@@ -3,6 +3,10 @@
  * @var App\View\AppView $this
  */
 ?>
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1516212154764308"
+            crossorigin="anonymous"></script>
+</head>
 <!-- ======= Top Bar ======= -->
 <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center">
