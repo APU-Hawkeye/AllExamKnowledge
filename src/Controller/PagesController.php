@@ -41,8 +41,22 @@ class PagesController extends AppController
         parent::beforeFilter($event);
     }
 
+    /**
+     * @return void
+     */
     public function index()
     {
+        $categories = $this->StudyMaterials->SubCategories->Categories->find()->all();
+        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+            'Categories',
+        ])->all();
+        $notes = $this->StudyMaterials->find()->contain([
+            'SubCategories',
+            'SubCategories.Categories',
+        ])->all();
+        $this->set('categories', $categories);
+        $this->set('subCategories', $subCategories);
+        $this->set('notes', $notes);
         $this->set('titleForLayout', __('All Exam Knowledge'));
     }
 
@@ -76,11 +90,15 @@ class PagesController extends AppController
         $this->set('titleForLayout', __('Download PDF'));
     }
 
-//    public function downloadMcq($filename)
-//    {
-//        $filePath = WWW_ROOT . 'pdfs' . DS . $filename;
-//        $this->response = $this->response->withFile($filePath);
-//
-//        return $this->response;
-//    }
+    /**
+     * @param string|null $filename
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function download(?string $filename = null)
+    {
+        $filePath = WWW_ROOT . 'files' . DS . 'study_materials' . DS . 'file' . DS . $filename;
+        $this->response = $this->response->withFile($filePath);
+
+        return $this->response;
+    }
 }
