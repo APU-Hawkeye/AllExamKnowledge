@@ -1,6 +1,10 @@
 <?php
 /**
  * @var App\View\AppView $this
+ * @var \Cake\Datasource\ResultSetInterface $studyMaterials
+ * @var \Cake\Datasource\ResultSetInterface $categories
+ * @var \Cake\Datasource\ResultSetInterface $subCategories
+ * @var \Cake\Datasource\ResultSetInterface $notes
  */
 ?>
 
@@ -24,55 +28,6 @@
 </section><!-- End Hero -->
 
 <main id="main">
-    <!-- ======= Coming video Section ======= -->
-    <section class="coming-video py-0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <!-- Swiper -->
-                    <div class="swiper coming-video-swiper mySwiper shadow-lg">
-                        <div class="swiper-wrapper ">
-                            <div class="swiper-slide">
-                                <div class="card w-100 border-0">
-                                    <div class="card-body">
-                                        <div class="coming-video-wrapper gap-3 gap-lg-5">
-                                            <div class="coming-video-col gap-3">
-                                                <div>
-                                                    <img src="img/laptop-video-icon.png" width="120" alt="">
-                                                </div>
-                                                <div class="d-flex flex-column">
-                                                    <h4>New Video are coming on GK-GS</h4>
-                                                    <p>Prepare for you recent exam, watch the video</p>
-                                                </div>
-                                            </div>
-                                            <div class="coming-video-col">
-                                                <div class="video-divider">
-
-                                                </div>
-                                            </div>
-                                            <div class="coming-video-col flex-column align-items-start">
-                                                <h5>Coming on Youtube</h5>
-                                                <div class="d-flex gap-3">
-                                                    <p><span class="bi bi-calendar"></span> 24 April 2023</p>
-                                                    <p><span class="bi bi-clock"></span> 05:30PM</p>
-                                                </div>
-                                                <div>
-                                                    <a href="#" class="btn btn-theme btn-primary">Notify Me</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="swiper-slide">Slide 2</div> -->
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- ======= //Coming video Section ======= -->
     <section class="news-section">
         <div class="container">
             <div class="row">
@@ -139,23 +94,47 @@
                 <div class="col-lg-12">
                     <div class="swiper solSwiper px-3">
                         <div class="swiper-wrapper">
+                            <?php
+                            /** @var \App\Model\Entity\Category $cat */
+                            foreach ($categories as $cat) {
+                                $collection = new \Cake\Collection\Collection($subCategories);
+                                $subCategoryMatch = $subCategories->match(['category.id' => $cat->id]);
+                            ?>
                             <div class="swiper-slide">
                                 <div class="card card-border mb-3 w-100">
                                     <div class="card-header cardHeading">
-                                        <h5 class="text-center">MCQ Question Papers</h5>
+                                        <h5 class="text-center"><?php echo $cat->title ?></h5>
                                     </div>
                                     <div class="card-body notifications-carousel">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">Odisha High Court ASO Preliminary Questions 2023</span><span class="float-end"><?php echo $this->Html->link('View', '/files/OdishaHighCourtASOPreliminaryQuestions2023.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">MCQ Questions 1</span><span class="float-end"><?php echo $this->Html->link('View', '/files/mcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">Geography 1000 MCQ Questions</span><span class="float-end"><?php echo $this->Html->link('View', '/files/DishaThousandMcq.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-                                        </ul>
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item">
+                                                <?php
+                                                /** @var \App\Model\Entity\SubCategory $sub */
+                                                foreach ($subCategoryMatch as $sub) {
+                                                    $noteCollection = new \Cake\Collection\Collection($notes);
+                                                    $notesByMatch = $noteCollection->match(['sub_category.id' => $sub->id])?>
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        <img src="img/notification-icon.png" class="me-2" alt=""><?php echo $sub->title ?>
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <?php
+                                                        /** @var \App\Model\Entity\StudyMaterial $note */
+                                                        foreach ($notesByMatch as $note) { ?>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                                <span class="float-left"><?php echo $note->title; ?></span>
+                                                                <span class="float-end"><?php echo $this->Html->link('Download', '/files/'.$note->file, ['download' => substr($note->file, strrpos($note->file, '\\') + 1)]);?></span>
+                                                            </li>
+                                                        </ul>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            </div>
+                                        </div>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
                                             <a href="<?php echo $this->Url->build([
                                                 'controller' => 'Pages',
@@ -165,80 +144,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="card card-border mb-3 w-100">
-                                    <div class="card-header cardHeading">
-                                        <h5 class="text-center">Reasoning</h5>
-                                    </div>
-                                    <div class="card-body notifications-carousel">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">Reasoning Analogy Questions Answer</span><span class="float-end"><?php echo $this->Html->link('View', '/files/ReasoningAnalogyQA.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-                                        </ul>
-                                        <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="<?php echo $this->Url->build([
-                                                'controller' => 'Pages',
-                                                'action' => 'downloadPdf'
-                                            ])?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-border mb-3 w-100">
-                                    <div class="card-header cardHeading">
-                                        <h5 class="text-center">Previous Year QA</h5>
-                                    </div>
-                                    <div class="card-body notifications-carousel">
-                                        <ul class="list-group list-group-flush">
-
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">ARI AMIN SFS-2021</span><span class="float-end"><?php echo $this->Html->link('View', '/files/ARIAMINSFS-2021.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">Excise Constable 2014</span><span class="float-end"><?php echo $this->Html->link('View', '/files/Excise-Constable-2014.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">Excise Constable 2018</span><span class="float-end"><?php echo $this->Html->link('View', '/files/Excise-Constable-2018.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-
-                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                <span class="float-left">ICDS Supervisor 2016 Paper1</span><span class="float-end"><?php echo $this->Html->link('View', '/files/ICDS-Supervisor-2016-Paper1.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                            </li>
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-                                        </ul>
-                                        <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="<?php echo $this->Url->build([
-                                                'controller' => 'Pages',
-                                                'action' => 'downloadPdf'
-                                            ])?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-<!--                            <div class="swiper-slide">-->
-<!--                                <div class="card card-border mb-3 w-100">-->
-<!--                                    <div class="card-header cardHeading">-->
-<!--                                        <h5 class="text-center">Reasoning</h5>-->
-<!--                                    </div>-->
-<!--                                    <div class="card-body .notifications-carousel">-->
-<!--                                        <ul class="list-group list-group-flush">-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end"><i class="bx bx-download"></i></a></li>-->
-<!--                                        </ul>-->
-<!--                                        <div class="w-100 d-flex align-items-center justify-content-center">-->
-<!--                                            <a href="#" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <?php } ?>
                         </div>
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
