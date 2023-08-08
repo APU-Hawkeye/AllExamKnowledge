@@ -39,6 +39,18 @@
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">CRP PO/MT-XIII for Vacancies of 2024-25</span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/Notification_CRP_PO_XIII.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">SSC Junior Engineer 2023</span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/Notice_JE_2023.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">GDS (Gramin Dak Sevak)</span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/GDS_Notification.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
                                     <span class="float-left">Odisha PSC Cuttack </span>
                                     <span class="float-end"><?php echo $this->Html->link('View', '/files/OdisaPscCuttack.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
                                 </li>
@@ -66,7 +78,10 @@
                         </div>
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
-                                <span class="text-center">Coming Soon</span>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">CRP PO/MT-XIII for Vacancies of 2024-25</span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/Notification_CRP_PO_XIII.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
 <!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>-->
 <!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
 <!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
