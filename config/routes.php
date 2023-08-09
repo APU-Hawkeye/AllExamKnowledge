@@ -78,7 +78,7 @@ return static function (RouteBuilder $routes) {
         $builder->fallbacks();
     });
 
-    $routes->prefix('Customers', ['path' => '/'], function (RouteBuilder $builder) {
+    $routes->prefix('Students', ['path' => '/'], function (RouteBuilder $builder) {
         $builder->connect('/register', [
             'controller' => 'Students',
             'action' => 'register',

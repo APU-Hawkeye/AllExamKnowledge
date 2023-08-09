@@ -188,46 +188,46 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             $service->loadIdentifier('Authentication.Password', compact('fields'));
         }
 
-        $service->setConfig([
-            'unauthenticatedRedirect' => null,
-        ]);
-        $fields = [
-            IdentifierInterface::CREDENTIAL_USERNAME => 'email',
-            IdentifierInterface::CREDENTIAL_PASSWORD => 'password',
-        ];
-
-        $service->loadAuthenticator('Authentication.Form', [
-            'fields' => $fields,
-            'loginUrl' => Router::url([
-                'prefix' => null,
-                'plugin' => null,
-                'controller' => 'Students',
-                'action' => 'login',
-            ]),
-        ]);
-        $service->loadAuthenticator('Authentication.Cookie', [
-            'rememberMeField' => 'remember',
-            'cookie' => [
-                'name' => 'auth_cookie_student',
-                'expires' => new FrozenTime('+1 Year'),
-                'httponly' => true,
-            ],
-            'fields' => $fields,
-            'loginUrl' => Router::url([
-                'prefix' => null,
-                'controller' => 'Students',
-                'action' => 'login',
-                'plugin' => null,
-            ]),
-        ]);
-
-        $service->loadIdentifier('Authentication.Password', [
-            'fields' => $fields,
-            'resolver' => [
-                'className' => 'Authentication.Orm',
-                'userModel' => 'Students',
-            ],
-        ]);
+//        $service->setConfig([
+//            'unauthenticatedRedirect' => null,
+//        ]);
+//        $fields = [
+//            IdentifierInterface::CREDENTIAL_USERNAME => 'email',
+//            IdentifierInterface::CREDENTIAL_PASSWORD => 'password',
+//        ];
+//
+//        $service->loadAuthenticator('Authentication.Form', [
+//            'fields' => $fields,
+//            'loginUrl' => Router::url([
+//                'prefix' => null,
+//                'plugin' => null,
+//                'controller' => 'Students',
+//                'action' => 'login',
+//            ]),
+//        ]);
+//        $service->loadAuthenticator('Authentication.Cookie', [
+//            'rememberMeField' => 'remember',
+//            'cookie' => [
+//                'name' => 'auth_cookie_student',
+//                'expires' => new FrozenTime('+1 Year'),
+//                'httponly' => true,
+//            ],
+//            'fields' => $fields,
+//            'loginUrl' => Router::url([
+//                'prefix' => null,
+//                'controller' => 'Students',
+//                'action' => 'login',
+//                'plugin' => null,
+//            ]),
+//        ]);
+//
+//        $service->loadIdentifier('Authentication.Password', [
+//            'fields' => $fields,
+//            'resolver' => [
+//                'className' => 'Authentication.Orm',
+//                'userModel' => 'Students',
+//            ],
+//        ]);
 
 
         return $service;
