@@ -24,18 +24,10 @@ class AppController extends BaseController
     public function initialize(): void
     {
         parent::initialize();
+        $this->loadComponent('RequestHandler');
+        $this->loadComponent('Flash');
         $this->loadComponent('Authentication.Authentication');
+        $this->loadComponent('FormProtection');
     }
 
-    /**
-     * @param EventInterface $event
-     * @return \Cake\Http\Response|void|null
-     */
-    public function beforeFilter(EventInterface $event)
-    {
-        parent::beforeFilter($event);
-        $this->FormProtection->setConfig([
-            'validate' => false
-        ]);
-    }
 }
