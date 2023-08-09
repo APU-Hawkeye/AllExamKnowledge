@@ -27,10 +27,9 @@ use Cake\Datasource\FactoryLocator;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Http\Middleware\BodyParserMiddleware;
-use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Http\Middleware\EncryptedCookieMiddleware;
 use Cake\Http\MiddlewareQueue;
-use Cake\Http\ServerRequest;
+use Cake\I18n\FrozenTime;
 use Cake\ORM\Locator\TableLocator;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
@@ -163,7 +162,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
     {
         $service = new AuthenticationService();
         $service->loadAuthenticator('Authentication.Session');
-        if ($request->getParam('prefix') === 'Admin') {
+        if (method_exists($request, 'getParam') && $request->getParam('prefix') === 'Admin') {
             $service->setConfig([
                 'unauthenticatedRedirect' => Router::url([
                     'controller' => 'Users',
@@ -188,6 +187,49 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             ]);
             $service->loadIdentifier('Authentication.Password', compact('fields'));
         }
+
+        $service->setConfig([
+            'unauthenticatedRedirect' => null,
+        ]);
+        $fields = [
+            IdentifierInterface::CREDENTIAL_USERNAME => 'email',
+            IdentifierInterface::CREDENTIAL_PASSWORD => 'password',
+        ];
+
+        $service->loadAuthenticator('Authentication.Form', [
+            'fields' => $fields,
+            'loginUrl' => Router::url([
+                'prefix' => null,
+                'plugin' => null,
+                'controller' => 'Students',
+                'action' => 'login',
+            ]),
+        ]);
+        $service->loadAuthenticator('Authentication.Cookie', [
+            'rememberMeField' => 'remember',
+            'cookie' => [
+                'name' => 'auth_cookie_student',
+                'expires' => new FrozenTime('+1 Year'),
+                'httponly' => true,
+            ],
+            'fields' => $fields,
+            'loginUrl' => Router::url([
+                'prefix' => null,
+                'controller' => 'Students',
+                'action' => 'login',
+                'plugin' => null,
+            ]),
+        ]);
+
+        $service->loadIdentifier('Authentication.Password', [
+            'fields' => $fields,
+            'resolver' => [
+                'className' => 'Authentication.Orm',
+                'userModel' => 'Students',
+            ],
+        ]);
+
+
         return $service;
     }
 }
