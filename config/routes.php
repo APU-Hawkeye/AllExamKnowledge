@@ -78,25 +78,25 @@ return static function (RouteBuilder $routes) {
         $builder->fallbacks();
     });
 
-    $routes->prefix('Students', ['path' => '/'], function (RouteBuilder $builder) {
-        $builder->connect('/register', [
-            'controller' => 'Students',
-            'action' => 'register',
-        ]);
-        $builder->connect('/login', [
-            'controller' => 'Students',
-            'action' => 'login',
-        ]);
-        $builder->connect('/dashboard', [
-            'controller' => 'Students',
-            'action' => 'dashboard',
-        ]);
-        $builder->connect('/logout', [
-            'controller' => 'Students',
-            'action' => 'dashboard',
-        ]);
-        $builder->fallbacks();
-    });
+//    $routes->prefix('Students', ['path' => '/'], function (RouteBuilder $builder) {
+//        $builder->connect('/register', [
+//            'controller' => 'Students',
+//            'action' => 'register',
+//        ]);
+//        $builder->connect('/login', [
+//            'controller' => 'Students',
+//            'action' => 'login',
+//        ]);
+//        $builder->connect('/dashboard', [
+//            'controller' => 'Students',
+//            'action' => 'dashboard',
+//        ]);
+//        $builder->connect('/logout', [
+//            'controller' => 'Students',
+//            'action' => 'dashboard',
+//        ]);
+//        $builder->fallbacks();
+//    });
 
     $routes->prefix('Admin', ['path' => '/administration'], function (RouteBuilder $routes) {
         $routes->scope('/', function (RouteBuilder $builder) {
