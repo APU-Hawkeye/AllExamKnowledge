@@ -16,7 +16,9 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use Authentication\Controller\Component\AuthenticationComponent;
 use Cake\Controller\Controller;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -26,6 +28,7 @@ use Cake\Controller\Controller;
  *
  * @link https://book.cakephp.org/4/en/controllers.html#the-app-controller
  * @property \Psr\Http\Message\ResponseInterface $response
+ * @property AuthenticationComponent $Authentication
  */
 class AppController extends Controller
 {
@@ -44,6 +47,7 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Authentication.Authentication');
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.
@@ -51,4 +55,5 @@ class AppController extends Controller
          */
         $this->loadComponent('FormProtection');
     }
+
 }
