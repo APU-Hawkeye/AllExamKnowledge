@@ -77,7 +77,10 @@
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-        <a href="#" class="btn btn-primary btn-theme gap-2 d-flex align-items-center order-2 order-lg-3"><span class="">Login / Signup</span><span class="bx bx-user"></span></a>
+        <a href="<?php echo $this->Url->build([
+            'controller' => 'Students',
+            'action' => 'login',
+        ])?>" class="btn btn-primary btn-theme gap-2 d-flex align-items-center order-2 order-lg-3"><span class="">Login / Signup</span><span class="bx bx-user"></span></a>
     </div>
 </header><!-- End Header -->
 
