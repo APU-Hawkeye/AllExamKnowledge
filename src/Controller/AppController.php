@@ -56,4 +56,31 @@ class AppController extends Controller
         $this->loadComponent('FormProtection');
     }
 
+    /**
+     * @param EventInterface $event
+     * @return \Cake\Http\Response|void|null
+     */
+    public function beforeFilter(EventInterface $event)
+    {
+        if ($this->components()->has('Authentication')) {
+            if($this->getRequest()->getParam('prefix') === null) {
+                $student = $this->Authentication->getIdentity();
+                // dd($user);
+                if($student){
+                    if (in_array($this->getRequest()->getParam('action'), [
+                            'logout',
+                            'changePassword',
+                        ]) === false) {
+                        return $this->redirect([
+                            'controller' => 'Students',
+                            'action' => 'login',
+                        ]);
+                    }
+                }
+            }
+        }
+
+        return parent::beforeFilter($event);
+    }
+
 }
