@@ -199,7 +199,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         $service->loadAuthenticator('Authentication.Form', [
             'fields' => $fields,
             'loginUrl' => Router::url([
-                'prefix' => null,
+                'prefix' => 'Students',
                 'plugin' => null,
                 'controller' => 'Students',
                 'action' => 'login',
