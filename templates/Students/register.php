@@ -1,7 +1,6 @@
 <?php
 /**
  * @var \Cake\View\View $this
- * @var \App\Model\Entity\Student $student
  */
 ?>
 <!DOCTYPE html>
@@ -47,132 +46,93 @@
                                         'action' => 'index',
                                     ])?>"><i class="bi bi-arrow-left me-2"></i><small>Back</small></a></span>
                             </h1>
-                            <form method="POST" class="needs-validation auth-form" novalidate="" autocomplete="off">
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="name">Name</label>
-                                    <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Name is required
+                            <?php echo $this->Flash->render(); ?>
+                            <?php echo $this->Form->create(null, [
+                                'autocomplete' => 'off',
+                                'data-submit' => 'disable',
+                                'novalidate',
+                                'templates' => [
+                                    'inputContainer' => '<div class="form-group">{{content}}</div>',
+                                    'inputContainerError' => '<div class="form-group was-validated">{{content}}{{error}}</div>',
+                                    'error' => '<div class="invalid-feedback mt-2">{{content}}</div>',
+                                    'label' => '<label class="tx-12 font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>',
+                                ],
+                                'class' => 'needs-validation auth-form'
+                            ]);
+                            ?>
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="mb-2 text-muted" for="name">First Name</label>
+                                        <?php echo $this->Form->control('first_name', [
+                                            'type' => 'string',
+                                            'class' => 'form-control',
+                                            'label' =>  false,
+                                            'required' => true,
+                                            'templates' => [
+                                                'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
+                                            ],
+                                            'templateVars' => [
+                                                'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                                            ],
+                                        ]); ?>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="mb-2 text-muted" for="name">Last Name</label>
+                                        <?php echo $this->Form->control('last_name', [
+                                            'type' => 'string',
+                                            'class' => 'form-control',
+                                            'label' =>  false,
+                                            'required' => true,
+                                            'templates' => [
+                                                'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
+                                            ],
+                                            'templateVars' => [
+                                                'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                                            ],
+                                        ]); ?>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+                                <?php echo $this->Form->control('email', [
+                                    'type' => 'string',
+                                    'class' => 'form-control',
+                                    'label' =>  false,
+                                    'required' => true,
+                                    'templates' => [
+                                        'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
+                                    ],
+                                    'templateVars' => [
+                                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                                    ],
+                                ]); ?>
+                            </div>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="password">Password</label>
+                                <?php echo $this->Form->control('password', [
+                                    'class' => 'form-control',
+                                    'label' =>  false,
+                                    'required' => true,
+                                    'templates' => [
+                                        'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
+                                    ],
+                                    'templateVars' => [
+                                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                                    ],
+                                ]); ?>
+                            </div>
+                            <p class="form-text text-muted mb-3">
+                                By registering you agree with our terms and condition.
+                            </p>
 
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="" required>
-                                    <div class="invalid-feedback">
-                                        Email is invalid
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="password">Password</label>
-                                    <input id="password" type="password" class="form-control" name="password" required>
-                                    <div class="invalid-feedback">
-                                        Password is required
-                                    </div>
-                                </div>
-
-                                <p class="form-text text-muted mb-3">
-                                    By registering you agree with our terms and condition.
-                                </p>
-
-                                <div class="align-items-center d-flex">
-                                    <button type="submit" class="btn btn-theme btn-primary ms-auto">
-                                        Register
-                                    </button>
-                                </div>
-                            </form>
-
-<!--                            --><?php //echo $this->Flash->render(); ?>
-<!--                            --><?php //echo $this->Form->create($student, [
-//                                'autocomplete' => 'off',
-//                                'data-submit' => 'disable',
-//                                'novalidate',
-//                                'templates' => [
-//                                    'inputContainer' => '<div class="form-group">{{content}}</div>',
-//                                    'inputContainerError' => '<div class="form-group was-validated">{{content}}{{error}}</div>',
-//                                    'error' => '<div class="invalid-feedback mt-2">{{content}}</div>',
-//                                    'label' => '<label class="tx-12 font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>',
-//                                ],
-//                                'class' => implode(' ', array_filter([
-//                                    'needs-validation',
-//                                    $student->hasErrors() ? 'was-validated' : null,
-//                                ]))
-//                            ]);
-//                            ?>
-<!--                            <div class="mb-3">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-md-6">-->
-<!--                                        <label class="mb-2 text-muted" for="name">First Name</label>-->
-<!--                                        --><?php //echo $this->Form->control('first_name', [
-//                                            'type' => 'string',
-//                                            'class' => 'form-control',
-//                                            'label' =>  false,
-//                                            'required' => true,
-//                                            'templates' => [
-//                                                'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
-//                                            ],
-//                                            'templateVars' => [
-//                                                'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
-//                                            ],
-//                                        ]); ?>
-<!--                                    </div>-->
-<!--                                    <div class="col-md-6">-->
-<!--                                        <label class="mb-2 text-muted" for="name">Last Name</label>-->
-<!--                                        --><?php //echo $this->Form->control('last_name', [
-//                                            'type' => 'string',
-//                                            'class' => 'form-control',
-//                                            'label' =>  false,
-//                                            'required' => true,
-//                                            'templates' => [
-//                                                'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
-//                                            ],
-//                                            'templateVars' => [
-//                                                'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
-//                                            ],
-//                                        ]); ?>
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="mb-3">-->
-<!--                                <label class="mb-2 text-muted" for="email">E-Mail Address</label>-->
-<!--                                --><?php //echo $this->Form->control('email', [
-//                                    'type' => 'string',
-//                                    'class' => 'form-control',
-//                                    'label' =>  false,
-//                                    'required' => true,
-//                                    'templates' => [
-//                                        'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
-//                                    ],
-//                                    'templateVars' => [
-//                                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
-//                                    ],
-//                                ]); ?>
-<!--                            </div>-->
-<!--                            <div class="mb-3">-->
-<!--                                <label class="mb-2 text-muted" for="password">Password</label>-->
-<!--                                --><?php //echo $this->Form->control('password', [
-//                                    'class' => 'form-control',
-//                                    'label' =>  false,
-//                                    'required' => true,
-//                                    'templates' => [
-//                                        'label' => '<label class="tx-12 font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>',
-//                                    ],
-//                                    'templateVars' => [
-//                                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
-//                                    ],
-//                                ]); ?>
-<!--                            </div>-->
-<!--                            <p class="form-text text-muted mb-3">-->
-<!--                                By registering you agree with our terms and condition.-->
-<!--                            </p>-->
-<!---->
-<!--                            <div class="align-items-center d-flex">-->
-<!--                                <button type="submit" class="btn btn-primary btn-theme ms-auto">-->
-<!--                                    --><?php //echo __("Register"); ?>
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                            --><?php //echo $this->Form->end(); ?>
+                            <div class="align-items-center d-flex">
+                                <button type="submit" class="btn btn-primary btn-theme ms-auto">
+                                    <?php echo __("Register"); ?>
+                                </button>
+                            </div>
+                            <?php echo $this->Form->end(); ?>
                         </div>
                         <div class="card-footer py-3 border-0">
                             <div class="text-center">
