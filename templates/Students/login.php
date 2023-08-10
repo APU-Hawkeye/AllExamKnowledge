@@ -44,38 +44,79 @@
                                         'action' => 'index',
                                     ])?>"><i class="bi bi-arrow-left me-2"></i><small>Back</small></a></span>
                             </h1>
-                            <form method="POST" class="needs-validation auth-form" novalidate="" autocomplete="off">
-                                <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-                                    <div class="invalid-feedback">
-                                        Email is invalid
-                                    </div>
+                            <?php echo $this->Flash->render(); ?>
+                            <?php echo $this->Form->create(null, [
+                                'autocomplete' => 'off',
+                                'data-submit' => 'disable',
+                                'templates' => [
+                                    'inputContainer' => '{{content}}',
+                                    'inputErrorContainer' => '{{content}}'
+                                ]
+                            ]); ?>
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+                                <?php echo $this->Form->control('username', [
+                                    'label' => false,
+                                    'class' => 'form-control',
+                                ]) ?>
+                                <div class="invalid-feedback">
+                                    Email is invalid
                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="mb-2 w-100">
+                                    <label class="text-muted" for="password">Password</label>
+                                    <a href="forgot.html" class="float-end">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                                <?php echo $this->Form->control('password', [
+                                    'label' => false,
+                                    'class' => 'form-control',
+                                ]) ?>
+                                <div class="invalid-feedback">
+                                    Password is required
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="form-check">
+                                    <input type="checkbox" name="remember" id="remember" class="form-check-input">
+                                    <label for="remember" class="form-check-label">Remember Me</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-theme ms-auto"><?php echo __("Login"); ?></button>
+                            </div>
 
-                                <div class="mb-3">
-                                    <div class="mb-2 w-100">
-                                        <label class="text-muted" for="password">Password</label>
-                                        <a href="forgot.html" class="float-end">
-                                            Forgot Password?
-                                        </a>
-                                    </div>
-                                    <input id="password" type="password" class="form-control" name="password" required>
-                                    <div class="invalid-feedback">
-                                        Password is required
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    <div class="form-check">
-                                        <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                        <label for="remember" class="form-check-label">Remember Me</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-theme ms-auto">
-                                        Login
-                                    </button>
-                                </div>
-                            </form>
+<!--                            <form method="POST" class="needs-validation auth-form" novalidate="" autocomplete="off">-->
+<!--                                <div class="mb-3">-->
+<!--                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>-->
+<!--                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>-->
+<!--                                    <div class="invalid-feedback">-->
+<!--                                        Email is invalid-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="mb-3">-->
+<!--                                    <div class="mb-2 w-100">-->
+<!--                                        <label class="text-muted" for="password">Password</label>-->
+<!--                                        <a href="forgot.html" class="float-end">-->
+<!--                                            Forgot Password?-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                    <input id="password" type="password" class="form-control" name="password" required>-->
+<!--                                    <div class="invalid-feedback">-->
+<!--                                        Password is required-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="d-flex align-items-center">-->
+<!--                                    <div class="form-check">-->
+<!--                                        <input type="checkbox" name="remember" id="remember" class="form-check-input">-->
+<!--                                        <label for="remember" class="form-check-label">Remember Me</label>-->
+<!--                                    </div>-->
+<!--                                    <button type="submit" class="btn btn-primary btn-theme ms-auto">-->
+<!--                                        Login-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+                            <?php echo $this->Form->end(); ?>
                         </div>
                         <div class="card-footer py-3 border-0">
                             <div class="text-center">
