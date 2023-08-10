@@ -35,6 +35,9 @@ class PagesController extends AppController
      */
     public function beforeFilter(EventInterface $event)
     {
+        $this->Authentication->allowUnauthenticated([
+            'index','contactUs','downloadPdf','aboutUs','download',
+        ]);
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
         $this->StudyMaterials = $studyMaterials;
