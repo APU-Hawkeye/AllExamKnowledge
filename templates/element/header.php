@@ -2,6 +2,8 @@
 /**
  * @var App\View\AppView $this
  */
+$student = $this->getRequest()->getAttribute('identity');
+$param = $this->getRequest()->getParam('action');
 ?>
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1516212154764308"
@@ -74,13 +76,30 @@
                         'controller' => 'Pages',
                         'action' => 'contactUs',
                 ])?>">Contact</a></li>
+                <?php if ($student) { ?>
+                    <li><a class="nav-link" href="<?php echo $this->Url->build([
+                            'controller' => 'Students',
+                            'action' => 'dashboard',
+                    ])?>"><?php echo __('Dashboard')?></a></li>
+                <?php } ?>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-        <a href="<?php echo $this->Url->build([
-            'controller' => 'Students',
-            'action' => 'login',
-        ])?>" class="btn btn-primary btn-theme gap-2 d-flex align-items-center order-2 order-lg-3"><span class="">Login / Signup</span><span class="bx bx-user"></span></a>
+        <?php if ($student) {?>
+            <a href="<?php echo $this->Url->build([
+                'controller' => 'Students',
+                'action' => 'logout',
+            ])?>" class="btn btn-primary btn-theme gap-2 d-flex align-items-center order-2 order-lg-3">
+                <span class=""><?php echo __('Log Out')?></span><span class="bx bx-user"></span>
+            </a>
+        <?php } else { ?>
+            <a href="<?php echo $this->Url->build([
+                'controller' => 'Students',
+                'action' => 'login',
+            ])?>" class="btn btn-primary btn-theme gap-2 d-flex align-items-center order-2 order-lg-3">
+                <span class="">Login / Signup</span><span class="bx bx-user"></span>
+            </a>
+        <?php } ?>
     </div>
 </header><!-- End Header -->
 
