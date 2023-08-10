@@ -63,10 +63,6 @@
                                     $student->hasErrors() ? 'was-validated' : null,
                                 ]))
                             ]);
-                            $this->Form->setConfig([
-                                'autoSetCustomValidity' => false,
-                                'errorClass' => 'is-invalid'
-                            ])
                             ?>
                             <div class="mb-3">
                                 <div class="row">
