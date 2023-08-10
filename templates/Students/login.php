@@ -29,12 +29,20 @@
             <div class="row justify-content-sm-center h-100">
                 <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                     <div class="text-center my-5">
-                        <a href="#"><img src="img/logo.png" alt="logo" width="150"></a>
+                        <a href="<?php echo $this->Url->build([
+                                'controller' => 'Pages',
+                                'action' => 'index',
+                            ])?>">
+                            <?php echo $this->Html->image('logo.png', ['alt'=>'logo', 'class' => 'img-fluid', 'width' => "150"]);?>
+                        </a>
                     </div>
                     <div class="card shadow-lg border-0">
                         <div class="card-body p-5">
                             <h1 class="fs-4 card-title fw-bold mb-4 auth-header">Welcome Back <span class="fw-normal fs-5 float-end">
-                                    <a href="#"><i class="bi bi-arrow-left me-2"></i><small>Back</small></a></span>
+                                    <a href="<?php echo $this->Url->build([
+                                        'controller' => 'Pages',
+                                        'action' => 'index',
+                                    ])?>"><i class="bi bi-arrow-left me-2"></i><small>Back</small></a></span>
                             </h1>
                             <form method="POST" class="needs-validation auth-form" novalidate="" autocomplete="off">
                                 <div class="mb-3">
@@ -71,7 +79,10 @@
                         </div>
                         <div class="card-footer py-3 border-0">
                             <div class="text-center">
-                                Don't have an account? <a href="register.html" class="text-dark">Create One</a>
+                                Don't have an account? <a href="<?php echo $this->Url->build([
+                                    'controller' => 'Students',
+                                    'action' => 'register',
+                                ])?>" class="text-danger">Create One</a>
                             </div>
                         </div>
                     </div>
