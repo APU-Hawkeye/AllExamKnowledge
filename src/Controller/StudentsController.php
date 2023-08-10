@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Model\Table\StudentsTable;
 use Cake\Database\Expression\QueryExpression;
 use Cake\Event\EventInterface;
+use Cake\Routing\Router;
 
 /**
  * Class UsersController
@@ -35,7 +36,6 @@ class StudentsController extends AppController
             'register',
             'forgotPassword',
             'resetPassword',
-            'changePassword',
         ]);
         $this->Students = $this->getTableLocator()->get('Students');
         parent::beforeFilter($event);
@@ -105,18 +105,23 @@ class StudentsController extends AppController
     public function login()
     {
         $result = $this->Authentication->getResult();
-        if ($result->isValid()) {
-            $redirect = $this->getRequest()->getQuery('redirect', [
-                'controller' => 'Students',
-                'action' => 'dashboard'
-            ]);
+        if ($result) {
+            if ($result->isValid()) {
+                $identity = $this->Authentication->getIdentity();
+                $this->Authentication->setIdentity($identity);
+                $redirectTarget = $this->Authentication->getLoginRedirect() ?? [
+                        'controller' => 'Students',
+                        'action' => 'dashboard',
+                    ];
+                $this->response = $this->response->withLocation(Router::url($redirectTarget));
 
-            return $this->redirect($redirect);
-        }
-        else {
-            if($this->getRequest()->is('post') && !$result->isValid()) {
-                $this->response = $this->response->withStatus(401);
-                $this->Flash->error(__("Incorrect username or password."));
+                return $this->response;
+            }
+            else {
+                if($this->getRequest()->is('post') && !$result->isValid()) {
+                    $this->response = $this->response->withStatus(401);
+                    $this->Flash->error(__("Incorrect username or password."));
+                }
             }
         }
         $this->viewBuilder()->disableAutoLayout();
