@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
+    <?php echo $this->Html->meta('favicon.ico', '/img/logo.png', ['type' => 'icon']); ?>
     <title><?php echo __('Register'); ?></title>
 
     <?php echo $this->Html->css([
