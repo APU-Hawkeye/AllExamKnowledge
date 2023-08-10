@@ -27,6 +27,7 @@ use Cake\Datasource\FactoryLocator;
 use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Http\Middleware\BodyParserMiddleware;
+use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Http\Middleware\EncryptedCookieMiddleware;
 use Cake\Http\MiddlewareQueue;
 use Cake\I18n\FrozenTime;
@@ -83,9 +84,9 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
      */
     public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
     {
-//        $csrf = new CsrfProtectionMiddleware([
-//            'httponly' => true
-//        ]);
+        $csrf = new CsrfProtectionMiddleware([
+            'httponly' => true
+        ]);
 //        $csrf->skipCheckCallback(function (ServerRequest $request) {
 //            if ($request->getParam('prefix') === 'Admin' || $request->getParam("controller") === "Users") {
 //                return true;
@@ -101,10 +102,6 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             ->add(new AssetMiddleware([
                 'cacheTime' => Configure::read('Asset.cacheTime'),
             ]))
-            ->add(new EncryptedCookieMiddleware([
-                'csrfToken'
-            ], Configure::read('Security.CookieKey', env('COOKIE_KEY'))))
-
             // Add routing middleware.
             // If you have a large number of routes connected, turning on routes
             // caching in production could improve performance. For that when
@@ -120,7 +117,11 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
             // Cross Site Request Forgery (CSRF) Protection Middleware
             // https://book.cakephp.org/4/en/security/csrf.html#cross-site-request-forgery-csrf-middleware
-//            ->add($csrf)
+            ->add($csrf)
+            ->add(new EncryptedCookieMiddleware([
+                'csrfToken'
+            ], Configure::read('Security.CookieKey', env('COOKIE_KEY')))
+            )
             ->add(new AuthenticationMiddleware($this));
 
         return $middlewareQueue;
@@ -187,47 +188,46 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             ]);
             $service->loadIdentifier('Authentication.Password', compact('fields'));
         }
+        $service->setConfig([
+            'unauthenticatedRedirect' => null,
+        ]);
+        $fields = [
+            IdentifierInterface::CREDENTIAL_USERNAME => 'email',
+            IdentifierInterface::CREDENTIAL_PASSWORD => 'password',
+        ];
 
-//        $service->setConfig([
-//            'unauthenticatedRedirect' => null,
-//        ]);
-//        $fields = [
-//            IdentifierInterface::CREDENTIAL_USERNAME => 'email',
-//            IdentifierInterface::CREDENTIAL_PASSWORD => 'password',
-//        ];
-//
-//        $service->loadAuthenticator('Authentication.Form', [
-//            'fields' => $fields,
-//            'loginUrl' => Router::url([
-//                'prefix' => null,
-//                'plugin' => null,
-//                'controller' => 'Students',
-//                'action' => 'login',
-//            ]),
-//        ]);
-//        $service->loadAuthenticator('Authentication.Cookie', [
-//            'rememberMeField' => 'remember',
-//            'cookie' => [
-//                'name' => 'auth_cookie_student',
-//                'expires' => new FrozenTime('+1 Year'),
-//                'httponly' => true,
-//            ],
-//            'fields' => $fields,
-//            'loginUrl' => Router::url([
-//                'prefix' => null,
-//                'controller' => 'Students',
-//                'action' => 'login',
-//                'plugin' => null,
-//            ]),
-//        ]);
-//
-//        $service->loadIdentifier('Authentication.Password', [
-//            'fields' => $fields,
-//            'resolver' => [
-//                'className' => 'Authentication.Orm',
-//                'userModel' => 'Students',
-//            ],
-//        ]);
+        $service->loadAuthenticator('Authentication.Form', [
+            'fields' => $fields,
+            'loginUrl' => Router::url([
+                'prefix' => null,
+                'plugin' => null,
+                'controller' => 'Students',
+                'action' => 'login',
+            ]),
+        ]);
+        $service->loadAuthenticator('Authentication.Cookie', [
+            'rememberMeField' => 'remember',
+            'cookie' => [
+                'name' => 'auth_cookie_student',
+                'expires' => new FrozenTime('+1 Year'),
+                'httponly' => true,
+            ],
+            'fields' => $fields,
+            'loginUrl' => Router::url([
+                'prefix' => null,
+                'controller' => 'Students',
+                'action' => 'login',
+                'plugin' => null,
+            ]),
+        ]);
+
+        $service->loadIdentifier('Authentication.Password', [
+            'fields' => $fields,
+            'resolver' => [
+                'className' => 'Authentication.Orm',
+                'userModel' => 'Students',
+            ],
+        ]);
 
 
         return $service;
