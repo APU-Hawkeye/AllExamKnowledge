@@ -15,7 +15,10 @@
                 <h1 class="text-uppercase">Welcome to All Exam <span>Knowledge! <img src="img/logo-pen-icon.png" alt=""></span></h1>
                 <p>All Exam Knowledge is a one-stop online education platform that provides comprehensive exam preparation services for SSC, UPSC, RAILWAY, Banking, JEE and many more.</p>
                 <div class="d-flex">
-                    <a href="#about" class="btn-get-started scrollto">Register Now</a>
+                    <a href="<?php echo $this->Url->build([
+                        'controller' => 'Students',
+                        'action' => 'register',
+                    ])?>" class="btn-get-started scrollto">Register Now</a>
 
                 </div>
             </div>
