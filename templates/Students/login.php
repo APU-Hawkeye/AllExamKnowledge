@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title><?php echo __('Register'); ?></title>
+    <title><?php echo __('Login'); ?></title>
 
     <?php echo $this->Html->css([
         '/lib/aos/aos',
@@ -55,7 +55,7 @@
                             ]); ?>
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="email">E-Mail Address</label>
-                                <?php echo $this->Form->control('username', [
+                                <?php echo $this->Form->control('email', [
                                     'label' => false,
                                     'class' => 'form-control',
                                 ]) ?>
