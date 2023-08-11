@@ -91,10 +91,6 @@ return static function (RouteBuilder $routes) {
             'controller' => 'Students',
             'action' => 'dashboard',
         ]);
-        $builder->connect('/logout', [
-            'controller' => 'Students',
-            'action' => 'dashboard',
-        ]);
     });
 
     $routes->prefix('Admin', ['path' => '/administration'], function (RouteBuilder $routes) {
