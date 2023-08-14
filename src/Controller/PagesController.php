@@ -36,7 +36,7 @@ class PagesController extends AppController
     public function beforeFilter(EventInterface $event)
     {
         $this->Authentication->allowUnauthenticated([
-            'index','contactUs','downloadPdf','aboutUs','download',
+            'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy'
         ]);
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
@@ -86,6 +86,11 @@ class PagesController extends AppController
     public function contactUs()
     {
         $this->set('titleForLayout', __('Contact Us'));
+    }
+
+    public function privacyPolicy()
+    {
+        $this->set('titleForLayout', __('Privacy Policy'));
     }
 
     public function downloadPdf()
