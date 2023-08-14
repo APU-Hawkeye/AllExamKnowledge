@@ -107,7 +107,7 @@
             </p>
             <h4><?php echo __('12. How To Access Your Personal Information'); ?></h4>
             <p><?php echo __('If you want to know what personal information, we have about you, you can ask us for details of that personal data and for a copy of it (where any such personal data is held). This is known as a “subject access request”.'); ?></p>
-            <p><?php echo __('All subject access requests should be made in writing and sent via sales@remitall.co.uk To make this as easy as possible for you, a Subject Access Request Form is available for you to use. You do not have to use this form, but it is the easiest way to tell us everything we need to know to respond to your request as quickly as possible.'); ?></p>
+            <p><?php echo __('All subject access requests should be made in writing and sent via contact@allexamknowledge.com To make this as easy as possible for you, a Subject Access Request Form is available for you to use. You do not have to use this form, but it is the easiest way to tell us everything we need to know to respond to your request as quickly as possible.'); ?></p>
             <p>
                 <?php echo __('There is not normally any charge for a subject access request. If your request is ‘manifestly unfounded or excessive’ (for example, if you make repetitive requests) a fee may be charged to cover our administrative costs in responding.'); ?>
             </p>
@@ -150,7 +150,7 @@
                     <?php echo __('Rights relating to automated decision-making and profiling. We do not use your personal data in this way.'); ?>
                 </li>
                 <li>
-                    <?php echo __('For more information about our use of your personal data or exercising your rights as outlined above, please contact us via'); ?>   <span class="text-danger"></span> <?php echo __('sales@remitall.co.uk.'); ?>
+                    <?php echo __('For more information about our use of your personal data or exercising your rights as outlined above, please contact us via'); ?>   <span class="text-danger"></span> <?php echo __('contact@allexamknowledge.com'); ?>
                 </li>
             </ol>
             <h4>
