@@ -25,11 +25,26 @@
                 <div class="col-lg-10">
                     <div class="w-100 text-center">
                         <ul class="footer-menu">
-                            <li>Home</li>
-                            <li>About Us</li>
-                            <li>Downloads</li>
-                            <li>Contact Us</li>
-                            <li>Login</li>
+                            <li><a href="<?php echo $this->Url->build([
+                                'controller' => 'Pages',
+                                'action' => 'index',
+                            ])?>" class="text-white">Home</a></li>
+                            <li><a href="<?php echo $this->Url->build([
+                                'controller' => 'Pages',
+                                'action' => 'aboutUs',
+                            ])?>" class="text-white">About Us</a></li>
+                            <li><a href="<?php echo $this->Url->build([
+                                'controller' => 'Pages',
+                                'action' => 'downloadPdf',
+                            ])?>" class="text-white">Downloads</a></li>
+                            <li><a href="<?php echo $this->Url->build([
+                                'controller' => 'Pages',
+                                'action' => 'contactUs',
+                            ])?>" class="text-white">Contact Us</a></li>
+                            <li><a href="<?php echo $this->Url->build([
+                                'controller' => 'Pages',
+                                'action' => 'privacyPolicy',
+                            ])?>" class="text-white">Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div class="w-100 text-center">
@@ -55,7 +70,11 @@
 <footer class="bottom-footer">
     <div class="container py-4">
         <div class="copyright">
-            &copy; Copyright 2023<strong> <span>allexamknowledge </span></strong>Pvt. Ltd.
+            &copy; Copyright 2023<strong> <span>AllExamKnowledge </span></strong>Pvt. Ltd.
+            Read our <a href="<?php echo $this->Url->build([
+                'controller' => 'Pages',
+                'action' => 'privacyPolicy',
+            ])?>" class="text-secondary">Privacy Policy & Terms & Conditions</a> for more.
         </div>
 
     </div>
