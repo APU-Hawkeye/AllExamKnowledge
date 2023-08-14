@@ -49,6 +49,12 @@
             ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Study Materials')?></span>
             </a>
         </li>
+        <li><a href="<?php echo $this->Url->build([
+                'controller' => 'Learners',
+                'action' => 'index'
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Students')?></span>
+            </a>
+        </li>
 
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'Users',
