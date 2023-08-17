@@ -36,7 +36,7 @@ class PagesController extends AppController
     public function beforeFilter(EventInterface $event)
     {
         $this->Authentication->allowUnauthenticated([
-            'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy'
+            'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy', 'adsFile'
         ]);
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
@@ -105,6 +105,17 @@ class PagesController extends AppController
     public function download(?string $filename = null)
     {
         $filePath = WWW_ROOT . 'files' . DS . 'study_materials' . DS . 'file' . DS . $filename;
+        $this->response = $this->response->withFile($filePath);
+
+        return $this->response;
+    }
+
+    /**
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function adsFile()
+    {
+        $filePath = WWW_ROOT. 'files' . DS . 'ads.txt';
         $this->response = $this->response->withFile($filePath);
 
         return $this->response;
