@@ -21,7 +21,8 @@
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1516212154764308"
+            crossorigin="anonymous"></script>
     <title><?php echo $titleForLayout; ?></title>
     <?php echo $this->Html->meta('favicon.ico', '/img/logo.png', ['type' => 'icon']); ?>
 

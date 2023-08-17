@@ -7,10 +7,6 @@
  * @var \Cake\Datasource\ResultSetInterface $notes
  */
 ?>
-<head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1516212154764308"
-            crossorigin="anonymous"></script>
-</head>
 <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
         <div class="row align-items-center">
