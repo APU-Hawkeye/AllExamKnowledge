@@ -1,6 +1,7 @@
 <?php
 /**
  * @var App\View\AppView $this
+ * @var \Cake\Datasource\ResultSetInterface $categories
  */
 $student = $this->getRequest()->getAttribute('identity');
 $param = $this->getRequest()->getParam('action');
@@ -31,18 +32,37 @@ $param = $this->getRequest()->getParam('action');
                     'controller' => 'Pages',
                     'action' => 'aboutUs',
                 ])?>">About Us</a></li>
+<!--                --><?php
+//                /** @var \App\Model\Entity\Category $category */
+//                foreach ($categories as $category) { ?>
+<!--                    <li>-->
+<!--                        <a class="nav-link" href="">--><?php //echo $category->title ?><!--</a>-->
+<!--                    </li>-->
+<!--                --><?php //} ?>
+                <li class="dropdown"><a class="" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'downloadPdf',
+                ])?>">GK Section<i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Geography</a></li>
+                        <li><a href="#">Physics</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="" href="<?php echo $this->Url->build([
+                    'controller' => 'Pages',
+                    'action' => 'downloadPdf',
+                ])?>">Current Affairs<i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Weekly</a></li>
+                        <li><a href="#">Monthly</a></li>
+                        <li><a href="#">Daily</a></li>
+                    </ul>
+                </li>
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
                     'controller' => 'Pages',
                     'action' => 'downloadPdf',
-                ])?>">GK Section</a></li>
-                <li><a class="nav-link" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>">Current Affairs</a></li>
-                <li><a class="nav-link" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>">Syllabus</a></li>
+                ])?>">Govt Jobs</a></li>
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
                     'controller' => 'Pages',
                     'action' => 'downloadPdf',
@@ -51,21 +71,6 @@ $param = $this->getRequest()->getParam('action');
                     'controller' => 'Pages',
                     'action' => 'downloadPdf',
                 ])?>"><span>Downloads</span></a>
-<!--                    <ul>-->
-<!--                        <li><a href="#">Drop Down 1</a></li>-->
-<!--                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
-<!--                            <ul>-->
-<!--                                <li><a href="#">Deep Drop Down 1</a></li>-->
-<!--                                <li><a href="#">Deep Drop Down 2</a></li>-->
-<!--                                <li><a href="#">Deep Drop Down 3</a></li>-->
-<!--                                <li><a href="#">Deep Drop Down 4</a></li>-->
-<!--                                <li><a href="#">Deep Drop Down 5</a></li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                        <li><a href="#">Drop Down 2</a></li>-->
-<!--                        <li><a href="#">Drop Down 3</a></li>-->
-<!--                        <li><a href="#">Drop Down 4</a></li>-->
-<!--                    </ul>-->
                 </li>
 <!--                <li><a class="nav-link" href="#">Test your self</a></li>-->
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
