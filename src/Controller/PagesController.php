@@ -42,6 +42,11 @@ class PagesController extends AppController
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
         $this->StudyMaterials = $studyMaterials;
         parent::beforeFilter($event);
+
+        $categories = $this->StudyMaterials->SubCategories->Categories->find('all');
+        $subCategories = $this->StudyMaterials->SubCategories->find('all');
+        $this->set('categories', $categories);
+        $this->set('subCategories', $subCategories);
     }
 
     /**
@@ -93,8 +98,16 @@ class PagesController extends AppController
         $this->set('titleForLayout', __('Privacy Policy'));
     }
 
+    /**
+     * @return void
+     */
     public function downloadPdf()
     {
+        $notes = $this->StudyMaterials->find()->contain([
+            'SubCategories',
+            'SubCategories.Categories',
+        ])->all();
+        $this->set('notes', $notes);
         $this->set('titleForLayout', __('Download PDF'));
     }
 
