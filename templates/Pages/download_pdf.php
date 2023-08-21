@@ -1,6 +1,9 @@
 <?php
 /**
  * @var App\View\AppView $this
+ * @var \Cake\Datasource\ResultSetInterface $categories
+ * @var \Cake\Datasource\ResultSetInterface $subCategories
+ * @var \Cake\Datasource\ResultSetInterface $note
  */
 ?>
 <main id="main">
@@ -10,29 +13,27 @@
             <div class="row flex-nowrap">
                 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light border-end download-sidebar">
                     <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-
                         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link align-middle px-0">
-                                    <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline">GK-GS</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                    <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline">ALL</span> </a>
-                                <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                    <li class="w-100">
-                                        <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0 align-middle">
-                                    <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline">NCERT/CBSE/ICSE</span></a>
-                            </li>
+                            <?php
+                            /** @var \App\Model\Entity\Category $category */
+                            $i = 1 ;
+                            foreach ($categories as $category) {
+                                $collection = new \Cake\Collection\Collection($subCategories);
+                                $subCatMatch = $collection->match(['category.id' => $category->id])?>
+                                <li>
+                                    <a href="#submenu.<?php echo $i ?>" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                        <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline"><?php echo $category->title ?></span> </a>
+                                        <?php
+                                        /** @var \App\Model\Entity\SubCategory $subCat */
+                                        foreach ($subCatMatch as $subCat) { ?>
+                                            <ul class="collapse show nav flex-column ms-1" id="submenu.<?php echo $i?>" data-bs-parent="#menu">
+                                                <li class="w-100">
+                                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline"><?php echo $subCat->title ?></span></a>
+                                                </li>
+                                            </ul>
+                                        <?php } ?>
+                                </li>
+                            <?php $i ++; } ?>
                             <li>
                                 <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                                     <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline">Previous Year Questions</span></a>
@@ -63,14 +64,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#" class="nav-link px-0 align-middle">
-                                    <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline">Chemistry</span> </a>
-                            </li>
                         </ul>
-
                     </div>
                 </div>
+
+
                 <div class="col py-5">
                     <div class="row">
                         <div class="col-lg-6 mb-4">
