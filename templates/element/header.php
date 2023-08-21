@@ -2,6 +2,7 @@
 /**
  * @var App\View\AppView $this
  * @var \Cake\Datasource\ResultSetInterface $categories
+ * @var \Cake\Datasource\ResultSetInterface $subCategories
  */
 $student = $this->getRequest()->getAttribute('identity');
 $param = $this->getRequest()->getParam('action');
@@ -32,45 +33,24 @@ $param = $this->getRequest()->getParam('action');
                     'controller' => 'Pages',
                     'action' => 'aboutUs',
                 ])?>">About Us</a></li>
-<!--                --><?php
-//                /** @var \App\Model\Entity\Category $category */
-//                foreach ($categories as $category) { ?>
-<!--                    <li>-->
-<!--                        <a class="nav-link" href="">--><?php //echo $category->title ?><!--</a>-->
-<!--                    </li>-->
-<!--                --><?php //} ?>
-                <li class="dropdown"><a class="" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>">GK Section<i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Geography</a></li>
-                        <li><a href="#">Physics</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a class="" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>">Current Affairs<i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">Weekly</a></li>
-                        <li><a href="#">Monthly</a></li>
-                        <li><a href="#">Daily</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>">Govt Jobs</a></li>
-                <li><a class="nav-link" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>">Previous Year QS</a></li>
-                <li><a class="nav-link" href="<?php echo $this->Url->build([
-                    'controller' => 'Pages',
-                    'action' => 'downloadPdf',
-                ])?>"><span>Downloads</span></a>
+                <?php
+                /** @var \App\Model\Entity\Category $category */
+                foreach ($categories as $key => $category) {
+                    $collection = new \Cake\Collection\Collection($subCategories) ;
+                    $subMatch = $collection->match(['category.id' => $category->id]);
+                    if($key <= 3) {?>
+                        <li class="<?php echo $subMatch ? 'dropdown' : ''?>">
+                            <a class="nav-link" href=""><?php echo $category->title ?></a>
+                            <?php
+                            /** @var \App\Model\Entity\SubCategory $subCat */
+                            foreach ($subMatch as $subCat) { ?>
+                            <ul>
+                                <li><a href="#"><?php echo $subCat->title ?></a></li>
+                            </ul>
+                            <?php } ?>
+                        </li>
+                    <?php }?>
+                <?php } ?>
                 </li>
 <!--                <li><a class="nav-link" href="#">Test your self</a></li>-->
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
