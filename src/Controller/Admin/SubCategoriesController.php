@@ -26,6 +26,9 @@ class SubCategoriesController extends \App\Controller\AppController
         $categories = TableRegistry::getTableLocator()->get('SubCategories');
         $this->SubCategories = $categories;
         parent::beforeFilter($event);
+
+        $subCategories = $this->SubCategories->find('all');
+        $this->set(compact('subCategories'));
     }
 
     /**

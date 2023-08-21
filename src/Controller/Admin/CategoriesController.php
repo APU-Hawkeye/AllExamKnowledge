@@ -26,6 +26,9 @@ class CategoriesController extends AppController
         $categories = TableRegistry::getTableLocator()->get('Categories');
         $this->Categories = $categories;
         parent::beforeFilter($event);
+
+        $categories = $this->Categories->find('all');
+        $this->set(compact('categories'));
     }
 
     /**
