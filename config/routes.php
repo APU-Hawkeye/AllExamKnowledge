@@ -97,6 +97,7 @@ return static function (RouteBuilder $routes) {
     $routes->prefix('Admin', ['path' => '/administration'], function (RouteBuilder $routes) {
         $routes->scope('/', function (RouteBuilder $builder) {
             $builder->connect('/', ['controller' => 'Users', 'action' => 'login']);
+            $builder->connect('/students', ['controller' => 'Learners', 'action' => 'index']);
             $builder->fallbacks();
         });
     });
