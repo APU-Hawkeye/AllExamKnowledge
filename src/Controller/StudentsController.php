@@ -9,7 +9,7 @@ use Cake\Event\EventInterface;
 use Cake\Routing\Router;
 
 /**
- * Class UsersController
+ * Class StudentsController
  * @package App\Controller\Admin
  *
  * @property StudentsTable $Students
@@ -39,35 +39,6 @@ class StudentsController extends AppController
         ]);
         $this->Students = $this->getTableLocator()->get('Students');
         parent::beforeFilter($event);
-    }
-
-    /**
-     * @return \Cake\ORM\Query|void
-     */
-    public function index()
-    {
-        $query = $this->Students->find()->order([
-            $this->Students->aliasField('disabled').' IS NULL ' => 'DESC',
-            $this->Students->aliasField('first_name') => 'ASC'
-        ]);
-        if ($this->getRequest()->getQuery('status') === 'active') {
-            return $query->find('enabled');
-        }
-        if ($this->getRequest()->getQuery('status') === 'disabled') {
-            return $query->find('disabled');
-        }
-        if ($this->getRequest()->getQuery('q')) {
-            $query->where(function (QueryExpression $expression) {
-                return $expression->or([
-                    $this->Students->aliasField('first_name').' LIKE' => '%'.$this->getRequest()->getQuery('q').'%',
-                    $this->Students->aliasField('last_name').' LIKE' => '%'.$this->getRequest()->getQuery('q').'%'
-                ]);
-            });
-        }
-        $students = $this->paginate($query);
-        $this->viewBuilder()->setLayout('admin_default');
-        $this->set('students', $students);
-        $this->set('titleForLayout', __("Users"));
     }
 
     /**
@@ -149,6 +120,12 @@ class StudentsController extends AppController
      */
     public function dashboard()
     {
+        $identity = $this->Authentication->getIdentity();
+        if ($identity != null) {
+            $id = $identity->getIdentifier();
+            $student = $this->Students->get($id);
+        }
+        $this->set('student', $student);
         $this->set('titleForLayout', __('Dashboard'));
     }
 }
