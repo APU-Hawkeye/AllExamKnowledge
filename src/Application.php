@@ -173,12 +173,12 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 ]),
                 'queryParam' => 'referer',
             ]);
-            $fields = [
+            $adminFields = [
                 IdentifierInterface::CREDENTIAL_USERNAME => 'username',
                 IdentifierInterface::CREDENTIAL_PASSWORD => 'password'
             ];
             $service->loadAuthenticator('Authentication.Form', [
-                'fields' => $fields,
+                'fields' => $adminFields,
                 'loginUrl' => Router::url([
                     'controller' => 'Users',
                     'action' => 'login',
@@ -186,7 +186,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                     'plugin' => null
                 ])
             ]);
-            $service->loadIdentifier('Authentication.Password', compact('fields'));
+            $service->loadIdentifier('Authentication.Password', compact('adminFields'));
         } elseif (method_exists($request, 'getParam') && $request->getParam('prefix') === 'Students') {
             $service->setConfig([
                 'unauthenticatedRedirect' => null,
@@ -221,13 +221,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 ]),
             ]);
 
-            $service->loadIdentifier('Authentication.Password', [
-                'fields' => $fields,
-                'resolver' => [
-                    'className' => 'Authentication.Orm',
-                    'userModel' => 'Students',
-                ],
-            ]);
+            $service->loadIdentifier('Authentication.Password',compact('fields'));
         }
 
         return $service;
