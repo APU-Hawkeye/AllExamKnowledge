@@ -27,7 +27,8 @@ class SubCategoriesController extends \App\Controller\AppController
         $this->SubCategories = $categories;
         parent::beforeFilter($event);
 
-        $subCategories = $this->SubCategories->find('all');
+        $subCategories = $this->SubCategories->find('all')
+            ->orderAsc('title')->orderAsc('created');
         $this->set(compact('subCategories'));
     }
 
