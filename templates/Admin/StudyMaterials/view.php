@@ -4,6 +4,12 @@
  * @var \App\Model\Entity\StudyMaterial $studyMaterial
  */
 ?>
+<style>
+    .required:after {
+        content:" *";
+        color: red;
+    }
+</style>
 <div class="topbar-nav">
     <nav class="navbar navbar-expand fixed-top bg-white">
         <ul class="navbar-nav mr-auto align-items-center">
@@ -46,8 +52,12 @@
                                 <div><?php echo $studyMaterial->title ;?></div>
                             </div>
                             <div class="mb-3 tx-13 tx-spacing-2">
+                                <h6 class="font-weight-bold mb-1"><?php echo __('Tag')?></h6>
+                                <div><?php echo $studyMaterial->tag ?: 'Not Available' ;?></div>
+                            </div>
+                            <div class="mb-3 tx-13 tx-spacing-2">
                                 <h6 class="font-weight-bold mb-1"><?php echo __('Description')?></h6>
-                                <div><?php echo $studyMaterial->description ;?></div>
+                                <div><?php echo $studyMaterial->description ?: 'Not Available' ;?></div>
                             </div>
                             <div class="mb-3 tx-13 tx-spacing-2">
                                 <h6 class="font-weight-bold mb-1"><?php echo __('Created')?></h6>
@@ -60,13 +70,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5 d-flex align-content-stretch">
-                    <div class="card w-100 border mb-4">
-                        <div class="card-body">
-                            <?php ?>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="col-sm-5 d-flex align-content-stretch">-->
+<!--                    <div class="card w-100 border mb-4">-->
+<!--                        <div class="card-body">-->
+<!--                            --><?php //?>
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
@@ -103,6 +113,9 @@
                 $this->Form->setConfig([
                     'autoSetCustomValidity' => false,
                 ]);
+                $this->Form->hidden('file', [
+                    'value' => $studyMaterial->file
+                ])
                 ?>
                 <?php echo $this->Form->control('title', [
                     'type' => 'string',
@@ -117,30 +130,36 @@
                         'label' => '<label class="font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>'
                     ],
                 ]); ?>
-                <?php echo $this->Form->control('description', [
+                <?php echo $this->Form->control('tag', [
                     'type' => 'string',
-                    'label' => __("Description"),
+                    'label' => __("Tag"),
                     'class' => 'form-control tx-spacing-2',
                     'error' => false,
-                    'required' => true,
+                    'required' => false,
                     'templateVars' => [
                         'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
                     ],
                     'templates' => [
-                        'label' => '<label class="font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>'
+                        'label' => '<label class="font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>'
                     ],
                 ]); ?>
-                <div class="custom-file mt-2">
-                    <?php echo $this->Form->control('file',[
-                        'type'  => 'file',
-                        'class' => 'custom-file-input',
-                        'id'    => 'inputGroupFile01',
-                    ]); ?>
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                </div>
+                <?php echo $this->Form->control('description', [
+                    'type' => 'textarea',
+                    'label' => __("Description"),
+                    'class' => 'form-control tx-spacing-2',
+                    'error' => false,
+                    'required' => false,
+                    'templateVars' => [
+                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                    ],
+                    'templates' => [
+                        'label' => '<label class="font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>'
+                    ],
+                ]); ?>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary tx-spacing-2"><i class="fa fa-check-square-o"></i><?php echo __("Save"); ?></button>
+                <?php $this->Form->unlockField('file')?>
                 <?php echo $this->Form->end(); ?>
             </div>
         </div>
