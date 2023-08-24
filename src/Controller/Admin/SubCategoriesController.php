@@ -113,9 +113,15 @@ class SubCategoriesController extends \App\Controller\AppController
      */
     public function view(?string $id = null)
     {
-        $category = $this->SubCategories->get($id);
+        $category = $this->SubCategories->get($id, [
+            'contain' => [
+                'Categories',
+            ],
+        ]);
+        $categories = $this->SubCategories->Categories->find('list')->all();
         $this->viewBuilder()->setLayout('admin_default');
         $this->set('titleForLayout', $category->title);
         $this->set('category', $category);
+        $this->set('categories', $categories);
     }
 }
