@@ -41,13 +41,13 @@ $param = $this->getRequest()->getParam('action');
                     if($key <= 3) {?>
                         <li class="<?php echo $subMatch ? 'dropdown' : ''?>">
                             <a class="nav-link" href=""><?php echo $category->title ?></a>
-                            <?php
-                            /** @var \App\Model\Entity\SubCategory $subCat */
-                            foreach ($subMatch as $subCat) { ?>
                             <ul>
-                                <li><a href="#"><?php echo $subCat->title ?></a></li>
+                                <?php
+                                /** @var \App\Model\Entity\SubCategory $subCat */
+                                foreach ($subMatch as $k => $subCat) {;?>
+                                    <li><a href="#"><?php echo $subCat->title ?></a></li>
+                                <?php } ?>
                             </ul>
-                            <?php } ?>
                         </li>
                     <?php }?>
                 <?php } ?>
