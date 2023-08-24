@@ -63,7 +63,7 @@ class AppController extends Controller
     public function beforeFilter(EventInterface $event)
     {
         if ($this->components()->has('Authentication')) {
-            if($this->getRequest()->getParam('prefix') === null) {
+            if($this->getRequest()->getParam('prefix') === 'Students') {
                 $student = $this->Authentication->getIdentity();
                 // dd($user);
                 if($student){
