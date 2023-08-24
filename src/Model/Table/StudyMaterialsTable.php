@@ -79,6 +79,10 @@ class StudyMaterialsTable extends Table
             ->allowEmptyString('description');
 
         $validator
+            ->scalar('tag')
+            ->allowEmptyString('tag');
+
+        $validator
             ->allowEmptyFile('file')
             ->add('file', [
                 'mimeType' => [

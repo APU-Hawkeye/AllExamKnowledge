@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property string $sub_category_id
  * @property string $title
  * @property string|null $description
+ * @property string|null $tag
  * @property string|null $file
  * @property \Cake\I18n\FrozenTime|null $disabled
  * @property \Cake\I18n\FrozenTime $created
@@ -34,6 +35,7 @@ class StudyMaterial extends Entity
         'sub_category_id' => true,
         'title' => true,
         'description' => true,
+        'tag' => true,
         'file' => true,
         'disabled' => true,
         'created' => true,
