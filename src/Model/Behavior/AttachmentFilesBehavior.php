@@ -71,9 +71,7 @@ class AttachmentFilesBehavior extends Behavior
                 $attachment = $entity->get($field);
                 if ($attachment instanceof UploadedFile) {
                     if ($attachment->getError() === UPLOAD_ERR_OK) {
-                        $filenameParts = explode(".", $attachment->getClientFilename());
-                        $extension = array_pop($filenameParts);
-                        $savePath = $baseFolder . DS . $field . DS . Text::uuid() . "." . $extension;
+                        $savePath = $baseFolder . DS . $field . DS . $attachment->getClientFilename();
                         $this->_storage->write($savePath, $attachment->getStream()->getContents());
                         $entity->set($field, $savePath);
                     } else {
