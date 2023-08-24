@@ -13,6 +13,10 @@ function getWords($sentence, $count = 10) {
     .toolbar .btn{
         padding: 9px 15px;
     }
+    .required:after {
+        content:" *";
+        color: red;
+    }
 </style>
 <div class="topbar-nav">
     <nav class="navbar navbar-expand fixed-top bg-white">
@@ -179,15 +183,47 @@ function getWords($sentence, $count = 10) {
                     'type' => 'select',
                     'options' => $categories,
                     'empty' => 'Please Select',
-                    'class' => 'form-control tx-spacing-2'
+                    'class' => 'form-control tx-spacing-2',
+                    'required' => true,
+                    'templateVars' => [
+                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                    ],
+                    'templates' => [
+                        'label' => '<label class="font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>'
+                    ],
                 ])?>
                 <?php echo $this->Form->control('title', [
                     'type' => 'string',
-                    'class' => 'form-control tx-spacing-2'
+                    'class' => 'form-control tx-spacing-2',
+                    'required' => true,
+                    'templateVars' => [
+                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                    ],
+                    'templates' => [
+                        'label' => '<label class="font-weight-bold tx-spacing-2 required"{{attrs}}>{{text}}</label>'
+                    ],
+                ])?>
+                <?php echo $this->Form->control('tag', [
+                    'type' => 'string',
+                    'class' => 'form-control tx-spacing-2',
+                    'required' => false,
+                    'templateVars' => [
+                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                    ],
+                    'templates' => [
+                        'label' => '<label class="font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>'
+                    ],
                 ])?>
                 <?php echo $this->Form->control('description', [
                     'type' => 'textarea',
-                    'class' => 'form-control tx-spacing-2'
+                    'class' => 'form-control tx-spacing-2',
+                    'required' => false,
+                    'templateVars' => [
+                        'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
+                    ],
+                    'templates' => [
+                        'label' => '<label class="font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>'
+                    ],
                 ])?>
                 <div class="custom-file mt-2">
                     <?php echo $this->Form->control('file',[
