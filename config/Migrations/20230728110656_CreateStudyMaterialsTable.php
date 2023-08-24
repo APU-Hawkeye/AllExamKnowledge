@@ -28,6 +28,10 @@ class CreateStudyMaterialsTable extends AbstractMigration
                 'null' => true,
                 'default' => null
             ])
+            ->addColumn('tag', 'string', [
+                'null' => true,
+                'default' => null
+            ])
             ->addColumn('file', 'text', [
                 'null' => true,
                 'default' => null
