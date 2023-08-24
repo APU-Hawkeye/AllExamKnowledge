@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 
 use Cake\Event\EventInterface;
 use Cake\ORM\TableRegistry;
+use Cake\Routing\Router;
 
 /**
  * Class AgenciesController
@@ -63,9 +64,32 @@ class StudyMaterialsController extends AppController
         $this->set(compact('note'));
     }
 
-    public function edit()
+    /**
+     * @param string|null $id Study Material ID
+     * @return \Cake\Http\Response|void|null
+     */
+    public function edit(?string $id = null)
     {
+        $note = $this->StudyMaterials->get($id);
+        if ($this->getRequest()->is(['post', 'put', 'patch', 'ajax'])) {
+            /** @var array $postData */
+            $postData = $this->getRequest()->getData();
+            $note = $this->StudyMaterials->patchEntity($note, $postData);
+            if ($this->StudyMaterials->save($note)) {
+                $this->Flash->success(__('{0} has been edited successfully', [
+                    $note->title
+                ]));
 
+                return $this->redirect(Router::url([
+                    'action' => 'view',
+                    $note->id,
+                ]));
+            } else {
+                $this->response = $this->response->withStatus(400);
+                $this->Flash->error(__('Something went wrong, please try to add again'));
+            }
+            return $this->redirect($this->referer());
+        }
     }
 
     /**
