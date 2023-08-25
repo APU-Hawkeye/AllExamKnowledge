@@ -123,33 +123,39 @@
                                         <h5 class="text-center"><?php echo $cat->title ?></h5>
                                     </div>
                                     <div class="card-body notifications-carousel">
-                                        <div class="accordion" id="accordionExample">
+                                        <div class="accordion accordion-flush" id="accordionFlushExample">
                                             <div class="accordion-item">
                                                 <?php
                                                 /** @var \App\Model\Entity\SubCategory $sub */
+                                                $k = 0;
                                                 foreach ($subCategoryMatch as $sub) {
-                                                    $noteCollection = new \Cake\Collection\Collection($notes);
-                                                    $notesByMatch = $noteCollection->match(['sub_category.id' => $sub->id])?>
-                                                <h2 class="accordion-header" id="headingOne">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        <img src="img/notification-icon.png" class="me-2" alt=""><?php echo $sub->title ?>
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
-                                                        <?php
-                                                        /** @var \App\Model\Entity\StudyMaterial $note */
-                                                        foreach ($notesByMatch as $note) { ?>
-                                                        <ul class="list-group list-group-flush">
-                                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                                                <span class="float-left"><?php echo $note->title; ?></span>
-                                                                <span class="float-end"><?php echo $this->Html->link('Download', '/files/'.$note->file, ['download' => substr($note->file, strrpos($note->file, '\\') + 1)]);?></span>
-                                                            </li>
-                                                        </ul>
-                                                        <?php } ?>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
+                                                    if($k <= 4) {
+                                                        $noteCollection = new \Cake\Collection\Collection($notes);
+                                                        $notesByMatch = $noteCollection->match(['sub_category.id' => $sub->id]); ?>
+                                                        <h2 class="accordion-header" id="flush-headingOne">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                                                                <img src="img/notification-icon.png" class="me-2" alt=""><?php echo $sub->title ?>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body">
+                                                                <?php
+                                                                /** @var \App\Model\Entity\StudyMaterial $note */
+                                                                $i = 0;
+                                                                foreach ($notesByMatch as $note) { ?>
+                                                                    <?php if($i <= 3) {?>
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                                                                <span class="float-left"><?php echo $note->title; ?></span>
+                                                                                <span class="float-end"><?php echo $this->Html->link('Download', '/files/'.$note->file, ['download' => substr($note->file, strrpos($note->file, '\\') + 1)]);?></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    <?php } $i++; ?>
+                                                                <?php } ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php }?>
+                                                <?php $k++; } ?>
                                             </div>
                                         </div>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
