@@ -36,7 +36,8 @@ class PagesController extends AppController
     public function beforeFilter(EventInterface $event)
     {
         $this->Authentication->allowUnauthenticated([
-            'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy', 'adsFile'
+            'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy', 'adsFile',
+            'previousYearQuestions'
         ]);
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
@@ -132,5 +133,27 @@ class PagesController extends AppController
         $this->response = $this->response->withFile($filePath);
 
         return $this->response;
+    }
+
+    /**
+     * @return void
+     */
+    public function previousYearQuestions()
+    {
+        $query = $this->StudyMaterials->find()->contain([
+            'SubCategories',
+            'SubCategories.Categories',
+        ])->where([
+            'Categories.code' => 'PYQ'
+        ]);
+        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+            'Categories',
+        ])->where([
+            'Categories.code' => 'PYQ'
+        ])->orderAsc('SubCategories.created')->all();
+        $notes = $this->paginate($query);
+        $this->set('notes', $notes);
+        $this->set('subCategories', $subCategories);
+        $this->set('titleForLayout', __('Previous year Question'));
     }
 }
