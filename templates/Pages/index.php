@@ -229,7 +229,7 @@
                             </div>
                             <h6 class="text-dark text-uppercase fw-bold">Mentor Supports</h6>
                             <p class="mb-0">
-                                Banking,SSC,Railway Exams & Many more
+                                Guidance That Inspires: Empowering You Through Expert Mentorship
                             </p>
                         </div>
                     </div>
@@ -249,7 +249,7 @@
                             </div>
                             <h6 class="text-dark text-uppercase fw-bold">Test yourself</h6>
                             <p class="mb-0">
-                                Download Answer Keys,Solutions,GK GS & Many more
+                                Assess Your Progress: Engage in Comprehensive Self-Evaluation with Us
                             </p>
                         </div>
                     </div>
