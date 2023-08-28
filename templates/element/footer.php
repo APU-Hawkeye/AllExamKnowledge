@@ -50,13 +50,13 @@
                     <div class="w-100 text-center">
                         <h4>Get In Touch with Us</h4>
                         <div class="footer-contact">
-                            <span><i><img src="img/social-icon/whatsapp.png" width="20" alt=""></i> (+91) +91 97785 39234</span>
-                            <span><i><img src="img/social-icon/email.png" width="20" alt=""></i> contact@allexamknowledge.com</span>
+                            <span><i><img src="img/whatsapp.png" width="20" alt=""></i> (+91) +91 97785 39234</span>
+                            <span><i><img src="img/email.png" width="20" alt=""></i> contact@allexamknowledge.com</span>
                             <span>
-                  <a href="#"><img src="img/social-icon/linkedin.png" width="20" alt=""></a>
-                  <a href="#"><img src="img/social-icon/instagram.png" width="20" alt=""></a>
-                  <a href="#"><img src="img/social-icon/twitter.png" width="20" alt=""></a>
-                  <a href="#"><img src="img/social-icon/youtube.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/linkedin.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/instagram.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/twitter.png" width="20" alt=""></a>
+                  <a href="#"><img src="img/youtube.png" width="20" alt=""></a>
                 </span>
 
                         </div>
