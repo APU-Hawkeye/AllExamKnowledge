@@ -89,7 +89,7 @@
             <div class="row mb-5">
                 <div class="col-lg-10">
                     <h2 class="fw-bold text-black">Why Content with us</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non fuga voluptas officiis sunt! Accusamus earum deleniti labore libero illum quo exercitationem asperiores dolorum. Dicta ullam porro repudiandae itaque asperiores!</p>
+                    <p>Unlock your potential with our meticulously designed courses, personalized mentorship, and extensive practice resources. Join us on the journey to acing your government exams with confidence.</p>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -113,7 +113,7 @@
                             </div>
                             <h6 class="text-dark text-uppercase fw-bold">Mentor Supports</h6>
                             <p class="mb-0">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                Guidance That Inspires: Empowering You Through Expert Mentorship
                             </p>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                             </div>
                             <h6 class="text-dark text-uppercase fw-bold">Test yourself</h6>
                             <p class="mb-0">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
+                                Assess Your Progress: Engage in Comprehensive Self-Evaluation with Us
                             </p>
                         </div>
                     </div>
