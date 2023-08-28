@@ -36,7 +36,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h4><?php echo $note->title ?></h4>
+                                            <p><?php echo $note->title ?></p>
                                         </a>
                                         <div class="mb-3">
                                             <a href="#" class="btn btn-light text-muted">Free Content</a>
