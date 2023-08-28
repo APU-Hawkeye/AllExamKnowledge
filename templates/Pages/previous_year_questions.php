@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <a href="#">
-                                        <h4><?php echo $note->title ?></h4>
+                                        <p><?php echo $note->title ?></p>
                                     </a>
                                     <div class="mb-3">
                                         <a href="#" class="btn btn-light text-muted">Free Content</a>
@@ -74,7 +74,11 @@
 <!--                    $('#notesData').empty();-->
 <!---->
 <!--                    $.each(notes, function(index, note) {-->
-<!--                        $('#notesData').append('<div class="col-lg-3 mb-4"><div class="card"><div class="card-body"><a href="#"><h4>' + note.title + '</h4></a><div class="mb-3"><a href="#" class="btn btn-light text-muted">Free Content</a></div><div class="d-flex justify-content-between align-items-center"><p class="mb-0"></p><button class="btn p-2 py-1">' + note.file + '</button></div></div></div></div>');-->
+<!--                        $('#notesData').append('<div class="col-lg-3 mb-4"><div class="card"><div class="card-body"><a href="#"><h4>' + note.title + '</h4></a>-->
+<!--                        <div class="mb-3"><a href="#" class="btn btn-light text-muted">Free Content</a></div>-->
+<!--                        <div class="d-flex justify-content-between align-items-center"><p class="mb-0"></p>-->
+<!--                            <button class="btn p-2 py-1">' + note.file + '</button></div></div>-->
+<!--                        </div></div>');-->
 <!--                    });-->
 <!--                }-->
 <!--            });-->
