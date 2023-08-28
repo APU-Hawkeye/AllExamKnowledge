@@ -17,10 +17,10 @@
                             /** @var \App\Model\Entity\SubCategory $category */
                             $i = 1 ;
                             foreach ($subCategories as $category) {?>
-                                <li>
-                                    <a href="#submenu.<?php echo $i ?>" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                        <i class="fs-4 bi bi-journal-arrow-down"></i> <span class="ms-1 d-none d-sm-inline">
-                                            <?php echo $category->title ?></span>
+                                <li id="cat">
+                                    <a href="#submenu.<?php echo $i ?>" data-bs-toggle="collapse" class="nav-link px-0 align-middle"
+                                       data-id="<?php echo $category->id ?>"><i class="fs-4 bi bi-journal-arrow-down"></i>
+                                        <span class="ms-1 d-none d-sm-inline"><?php echo $category->title ?></span>
                                     </a>
                                 </li>
                             <?php $i ++; } ?>
@@ -32,7 +32,7 @@
                         <?php
                         /** @var \App\Model\Entity\StudyMaterial $note */
                         foreach ($notes as $note) {?>
-                        <div class="col-lg-3 mb-4">
+                        <div class="col-lg-3 mb-4" id="notesData">
                             <div class="card">
                                 <div class="card-body">
                                     <a href="#">
@@ -56,5 +56,28 @@
             </div>
         </div>
     </section>
-
 </main><!-- End #main -->
+<!---->
+<?php //$this->Html->scriptStart([ 'block' => 'scriptBottom' ]); ?>
+<!--    $(document).ready(function() {-->
+<!--        $('#menu li a').click(function() {-->
+<!--            var catId = $(this).data('id');-->
+<!---->
+<!--            $.ajax({-->
+<!--                url: '--><?php //echo $this->Url->build([
+//                    "action" => "dataBySubCategory",
+//                ]); ?><!--/'+catId,-->
+<!--                dataType: 'json',-->
+<!--                method:'GET',-->
+<!--                success: function(response) {-->
+<!--                    var notes = JSON.parse(response);-->
+<!--                    $('#notesData').empty();-->
+<!---->
+<!--                    $.each(notes, function(index, note) {-->
+<!--                        $('#notesData').append('<div class="col-lg-3 mb-4"><div class="card"><div class="card-body"><a href="#"><h4>' + note.title + '</h4></a><div class="mb-3"><a href="#" class="btn btn-light text-muted">Free Content</a></div><div class="d-flex justify-content-between align-items-center"><p class="mb-0"></p><button class="btn p-2 py-1">' + note.file + '</button></div></div></div></div>');-->
+<!--                    });-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    });-->
+<?php //$this->Html->scriptEnd(); ?>
