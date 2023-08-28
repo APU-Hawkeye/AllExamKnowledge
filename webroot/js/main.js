@@ -203,7 +203,7 @@
     loop: true,
     centeredSlides: true,
     autoplay: {
-      delay: 8000,
+      delay: 10000,
       disableOnInteraction: false,
     },
     navigation: {
@@ -217,7 +217,7 @@
     spaceBetween: 30,
     freeMode: true,
     autoplay: {
-      delay: 8000,
+      delay: 10000,
       disableOnInteraction: false,
     },
     navigation: {
