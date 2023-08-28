@@ -40,18 +40,47 @@ $param = $this->getRequest()->getParam('action');
                     $subMatch = $collection->match(['category.id' => $category->id]);
                     if($key <= 3) {?>
                         <li class="<?php echo $subMatch ? 'dropdown' : ''?>">
-                            <a class="nav-link" href=""><?php echo $category->title ?></a>
+                            <a class="nav-link" href="<?php if ($category->code === 'PYQ') {
+                                echo $this->Url->build([
+                                    'controller' => 'Pages',
+                                    'action' => 'previousYearQuestions'
+                                ]);
+                            } elseif ($category->code === 'GK') {
+                                echo $this->Url->build([
+                                    'controller' => 'Pages',
+                                    'action' => 'generalKnowledge'
+                                ]);
+                            } elseif ($category->code === 'CA') {
+                                echo $this->Url->build([
+                                    'controller' => 'Pages',
+                                    'action' => 'currentAffairs'
+                                ]);
+                            }?>"><?php echo $category->title ?></a>
                             <ul>
                                 <?php
                                 /** @var \App\Model\Entity\SubCategory $subCat */
                                 foreach ($subMatch as $k => $subCat) {;?>
-                                    <li><a href="#"><?php echo $subCat->title ?></a></li>
+                                    <li><a href="<?php if ($category->code === 'PYQ') {
+                                            echo $this->Url->build([
+                                                'controller' => 'Pages',
+                                                'action' => 'previousYearQuestions'
+                                            ]);
+                                        } elseif ($category->code === 'GK') {
+                                            echo $this->Url->build([
+                                                'controller' => 'Pages',
+                                                'action' => 'generalKnowledge'
+                                            ]);
+                                        } elseif ($category->code === 'CA') {
+                                            echo $this->Url->build([
+                                                'controller' => 'Pages',
+                                                'action' => 'currentAffairs'
+                                            ]);
+                                        }?>"><?php echo $subCat->title ?></a></li>
                                 <?php } ?>
                             </ul>
                         </li>
                     <?php }?>
                 <?php } ?>
-                </li>
 <!--                <li><a class="nav-link" href="#">Test your self</a></li>-->
                 <li><a class="nav-link" href="<?php echo $this->Url->build([
                         'controller' => 'Pages',
