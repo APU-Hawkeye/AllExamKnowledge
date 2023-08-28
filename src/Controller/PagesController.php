@@ -37,7 +37,7 @@ class PagesController extends AppController
     {
         $this->Authentication->allowUnauthenticated([
             'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy', 'adsFile',
-            'previousYearQuestions'
+            'previousYearQuestions', 'generalKnowledge', 'currentAffairs', 'dataBySubCategory'
         ]);
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
@@ -155,5 +155,69 @@ class PagesController extends AppController
         $this->set('notes', $notes);
         $this->set('subCategories', $subCategories);
         $this->set('titleForLayout', __('Previous year Question'));
+    }
+
+    /**
+     * @return void
+     */
+    public function generalKnowledge()
+    {
+        $query = $this->StudyMaterials->find()->contain([
+            'SubCategories',
+            'SubCategories.Categories',
+        ])->where([
+            'Categories.code' => 'GK'
+        ]);
+        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+            'Categories',
+        ])->where([
+            'Categories.code' => 'GK'
+        ])->orderAsc('SubCategories.created')->all();
+        $notes = $this->paginate($query);
+        $this->set('notes', $notes);
+        $this->set('subCategories', $subCategories);
+        $this->set('titleForLayout', __('General Knowledge'));
+    }
+
+    /**
+     * @return void
+     */
+    public function currentAffairs()
+    {
+        $query = $this->StudyMaterials->find()->contain([
+            'SubCategories',
+            'SubCategories.Categories',
+        ])->where([
+            'Categories.code' => 'CA'
+        ]);
+        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+            'Categories',
+        ])->where([
+            'Categories.code' => 'CA'
+        ])->orderAsc('SubCategories.created')->all();
+        $notes = $this->paginate($query);
+        $this->set('notes', $notes);
+        $this->set('subCategories', $subCategories);
+        $this->set('titleForLayout', __('Current Affairs'));
+    }
+
+    /**
+     * @param string|null $id
+     * @return \Cake\Http\Response
+     */
+    public function dataBySubCategory(?string $id = null)
+    {
+        $this->getRequest()->allowMethod(['get', 'ajax', 'post']);
+        $this->getResponse()->withType('json');
+        $subCategory = $this->StudyMaterials->SubCategories->get($id, [
+            'contain' => ['Categories',]
+        ]);
+        $notes = $this->StudyMaterials->find()->where([
+            $this->StudyMaterials->aliasField('sub_category_id') => $subCategory->id,
+        ])->orderAsc('StudyMaterials.title')->enableHydration(false)->all();
+        /** @var string $responseBody */
+        $responseBody = json_encode($notes);
+
+        return $this->getResponse()->withStringBody($responseBody);
     }
 }
