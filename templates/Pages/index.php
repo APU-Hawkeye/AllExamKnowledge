@@ -128,16 +128,17 @@
                                                 <?php
                                                 /** @var \App\Model\Entity\SubCategory $sub */
                                                 $k = 0;
+                                                $p = 1;
                                                 foreach ($subCategoryMatch as $sub) {
                                                     if($k <= 4) {
                                                         $noteCollection = new \Cake\Collection\Collection($notes);
                                                         $notesByMatch = $noteCollection->match(['sub_category.id' => $sub->id]); ?>
-                                                        <h2 class="accordion-header" id="flush-headingOne">
-                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                                                        <h2 class="accordion-header" id="flush-heading<?php echo $p ?>">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo $p ?>" aria-expanded="true" aria-controls="flush-collapse<?php echo $p ?>">
                                                                 <img src="img/notification-icon.png" class="me-2" alt=""><?php echo $sub->title ?>
                                                             </button>
                                                         </h2>
-                                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                        <div id="flush-collapse<?php echo $p ?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?php echo $p ?>" data-bs-parent="#accordionFlushExample">
                                                             <div class="accordion-body">
                                                                 <?php
                                                                 /** @var \App\Model\Entity\StudyMaterial $note */
@@ -155,7 +156,7 @@
                                                             </div>
                                                         </div>
                                                     <?php }?>
-                                                <?php $k++; } ?>
+                                                <?php $p++; $k++; } ?>
                                             </div>
                                         </div>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
