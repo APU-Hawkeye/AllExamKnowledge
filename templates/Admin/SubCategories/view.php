@@ -41,7 +41,7 @@
                         <div class="card-body">
                             <div class="mb-3 tx-13 tx-spacing-2">
                                 <h6 class="font-weight-bold mb-1"><?php echo __('Code')?></h6>
-                                <div><?php echo $category->title ;?></div>
+                                <div><?php echo $category->code ;?></div>
                             </div>
                             <div class="mb-3 tx-13 tx-spacing-2">
                                 <h6 class="font-weight-bold mb-1"><?php echo __('Title')?></h6>
@@ -107,7 +107,6 @@
                     'label' => __("Code"),
                     'class' => 'form-control tx-spacing-2',
                     'error' => false,
-                    'readOnly' => true,
                     'required' => true,
                     'templateVars' => [
                         'errorDiv' => '<div class="invalid-feedback mt-2 tx-12 tx-spacing-2"></div>'
