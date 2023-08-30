@@ -160,10 +160,27 @@
                                             </div>
                                         </div>
                                         <div class="w-100 d-flex align-items-center justify-content-center">
-                                            <a href="<?php echo $this->Url->build([
-                                                'controller' => 'Pages',
-                                                'action' => 'downloadPdf'
-                                            ])?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
+                                            <a href="<?php if ($cat->code === 'PYQ') {
+                                                echo $this->Url->build([
+                                                    'controller' => 'Pages',
+                                                    'action' => 'previousYearQuestions'
+                                                ]);
+                                            } elseif ($cat->code === 'GK') {
+                                                echo $this->Url->build([
+                                                    'controller' => 'Pages',
+                                                    'action' => 'generalKnowledge'
+                                                ]);
+                                            } elseif ($cat->code === 'CA') {
+                                                echo $this->Url->build([
+                                                    'controller' => 'Pages',
+                                                    'action' => 'currentAffairs'
+                                                ]);
+                                            } elseif ($cat->code === 'LGJ') {
+                                                echo $this->Url->build([
+                                                    'controller' => 'Pages',
+                                                    'action' => 'latestGovJobs'
+                                                ]);
+                                            } ?>" class="text-primary">See All <i class="bx bx-right-arrow-alt"></i></a>
                                         </div>
                                     </div>
                                 </div>
