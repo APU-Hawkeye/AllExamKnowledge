@@ -35,10 +35,6 @@
                             ])?>" class="text-white">About Us</a></li>
                             <li><a href="<?php echo $this->Url->build([
                                 'controller' => 'Pages',
-                                'action' => 'downloadPdf',
-                            ])?>" class="text-white">Downloads</a></li>
-                            <li><a href="<?php echo $this->Url->build([
-                                'controller' => 'Pages',
                                 'action' => 'contactUs',
                             ])?>" class="text-white">Contact Us</a></li>
                             <li><a href="<?php echo $this->Url->build([
