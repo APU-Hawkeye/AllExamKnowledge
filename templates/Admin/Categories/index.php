@@ -193,3 +193,11 @@ function getWords($sentence, $count = 10) {
         </div>
     </div>
 </div>
+<?php $this->Html->script([
+    'jquery.mask.min',
+    '/lib/semantic-ui/transition/transition.min',
+    '/lib/semantic-ui/dropdown/dropdown.min',
+], [
+    'block' => 'scriptBottom'
+]); ?>
+<?php $this->Html->scriptStart([ 'block' => 'script' ]); ?>
