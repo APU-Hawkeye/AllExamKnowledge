@@ -37,7 +37,7 @@ class PagesController extends AppController
     {
         $this->Authentication->allowUnauthenticated([
             'index','contactUs','downloadPdf','aboutUs','download', 'privacyPolicy', 'adsFile',
-            'previousYearQuestions', 'generalKnowledge', 'currentAffairs', 'dataBySubCategory'
+            'previousYearQuestions', 'generalKnowledge', 'currentAffairs', 'queryBySubCategory'
         ]);
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
@@ -55,8 +55,8 @@ class PagesController extends AppController
      */
     public function index()
     {
-        $categories = $this->StudyMaterials->SubCategories->Categories->find()->all();
-        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+        $categories = $this->StudyMaterials->SubCategories->Categories->find()->find('enabled')->all();
+        $subCategories = $this->StudyMaterials->SubCategories->find()->find('enabled')->contain([
             'Categories',
         ])->all();
         $notes = $this->StudyMaterials->find()->contain([
@@ -151,7 +151,10 @@ class PagesController extends AppController
         ])->where([
             'Categories.code' => 'PYQ'
         ])->orderAsc('SubCategories.created')->all();
-        $notes = $this->paginate($query);
+        $notes = $this->paginate($query, [
+            'limit' => 30,
+            'maxLimit' => 200
+        ]);
         $this->set('notes', $notes);
         $this->set('subCategories', $subCategories);
         $this->set('titleForLayout', __('Previous year Question'));
@@ -219,5 +222,32 @@ class PagesController extends AppController
         $responseBody = json_encode($notes);
 
         return $this->getResponse()->withStringBody($responseBody);
+    }
+
+    /**
+     * @param string|null $id
+     * @param string|null $catId
+     * @return void
+     */
+    public function queryBySubCategory(?string $id = null, ?string $catId = null)
+    {
+        $category = $this->StudyMaterials->SubCategories->Categories->get($catId);
+        $subCat = $this->StudyMaterials->SubCategories->get($id, [
+            'contain' => ['Categories']
+        ]);
+        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+            'Categories',
+        ])->where([
+            $this->StudyMaterials->SubCategories->aliasField('category_id') => $category->id,
+        ])->orderAsc('SubCategories.created')->all();
+        $notes = $this->StudyMaterials->find()->where([
+            $this->StudyMaterials->aliasField('sub_category_id') => $subCat->id,
+        ])->orderAsc('StudyMaterials.title')->all();
+
+        $this->set('notes', $notes);
+        $this->set('subCategories', $subCategories);
+        $this->set('titleForLayout', __('{0}', [
+            $subCat->title
+        ]));
     }
 }
