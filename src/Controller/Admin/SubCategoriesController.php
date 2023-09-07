@@ -125,4 +125,42 @@ class SubCategoriesController extends \App\Controller\AppController
         $this->set('category', $category);
         $this->set('categories', $categories);
     }
+
+    /**
+     * @param string|null $id ID
+     * @return \Cake\Http\Response|null
+     */
+    public function disable(?string $id = null)
+    {
+        $this->getRequest()->allowMethod(['post']);
+        $category = $this->SubCategories->get($id);
+        if ($this->SubCategories->disable($category)) {
+            $this->Flash->success(__('{0} has been successfully disabled.', [
+                $category->title,
+            ]));
+        } else {
+            $this->Flash->error(__('Something went wrong. Kindly try again later'));
+        }
+
+        return $this->redirect($this->referer());
+    }
+
+    /**
+     * @param string|null $id ID
+     * @return \Cake\Http\Response|null
+     */
+    public function enable(?string $id = null)
+    {
+        $this->getRequest()->allowMethod(['post']);
+        $category = $this->SubCategories->get($id);
+        if ($this->SubCategories->enable($category)) {
+            $this->Flash->success(__('{0} has been successfully enabled.', [
+                $category->title,
+            ]));
+        } else {
+            $this->Flash->error(__('Something went wrong. Kindly try again later'));
+        }
+
+        return $this->redirect($this->referer());
+    }
 }

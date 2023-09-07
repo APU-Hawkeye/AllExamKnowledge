@@ -116,4 +116,42 @@ class CategoriesController extends AppController
         $this->set('titleForLayout', $category->title);
         $this->set('category', $category);
     }
+
+    /**
+     * @param string|null $id ID
+     * @return \Cake\Http\Response|null
+     */
+    public function disable(?string $id = null)
+    {
+        $this->getRequest()->allowMethod(['post']);
+        $category = $this->Categories->get($id);
+        if ($this->Categories->disable($category)) {
+            $this->Flash->success(__('{0} has been successfully disabled.', [
+                $category->title,
+            ]));
+        } else {
+            $this->Flash->error(__('Something went wrong. Kindly try again later'));
+        }
+
+        return $this->redirect($this->referer());
+    }
+
+    /**
+     * @param string|null $id ID
+     * @return \Cake\Http\Response|null
+     */
+    public function enable(?string $id = null)
+    {
+        $this->getRequest()->allowMethod(['post']);
+        $category = $this->Categories->get($id);
+        if ($this->Categories->enable($category)) {
+            $this->Flash->success(__('{0} has been successfully enabled.', [
+                $category->title,
+            ]));
+        } else {
+            $this->Flash->error(__('Something went wrong. Kindly try again later'));
+        }
+
+        return $this->redirect($this->referer());
+    }
 }
