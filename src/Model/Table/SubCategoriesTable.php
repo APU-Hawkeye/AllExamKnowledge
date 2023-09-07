@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
-use Cake\ORM\Query;
+use App\Model\Behavior\SwitchBehavior;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -29,6 +29,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\SubCategory[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @mixin SwitchBehavior
  */
 class SubCategoriesTable extends Table
 {
@@ -47,6 +48,7 @@ class SubCategoriesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Switch');
 
         $this->belongsTo('Categories', [
             'foreignKey' => 'category_id',
