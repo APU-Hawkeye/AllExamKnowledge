@@ -49,12 +49,11 @@
                             <span><i><img src="img/whatsapp.png" width="20" alt=""></i> (+91) +91 97785 39234</span>
                             <span><i><img src="img/email.png" width="20" alt=""></i> contact@allexamknowledge.com</span>
                             <span>
-                  <a href="#"><img src="img/linkedin.png" width="20" alt=""></a>
-                  <a href="#"><img src="img/instagram.png" width="20" alt=""></a>
-                  <a href="#"><img src="img/twitter.png" width="20" alt=""></a>
-                  <a href="#"><img src="img/youtube.png" width="20" alt=""></a>
-                </span>
-
+                              <a href="https://in.linkedin.com/in/chintamani-mahananda-599050131"><img src="img/linkedin.png" width="20" alt=""></a>
+                              <a href="https://www.instagram.com/allexamknowledge_/?utm_source=qr&igshid=YzU1NGVlODEzOA%3D%3D"><img src="img/instagram.png" width="20" alt=""></a>
+                              <a href="https://www.facebook.com/ALLEXAMKNOWLEDGE"><img src="img/facebook.png" width="20" alt=""></a>
+                              <a href="https://www.youtube.com/@ALLEXAMKNOWLEDGE"><img src="img/youtube.png" width="20" alt=""></a>
+                            </span>
                         </div>
                     </div>
 
