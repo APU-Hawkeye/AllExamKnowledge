@@ -52,6 +52,7 @@
                               <a href="https://in.linkedin.com/in/chintamani-mahananda-599050131"><img src="img/linkedin.png" width="20" alt=""></a>
                               <a href="https://www.instagram.com/allexamknowledge_/?utm_source=qr&igshid=YzU1NGVlODEzOA%3D%3D"><img src="img/instagram.png" width="20" alt=""></a>
                               <a href="https://www.facebook.com/ALLEXAMKNOWLEDGE"><img src="img/facebook.png" width="20" alt=""></a>
+                              <a href="https://twitter.com/AEK00005?s=08"><img src="img/twitter.png" width="20" alt=""></a>
                               <a href="https://www.youtube.com/@ALLEXAMKNOWLEDGE"><img src="img/youtube.png" width="20" alt=""></a>
                             </span>
                         </div>
