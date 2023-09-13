@@ -152,8 +152,8 @@ class PagesController extends AppController
             'Categories.code' => 'PYQ'
         ])->orderAsc('SubCategories.created')->all();
         $notes = $this->paginate($query, [
-            'limit' => 30,
-            'maxLimit' => 200
+            'limit' => 10,
+            'maxLimit' => 100
         ]);
         $this->set('notes', $notes);
         $this->set('subCategories', $subCategories);
@@ -176,7 +176,10 @@ class PagesController extends AppController
         ])->where([
             'Categories.code' => 'GK'
         ])->orderAsc('SubCategories.created')->all();
-        $notes = $this->paginate($query);
+        $notes = $this->paginate($query, [
+            'limit' => 10,
+            'maxLimit' => 100
+        ]);
         $this->set('notes', $notes);
         $this->set('subCategories', $subCategories);
         $this->set('titleForLayout', __('General Knowledge'));
@@ -198,7 +201,10 @@ class PagesController extends AppController
         ])->where([
             'Categories.code' => 'CA'
         ])->orderAsc('SubCategories.created')->all();
-        $notes = $this->paginate($query);
+        $notes = $this->paginate($query, [
+            'limit' => 10,
+            'maxLimit' => 100
+        ]);
         $this->set('notes', $notes);
         $this->set('subCategories', $subCategories);
         $this->set('titleForLayout', __('Current Affairs'));
