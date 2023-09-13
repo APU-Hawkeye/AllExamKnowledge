@@ -38,7 +38,6 @@
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 </head>
 <body>
 <!-- ======= Header ======= -->
@@ -49,22 +48,25 @@
 
 <!-- ======= Footer ======= -->
 <?php echo $this->element("footer"); ?>
+
 <!-- End Footer -->
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-up-short"></i>
 </a>
-
 <?php echo $this->Html->script([
+    '/lib/jquery/jquery.min',
     '/lib/purecounter/purecounter_vanilla',
     '/lib/aos/aos',
     '/lib/bootstrap/js/bootstrap.bundle.min',
     '/lib/isotope-layout/isotope.pkgd.min',
     '/lib/swiper/swiper-bundle.min',
+    '/lib/feather-icons/feather.min',
     '/lib/waypoints/noframework.waypoints',
     '/lib/php-email-form/validate',
     'main',
-]); ?>
-<?php echo $this->fetch('js'); ?>
+]);
+echo $this->fetch('script');
+?>
 </body>
 </html>
