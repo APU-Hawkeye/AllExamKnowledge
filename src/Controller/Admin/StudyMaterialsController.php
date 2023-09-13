@@ -15,6 +15,11 @@ use Cake\Routing\Router;
  */
 class StudyMaterialsController extends AppController
 {
+    public $paginate = [
+        'limit' => 30,
+        'maxLimit' => 600,
+    ];
+
     /**
      * @param EventInterface $event
      * @return \Cake\Http\Response|void|null
@@ -32,12 +37,13 @@ class StudyMaterialsController extends AppController
      */
     public function index()
     {
-        $studyMaterials = $this->StudyMaterials->find()->contain([
+        $query = $this->StudyMaterials->find()->contain([
             'SubCategories',
             'SubCategories.Categories',
         ])->orderAsc('StudyMaterials.title');
         $categories = $this->StudyMaterials->SubCategories->find('list')
             ->contain('Categories')->all();
+        $studyMaterials = $this->paginate($query);
         $this->set('studyMaterials', $studyMaterials);
         $this->set('categories', $categories);
         $this->set('titleForLayout', 'Study Materials');
