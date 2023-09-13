@@ -40,10 +40,16 @@ function getWords($sentence, $count = 10) {
             <div class="d-flex justify-content-between">
                 <div class="d-none d-sm-block d-md-block d-lg-block">
                     <?php echo $this->PaginationControl->get([
-                        25 => __("25 Records"),
-                        50 => __("50 Records"),
-                        75 => __("75 Records"),
-                        100 => __("100 Records"),
+                        30 => __("30 Records"),
+                        60 => __("60 Records"),
+                        90 => __("90 Records"),
+                        120 => __("120 Records"),
+                        150 => __("150 Records"),
+                        180 => __("180 Records"),
+                        210 => __("210 Records"),
+                        240 => __("240 Records"),
+                        270 => __("270 Records"),
+                        300 => __("300 Records"),
                     ]); ?>
                 </div>
                 <div class="col-md-5 col-sm-4 col-9">
@@ -142,16 +148,15 @@ function getWords($sentence, $count = 10) {
                 </tbody>
             </table>
         </div>
-        <div class="toolbar px-3 py-4 bg-light mb-n4">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 d-none d-sm-block"></div>
-                <div class="col-md-2 col-sm-2 col-3 text-right">
-                    <ul class="pagination mb-0 float-right">
-                        <?php echo $this->Paginator->prev(); ?>
-                        <?php echo $this->Paginator->next(); ?>
-                    </ul>
-                </div>
-            </div>
+        <div class="p-3 d-flex flex-row justify-content-between bg-light">
+            <div class="justify-content-start tx-spacing-2 pd-t-8"><?php echo $this->Paginator->counter('Page {{page}} of {{pages}}, showing {{current}} records out of total {{count}} records'); ?></div>
+            <ul class="pagination pagination-outline justify-content-end mg-b-0">
+                <?php echo $this->Paginator->first(); ?>
+                <?php echo $this->Paginator->prev(); ?>
+                <?php echo $this->Paginator->numbers(); ?>
+                <?php echo $this->Paginator->next(); ?>
+                <?php echo $this->Paginator->last(); ?>
+            </ul>
         </div>
     </div>
 </div>
