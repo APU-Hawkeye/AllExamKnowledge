@@ -41,6 +41,10 @@
                         <div class="card-body news-list">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
+                                    <span class="float-left">RBI Assistant Vacancy 2023</span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/RBI_Assistant_2023.PDF', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                </li>
+                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
                                     <span class="float-left">CRP PO/MT-XIII for Vacancies of 2024-25</span>
                                     <span class="float-end"><?php echo $this->Html->link('View', '/files/Notification_CRP_PO_XIII.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
                                 </li>
