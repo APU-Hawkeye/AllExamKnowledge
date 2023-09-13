@@ -28,6 +28,24 @@
                     </div>
                 </div>
                 <div class="col py-5">
+                    <div class="toolbar px-3 py-4 bg-light">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-none d-sm-block d-md-block d-lg-block">
+                                <?php echo $this->PaginationControl->get([
+                                    10 => __("10 Records"),
+                                    20 => __("20 Records"),
+                                    30 => __("30 Records"),
+                                    40 => __("40 Records"),
+                                    50 => __("50 Records"),
+                                    60 => __("60 Records"),
+                                    70 => __("70 Records"),
+                                    80 => __("80 Records"),
+                                    90 => __("90 Records"),
+                                    100 => __("100 Records"),
+                                ]); ?>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <?php
                         /** @var \App\Model\Entity\StudyMaterial $note */
@@ -51,6 +69,16 @@
                                 </div>
                             </div>
                         <?php } ?>
+                    </div>
+                    <div class="p-3 d-flex flex-row justify-content-between bg-light">
+                        <div class="justify-content-start tx-spacing-2 pd-t-8"><?php echo $this->Paginator->counter('Page {{page}} of {{pages}}, showing {{current}} records out of total {{count}} records'); ?></div>
+                        <ul class="pagination pagination-outline justify-content-end mg-b-0">
+                            <?php echo $this->Paginator->first(); ?>
+                            <?php echo $this->Paginator->prev(); ?>
+                            <?php echo $this->Paginator->numbers(); ?>
+                            <?php echo $this->Paginator->next(); ?>
+                            <?php echo $this->Paginator->last(); ?>
+                        </ul>
                     </div>
                 </div>
             </div>
