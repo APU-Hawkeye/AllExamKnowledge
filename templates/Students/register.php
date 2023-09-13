@@ -28,7 +28,7 @@
 <body>
     <section class="h-100 bg-light py-0">
         <div class="container h-100">
-            <div class="row justify-content-sm-center h-100">
+            <div class="row justify-content-sm-center min-vh-100">
                 <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                     <div class="text-center my-5">
                         <a href="<?php echo $this->Url->build([
@@ -152,3 +152,21 @@
             </div>
         </div>
     </section>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+    <?php echo $this->Html->script([
+        "/lib/jquery/jquery.min",
+        '/lib/purecounter/purecounter_vanilla',
+        '/lib/aos/aos',
+        '/lib/bootstrap/js/bootstrap.bundle.min',
+        '/lib/isotope-layout/isotope.pkgd.min',
+        '/lib/swiper/swiper-bundle.min',
+        '/lib/waypoints/noframework.waypoints',
+        '/lib/php-email-form/validate',
+        'main',
+        'login',
+    ]); ?>
+    <?php echo $this->fetch('js'); ?>
+</body>
