@@ -27,7 +27,7 @@
 <body>
     <section class="h-100 bg-light py-0">
         <div class="container h-100">
-            <div class="row justify-content-sm-center h-100">
+            <div class="row justify-content-sm-center min-vh-100">
                 <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                     <div class="text-center my-5">
                         <a href="<?php echo $this->Url->build([
@@ -64,17 +64,23 @@
                                     Email is invalid
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <div class="form-group mb-3">
                                 <div class="mb-2 w-100">
                                     <label class="text-muted" for="password">Password</label>
-                                    <a href="forgot.html" class="float-end">
+                                    <a href="#" class="float-end">
                                         Forgot Password?
                                     </a>
                                 </div>
-                                <?php echo $this->Form->control('password', [
-                                    'label' => false,
-                                    'class' => 'form-control',
-                                ]) ?>
+                                <div class="input-group">
+                                    <?php echo $this->Form->control('password', [
+                                        'type'=> 'password',
+                                        'label' => false,
+                                        'class' => 'form-control',
+                                    ]) ?>
+                                    <div class="input-group-append">
+                                        <button id="passwordToggleBtn" class="btn btn-light" type="button"><i class="icon ion-md-eye"></i></button>
+                                    </div>
+                                </div>
                                 <div class="invalid-feedback">
                                     Password is required
                                 </div>
@@ -86,37 +92,6 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-theme ms-auto"><?php echo __("Login"); ?></button>
                             </div>
-
-<!--                            <form method="POST" class="needs-validation auth-form" novalidate="" autocomplete="off">-->
-<!--                                <div class="mb-3">-->
-<!--                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>-->
-<!--                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>-->
-<!--                                    <div class="invalid-feedback">-->
-<!--                                        Email is invalid-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="mb-3">-->
-<!--                                    <div class="mb-2 w-100">-->
-<!--                                        <label class="text-muted" for="password">Password</label>-->
-<!--                                        <a href="forgot.html" class="float-end">-->
-<!--                                            Forgot Password?-->
-<!--                                        </a>-->
-<!--                                    </div>-->
-<!--                                    <input id="password" type="password" class="form-control" name="password" required>-->
-<!--                                    <div class="invalid-feedback">-->
-<!--                                        Password is required-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="d-flex align-items-center">-->
-<!--                                    <div class="form-check">-->
-<!--                                        <input type="checkbox" name="remember" id="remember" class="form-check-input">-->
-<!--                                        <label for="remember" class="form-check-label">Remember Me</label>-->
-<!--                                    </div>-->
-<!--                                    <button type="submit" class="btn btn-primary btn-theme ms-auto">-->
-<!--                                        Login-->
-<!--                                    </button>-->
-<!--                                </div>-->
-<!--                            </form>-->
                             <?php echo $this->Form->end(); ?>
                         </div>
                         <div class="card-footer py-3 border-0">
@@ -144,6 +119,7 @@
     </a>
 
     <?php echo $this->Html->script([
+        "/lib/jquery/jquery.min",
         '/lib/purecounter/purecounter_vanilla',
         '/lib/aos/aos',
         '/lib/bootstrap/js/bootstrap.bundle.min',
@@ -152,6 +128,21 @@
         '/lib/waypoints/noframework.waypoints',
         '/lib/php-email-form/validate',
         'main',
+        'login',
     ]); ?>
     <?php echo $this->fetch('js'); ?>
+    <script>
+        let $passwordInput = $("#password");
+        $(function(){
+            $("#passwordToggleBtn").on("click", function(){
+                if ( $passwordInput.prop("type") === "text" ) {
+                    $passwordInput.prop("type", "password");
+                    $(this).children("i").removeClass("ion-md-eye-off").addClass("ion-md-eye");
+                } else {
+                    $passwordInput.prop("type", "text");
+                    $(this).children("i").removeClass("ion-md-eye").addClass("ion-md-eye-off");
+                }
+            });
+        });
+    </script>
 </body>
