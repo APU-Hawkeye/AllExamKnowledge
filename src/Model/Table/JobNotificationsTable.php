@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use App\Model\Behavior\SwitchBehavior;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
@@ -24,6 +25,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\JobNotification[]|\Cake\Datasource\ResultSetInterface deleteManyOrFail(iterable $entities, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
+ * @mixin SwitchBehavior
  */
 class JobNotificationsTable extends Table
 {
@@ -42,6 +44,7 @@ class JobNotificationsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Switch');
         $this->addBehavior('AttachmentFiles', [
             'fields' => ['file']
         ]);
