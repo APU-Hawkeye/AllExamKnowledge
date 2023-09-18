@@ -26,6 +26,7 @@ use Cake\ORM\TableRegistry;
  *
  * @link https://book.cakephp.org/4/en/controllers/pages-controller.html
  * @property \App\Model\Table\StudyMaterialsTable $StudyMaterials
+ * @property \App\Model\Table\JobNotificationsTable $JobNotifications
  */
 class PagesController extends AppController
 {
@@ -42,6 +43,9 @@ class PagesController extends AppController
         /** @var  \App\Model\Table\CategoriesTable $studyMaterials */
         $studyMaterials = TableRegistry::getTableLocator()->get('StudyMaterials');
         $this->StudyMaterials = $studyMaterials;
+        /** @var  \App\Model\Table\JobNotificationsTable $jobNotifications */
+        $jobNotifications = TableRegistry::getTableLocator()->get('JobNotifications');
+        $this->JobNotifications = $jobNotifications;
         parent::beforeFilter($event);
 
         $categories = $this->StudyMaterials->SubCategories->Categories->find('all');
@@ -63,9 +67,12 @@ class PagesController extends AppController
             'SubCategories',
             'SubCategories.Categories',
         ])->all();
+        $notifications = $this->JobNotifications->find()->find('enabled')
+            ->orderDesc('created')->all();
         $this->set('categories', $categories);
         $this->set('subCategories', $subCategories);
         $this->set('notes', $notes);
+        $this->set('notifications', $notifications);
         $this->set('titleForLayout', __('All Exam Knowledge'));
     }
 
