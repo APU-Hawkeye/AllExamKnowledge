@@ -24,13 +24,13 @@
                 'action' => 'dashboard'
             ]); ?>" class="waves-effect"><i class="fa fa-home"></i><span><?php echo __('Dashboard')?></span></a></li>
         <li><a href="<?php echo $this->Url->build([
-                'controller' => 'Announcements',
+                'controller' => 'JobNotifications',
                 'action' => 'index'
-            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Announcements')?></span></a></li>
-        <li><a href="<?php echo $this->Url->build([
-                'controller' => 'News',
-                'action' => 'index'
-            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('News')?></span></a></li>
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Job Notifications')?></span></a></li>
+<!--        <li><a href="--><?php //echo $this->Url->build([
+//                'controller' => 'News',
+//                'action' => 'index'
+//            ]); ?><!--" class="waves-effect"><i class="fa fa-server"></i><span>--><?php //echo __('News')?><!--</span></a></li>-->
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'Categories',
                 'action' => 'index'
