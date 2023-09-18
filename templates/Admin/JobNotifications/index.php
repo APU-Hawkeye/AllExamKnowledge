@@ -172,7 +172,7 @@ function getWords($sentence, $count = 10) {
             <div class="modal-body">
                 <?php echo $this->Form->create(null, [
                     'url' => [
-                        'controller' => 'JobNotification',
+                        'controller' => 'JobNotifications',
                         'action' => 'add'
                     ],
                     'templates' => [
