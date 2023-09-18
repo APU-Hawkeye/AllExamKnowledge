@@ -5,6 +5,7 @@
  * @var \Cake\Datasource\ResultSetInterface $categories
  * @var \Cake\Datasource\ResultSetInterface $subCategories
  * @var \Cake\Datasource\ResultSetInterface $notes
+ * @var \Cake\Datasource\ResultSetInterface $notifications
  */
 ?>
 <section id="hero" class="d-flex align-items-center">
@@ -39,37 +40,21 @@
                             <h5 class="text-center">Latest Government Jobs</h5>
                         </div>
                         <div class="card-body news-list">
+                            <?php
+                            /** @var \App\Model\Entity\JobNotification $notification */
+                            foreach ($notifications as $notification) {?>
                             <ul class="list-group list-group-flush">
+<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">-->
+<!--                                    <span class="float-left">RBI Assistant Vacancy 2023</span>-->
+<!--                                    <span class="float-end">--><?php //echo $this->Html->link('View', '/files/RBI_Assistant_2023.PDF', ['class' => 'pdf-link', 'target' => '_blank']);?><!--</span>-->
+<!--                                </li>-->
                                 <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                    <span class="float-left">RBI Assistant Vacancy 2023</span>
-                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/RBI_Assistant_2023.PDF', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                </li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                    <span class="float-left">CRP PO/MT-XIII for Vacancies of 2024-25</span>
-                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/Notification_CRP_PO_XIII.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                </li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                    <span class="float-left">SSC Junior Engineer 2023</span>
-                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/Notice_JE_2023.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                </li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                    <span class="float-left">GDS (Gramin Dak Sevak)</span>
-                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/GDS_Notification.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
-                                </li>
-                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">
-                                    <span class="float-left">Sashastra Seema Bal </span>
-                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/SashastraSeemaBal.pdf', ['class' => 'pdf-link', 'target' => '_blank']);?></span>
+                                    <span class="float-left"><?php echo $notification->title ?></span>
+                                    <span class="float-end"><?php echo $this->Html->link('View', '/files/'.$notification->file, ['class' => 'pdf-link', 'target' => '_blank']);?></span>
                                 </li>
 <!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="#" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Cras justo odio<a href="" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Dapibus ac facilisis in<a href="#" class="float-end">click here</a></li>-->
-<!--                                <li class="list-group-item py-3"><img src="img/notification-icon.png" class="me-2" alt="">Vestibulum at eros<a href="#" class="float-end">click here</a></li>-->
                             </ul>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
