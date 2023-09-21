@@ -183,87 +183,87 @@
             </div>
         </div>
     </section>
-    <section class="about">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10 text-center">
-                    <h2 class="fw-bold">Learn From The Best </h2>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h4 class="mb-4 fw-bold">About Us</h4>
-                    <p>
-                        All Exam Knowledge is an educational platform for all competitive exam aspirants from India. We have been preparing candidates for various state and central examinations for over a decade. Throughout our journey we have consistently followed our ideology of making competitive exam coaching accessible and affordable for all Indian students.
-                    </p>
-                    <div>
-                        <a href="#" class="btn btn-theme btn-primary">Know More</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <img src="img/about.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ======= why-us Section ======= -->
-    <section class="why-us">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-10">
-                    <h2 class="fw-bold text-black">Why Content with us</h2>
-                    <p>Comprehensive Study Material,Expert Faculty at Your Disposal, Interactive Learning Experience, Convenience at Your Fingertips</p>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-4 mb-4">
-                    <img src="img/why-img.png" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-8 ps-5">
-                    <div class="row mb-5">
-                        <div class="col-lg-6 why-column">
-                            <div class="mb-2">
-                                <span class="bi bi-bank"></span>
-                            </div>
-                            <h6 class="text-dark text-uppercase fw-bold">Government Exams</h6>
-                            <p class="mb-0">
-                                Banking, SSC, Railways, Defence, Teaching & Many more
-                            </p>
-                        </div>
-                        <div class="col-lg-6 why-column">
-                            <div class="mb-2">
-                                <span><img src="img/support-icon.png" alt=""></span>
-                            </div>
-                            <h6 class="text-dark text-uppercase fw-bold">Mentor Supports</h6>
-                            <p class="mb-0">
-                                Guidance That Inspires: Empowering You Through Expert Mentorship
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 why-column">
-                            <div class="mb-2">
-                                <span><img src="img/download-icon.png" width="43" alt=""></span>
-                            </div>
-                            <h6 class="text-dark text-uppercase fw-bold">Download PDF</h6>
-                            <p class="mb-0">
-                                Download Answer Key, Solution, GKGS & Many more
-                            </p>
-                        </div>
-                        <div class="col-lg-6 why-column">
-                            <div class="mb-2">
-                                <span><img src="img/test-icon.png" alt=""></span>
-                            </div>
-                            <h6 class="text-dark text-uppercase fw-bold">Test yourself</h6>
-                            <p class="mb-0">
-                                Assess Your Progress: Engage in Comprehensive Self-Evaluation with Us
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="about">-->
+<!--        <div class="container">-->
+<!--            <div class="row justify-content-center mb-5">-->
+<!--                <div class="col-lg-10 text-center">-->
+<!--                    <h2 class="fw-bold">Learn From The Best </h2>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row align-items-center">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <h4 class="mb-4 fw-bold">About Us</h4>-->
+<!--                    <p>-->
+<!--                        All Exam Knowledge is an educational platform for all competitive exam aspirants from India. We have been preparing candidates for various state and central examinations for over a decade. Throughout our journey we have consistently followed our ideology of making competitive exam coaching accessible and affordable for all Indian students.-->
+<!--                    </p>-->
+<!--                    <div>-->
+<!--                        <a href="#" class="btn btn-theme btn-primary">Know More</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-6 text-center">-->
+<!--                    <img src="img/about.png" class="img-fluid" alt="">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    <section class="why-us">-->
+<!--        <div class="container">-->
+<!--            <div class="row mb-5">-->
+<!--                <div class="col-lg-10">-->
+<!--                    <h2 class="fw-bold text-black">Why Content with us</h2>-->
+<!--                    <p>Comprehensive Study Material,Expert Faculty at Your Disposal, Interactive Learning Experience, Convenience at Your Fingertips</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row align-items-center">-->
+<!--                <div class="col-lg-4 mb-4">-->
+<!--                    <img src="img/why-img.png" class="img-fluid" alt="">-->
+<!--                </div>-->
+<!--                <div class="col-lg-8 ps-5">-->
+<!--                    <div class="row mb-5">-->
+<!--                        <div class="col-lg-6 why-column">-->
+<!--                            <div class="mb-2">-->
+<!--                                <span class="bi bi-bank"></span>-->
+<!--                            </div>-->
+<!--                            <h6 class="text-dark text-uppercase fw-bold">Government Exams</h6>-->
+<!--                            <p class="mb-0">-->
+<!--                                Banking, SSC, Railways, Defence, Teaching & Many more-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-6 why-column">-->
+<!--                            <div class="mb-2">-->
+<!--                                <span><img src="img/support-icon.png" alt=""></span>-->
+<!--                            </div>-->
+<!--                            <h6 class="text-dark text-uppercase fw-bold">Mentor Supports</h6>-->
+<!--                            <p class="mb-0">-->
+<!--                                Guidance That Inspires: Empowering You Through Expert Mentorship-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-lg-6 why-column">-->
+<!--                            <div class="mb-2">-->
+<!--                                <span><img src="img/download-icon.png" width="43" alt=""></span>-->
+<!--                            </div>-->
+<!--                            <h6 class="text-dark text-uppercase fw-bold">Download PDF</h6>-->
+<!--                            <p class="mb-0">-->
+<!--                                Download Answer Key, Solution, GKGS & Many more-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-6 why-column">-->
+<!--                            <div class="mb-2">-->
+<!--                                <span><img src="img/test-icon.png" alt=""></span>-->
+<!--                            </div>-->
+<!--                            <h6 class="text-dark text-uppercase fw-bold">Test yourself</h6>-->
+<!--                            <p class="mb-0">-->
+<!--                                Assess Your Progress: Engage in Comprehensive Self-Evaluation with Us-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 <!--    <section class="pb-0 upload-video-section">-->
 <!--        <div class="container">-->
 <!--            <div class="row justify-content-center mb-5">-->
