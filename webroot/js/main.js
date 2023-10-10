@@ -169,8 +169,7 @@
   let preloader = select('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
-      preloader.remove(),
-          preloader.delay()
+      preloader.remove()
     });
   }
 
