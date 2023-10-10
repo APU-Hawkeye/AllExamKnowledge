@@ -3,12 +3,13 @@ declare(strict_types=1);
 
 namespace App\Controller\Admin;
 
+use Cake\Database\Expression\QueryExpression;
 use Cake\Event\EventInterface;
 use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 
 /**
- * Class AgenciesController
+ * Class StudyMaterialsController
  * @package App\Controller
  *
  * @property \App\Model\Table\StudyMaterialsTable $StudyMaterials
@@ -43,6 +44,14 @@ class StudyMaterialsController extends AppController
         ])->orderAsc('StudyMaterials.title');
         $categories = $this->StudyMaterials->SubCategories->find('list')
             ->contain('Categories')->all();
+        if ($this->getRequest()->getQuery('sub_category')) {
+            $query->where(function (QueryExpression $expression) {
+                return $expression->or([
+                    $this->StudyMaterials->aliasField('sub_category_id') . ' IS' =>
+                        $this->getRequest()->getQuery('sub_category'),
+                ]);
+            });
+        }
         $studyMaterials = $this->paginate($query);
         $this->set('studyMaterials', $studyMaterials);
         $this->set('categories', $categories);
