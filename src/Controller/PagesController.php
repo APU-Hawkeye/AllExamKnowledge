@@ -16,6 +16,7 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use Cake\Database\Expression\QueryExpression;
 use Cake\Event\EventInterface;
 use Cake\ORM\TableRegistry;
 
@@ -158,12 +159,26 @@ class PagesController extends AppController
         ])->where([
             'Categories.code' => 'PYQ'
         ])->orderAsc('SubCategories.created')->all();
+        $sc = $this->StudyMaterials->SubCategories->find('list')->contain([
+            'Categories',
+        ])->where([
+            'Categories.code' => 'PYQ'
+        ]);
+        if ($this->getRequest()->getQuery('sub_category')) {
+            $query->where(function (QueryExpression $expression) {
+                return $expression->or([
+                    $this->StudyMaterials->aliasField('sub_category_id') . ' IS' =>
+                        $this->getRequest()->getQuery('sub_category'),
+                ]);
+            });
+        }
         $notes = $this->paginate($query, [
             'limit' => 10,
             'maxLimit' => 100
         ]);
         $this->set('notes', $notes);
         $this->set('subCategories', $subCategories);
+        $this->set('sc', $sc);
         $this->set('titleForLayout', __('Previous year Question'));
     }
 
@@ -178,11 +193,19 @@ class PagesController extends AppController
         ])->where([
             'Categories.code' => 'GK'
         ]);
-        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+        $subCategories = $this->StudyMaterials->SubCategories->find('list')->contain([
             'Categories',
         ])->where([
             'Categories.code' => 'GK'
         ])->orderAsc('SubCategories.created')->all();
+        if ($this->getRequest()->getQuery('sub_category')) {
+            $query->where(function (QueryExpression $expression) {
+                return $expression->or([
+                    $this->StudyMaterials->aliasField('sub_category_id') . ' IS' =>
+                        $this->getRequest()->getQuery('sub_category'),
+                ]);
+            });
+        }
         $notes = $this->paginate($query, [
             'limit' => 10,
             'maxLimit' => 100
@@ -203,11 +226,19 @@ class PagesController extends AppController
         ])->where([
             'Categories.code' => 'CA'
         ]);
-        $subCategories = $this->StudyMaterials->SubCategories->find()->contain([
+        $subCategories = $this->StudyMaterials->SubCategories->find('list')->contain([
             'Categories',
         ])->where([
             'Categories.code' => 'CA'
         ])->orderAsc('SubCategories.created')->all();
+        if ($this->getRequest()->getQuery('sub_category')) {
+            $query->where(function (QueryExpression $expression) {
+                return $expression->or([
+                    $this->StudyMaterials->aliasField('sub_category_id') . ' IS' =>
+                        $this->getRequest()->getQuery('sub_category'),
+                ]);
+            });
+        }
         $notes = $this->paginate($query, [
             'limit' => 10,
             'maxLimit' => 100
