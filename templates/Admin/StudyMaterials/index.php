@@ -74,6 +74,29 @@ function getWords($sentence, $count = 10) {
                     </div>
                     <?php echo $this->Form->end(); ?>
                 </div>
+                <div class="px-3">
+                    <?php echo $this->Form->create(null, [
+                        'type' => 'GET',
+                        'templates' => [
+                            'inputContainer' => '{{content}}',
+                        ],
+                        'valueSources' => ['query']
+                    ]); ?>
+                    <div class="input-group w-100">
+                        <?php echo $this->Form->control('sub_category', [
+                            'type' => 'select',
+                            'class' => 'form-control ui dropdown',
+                            'empty' => __("Sub Category"),
+                            'id' => 'sub-category',
+                            'options' => $categories,
+                            'label' => false,
+                        ]) ?>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary btn-block tx-spacing-2"><i data-feather="search"></i></button>
+                        </div>
+                    </div>
+                    <?php echo $this->Form->end(); ?>
+                </div>
                 <div class="col-md-4 col-sm-4 d-none d-sm-block">
                     <div class="btn-group m-0">
                         <a href="<?php echo $this->Url->build([
