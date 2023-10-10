@@ -4,34 +4,39 @@
  * @var \Cake\Datasource\ResultSetInterface $notes
  * @var \Cake\Datasource\ResultSetInterface $subCategories
  */
+
+$this->Html->css([
+    "/lib/semantic-ui/dropdown/dropdown.min",
+    "/lib/semantic-ui/transition/transition.min",
+], ["block" => true]);
 ?>
 
 <main id="main">
     <section class="py-0">
         <div class="container-fluid">
             <div class="row flex-nowrap">
-                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light border-end download-sidebar">
-                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                            <?php
-                            /** @var \App\Model\Entity\SubCategory $category */
-                            $i = 1 ;
-                            foreach ($subCategories as $category) {?>
-                                <li id="cat">
-                                    <a href="#submenu.<?php echo $i ?>" data-bs-toggle="collapse" class="nav-link px-0 align-middle"
-                                       data-id="<?php echo $category->id ?>"><i class="fs-4 bi bi-journal-arrow-down"></i>
-                                        <span class="ms-1 d-none d-sm-inline"><?php echo $category->title ?></span>
-                                    </a>
-                                </li>
-                                <?php $i ++; } ?>
-                        </ul>
-                    </div>
-                </div>
+<!--                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light border-end download-sidebar">-->
+<!--                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">-->
+<!--                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">-->
+<!--                            --><?php
+//                            /** @var \App\Model\Entity\SubCategory $category */
+//                            $i = 1 ;
+//                            foreach ($subCategories as $category) {?>
+<!--                                <li id="cat">-->
+<!--                                    <a href="#submenu.--><?php //echo $i ?><!--" data-bs-toggle="collapse" class="nav-link px-0 align-middle"-->
+<!--                                       data-id="--><?php //echo $category->id ?><!--"><i class="fs-4 bi bi-journal-arrow-down"></i>-->
+<!--                                        <span class="ms-1 d-none d-sm-inline">--><?php //echo $category->title ?><!--</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                --><?php //$i ++; } ?>
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="col py-5">
                     <div class="toolbar px-3 py-4 bg-light">
                         <div class="d-flex justify-content-between">
                             <div class="d-none d-sm-block d-md-block d-lg-block">
-                                <?php echo $this->PaginationControl->get([
+                                <?php echo $this->Paginator->limitControl([
                                     10 => __("10 Records"),
                                     20 => __("20 Records"),
                                     30 => __("30 Records"),
@@ -42,7 +47,36 @@
                                     80 => __("80 Records"),
                                     90 => __("90 Records"),
                                     100 => __("100 Records"),
+                                ], null, [
+                                    'label' => false,
+                                    'class' => 'ui dropdown',
+                                    'empty' => __("Records")
                                 ]); ?>
+                            </div>
+                            <div class="px-3 flex-grow-1">
+                            </div>
+                            <div class="px-4">
+                                <?php echo $this->Form->create(null, [
+                                    'type' => 'GET',
+                                    'templates' => [
+                                        'inputContainer' => '{{content}}',
+                                    ],
+                                    'valueSources' => ['query']
+                                ]); ?>
+                                <div class="input-group w-100">
+                                    <?php echo $this->Form->control('sub_category', [
+                                        'type' => 'select',
+                                        'class' => 'form-control ui dropdown',
+                                        'empty' => __("Sub Category"),
+                                        'id' => 'sub-category',
+                                        'options' => $subCategories,
+                                        'label' => false,
+                                    ]) ?>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary btn-block tx-spacing-2"><i class="bi bi-search"></i></button>
+                                    </div>
+                                </div>
+                                <?php echo $this->Form->end(); ?>
                             </div>
                         </div>
                     </div>
@@ -85,3 +119,22 @@
         </div>
     </section>
 </main><!-- End #main -->
+<?php $this->Html->script([
+    "/lib/semantic-ui/transition/transition.min",
+    "/lib/semantic-ui/dropdown/dropdown.min",
+    '/lib/feather-icons/feather.min',
+], [
+    'block' => 'script'
+]); ?>
+<?php $this->Html->scriptStart([ 'block' => 'script' ]); ?>
+$(function(){
+    $('.ui.dropdown').dropdown({
+        selectOnKeydown: false,
+        forceSelection: false
+    });
+    $("#sub-category").dropdown({
+        selectOnKeydown: false,
+        forceSelection: false
+    });
+});
+<?php $this->Html->scriptEnd(); ?>
