@@ -78,9 +78,6 @@ $this->Html->css([
                                 </div>
                                 <?php echo $this->Form->end(); ?>
                             </div>
-                            <div class="px-3 flex-grow-1">
-
-                            </div>
                         </div>
                     </div>
                     <div class="row">
