@@ -49,10 +49,12 @@ class PagesController extends AppController
         $this->JobNotifications = $jobNotifications;
         parent::beforeFilter($event);
 
-        $categories = $this->StudyMaterials->SubCategories->Categories->find('all');
-        $subCategories = $this->StudyMaterials->SubCategories->find('all');
-        $this->set('categories', $categories);
-        $this->set('subCategories', $subCategories);
+        $cate = $this->StudyMaterials->SubCategories->Categories->find()->find('enabled')->all();
+        $subCate = $this->StudyMaterials->SubCategories->find()->find('enabled')->contain([
+            'Categories',
+        ])->all();
+        $this->set('cate', $cate);
+        $this->set('subCate', $subCate);
     }
 
     /**
