@@ -33,7 +33,7 @@ $this->Html->css([
 <!--                    </div>-->
 <!--                </div>-->
                 <div class="col py-5">
-                    <div class="toolbar px-3 py-4 bg-light">
+                    <div class="toolbar px-4 py-4 bg-light">
                         <div class="d-flex justify-content-between">
                             <div class="d-none d-sm-block d-md-block d-lg-block">
                                 <?php echo $this->Paginator->limitControl([
@@ -55,7 +55,7 @@ $this->Html->css([
                             </div>
                             <div class="px-3 flex-grow-1">
                             </div>
-                            <div class="px-4">
+                            <div class="px-4 flex-grow-1">
                                 <?php echo $this->Form->create(null, [
                                     'type' => 'GET',
                                     'templates' => [
@@ -67,16 +67,19 @@ $this->Html->css([
                                     <?php echo $this->Form->control('sub_category', [
                                         'type' => 'select',
                                         'class' => 'form-control ui dropdown',
-                                        'empty' => __("Sub Category"),
+                                        'empty' => __("Please Select"),
                                         'id' => 'sub-category',
                                         'options' => $subCategories,
                                         'label' => false,
                                     ]) ?>
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary btn-block tx-spacing-2"><i class="bi bi-search"></i></button>
+                                        <button type="submit" class="btn btn-primary btn-block tx-spacing-2"><i class="bi bi-filter"></i> click</button>
                                     </div>
                                 </div>
                                 <?php echo $this->Form->end(); ?>
+                            </div>
+                            <div class="px-3 flex-grow-1">
+
                             </div>
                         </div>
                     </div>
