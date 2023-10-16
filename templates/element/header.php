@@ -1,8 +1,8 @@
 <?php
 /**
  * @var App\View\AppView $this
- * @var \Cake\Datasource\ResultSetInterface $categories
- * @var \Cake\Datasource\ResultSetInterface $subCategories
+ * @var \Cake\Datasource\ResultSetInterface $cate
+ * @var \Cake\Datasource\ResultSetInterface $subCate
  */
 $student = $this->getRequest()->getAttribute('identity');
 $param = $this->getRequest()->getParam('action');
@@ -35,8 +35,8 @@ $param = $this->getRequest()->getParam('action');
                 ])?>">About Us</a></li>
                 <?php
                 /** @var \App\Model\Entity\Category $category */
-                foreach ($categories as $key => $category) {
-                    $collection = new \Cake\Collection\Collection($subCategories) ;
+                foreach ($cate as $key => $category) {
+                    $collection = new \Cake\Collection\Collection($subCate) ;
                     $subMatch = $collection->match(['category.id' => $category->id]);
                     if($key <= 3) {?>
                         <li class="<?php echo $subMatch ? 'dropdown' : ''?>">
