@@ -55,6 +55,12 @@
             ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Students')?></span>
             </a>
         </li>
+        <li><a href="<?php echo $this->Url->build([
+                'controller' => 'Blogs',
+                'action' => 'dashboard'
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Blogs')?></span>
+            </a>
+        </li>
 
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'Users',
