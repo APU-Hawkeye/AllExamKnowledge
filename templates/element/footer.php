@@ -38,6 +38,10 @@
                                 'action' => 'contactUs',
                             ])?>" class="text-white">Contact Us</a></li>
                             <li><a href="<?php echo $this->Url->build([
+                                'controller' => 'Blogs',
+                                'action' => 'index',
+                            ])?>" class="text-white">Blogs</a></li>
+                            <li><a href="<?php echo $this->Url->build([
                                 'controller' => 'Pages',
                                 'action' => 'privacyPolicy',
                             ])?>" class="text-white">Privacy Policy</a></li>
