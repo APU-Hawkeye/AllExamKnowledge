@@ -107,6 +107,20 @@ class BlogsController extends AppController
     }
 
     /**
+     * @param string|null $id Category ID
+     * @return void
+     */
+    public function viewCategory(?string $id = null)
+    {
+        $category = $this->Blogs->BlogCategories->get($id);
+        $this->set('category', $category);
+        $this->set('titleForLayout', __('Category - {0}', [
+            $category->title
+        ]));
+        $this->viewBuilder()->setLayout('admin_default');
+    }
+
+    /**
      * @return \Cake\Http\Response|void|null
      */
     public function addCategory()
@@ -150,7 +164,7 @@ class BlogsController extends AppController
                     $category->title
                 ]));
                 return $this->redirect(Router::url([
-                    'action' => 'view',
+                    'action' => 'viewCategory',
                     $category->id,
                 ]));
             } else {
@@ -170,6 +184,20 @@ class BlogsController extends AppController
         $authors = $this->paginate($query);
         $this->set('titleForLayout', __('Blogs Authors'));
         $this->set('authors', $authors);
+        $this->viewBuilder()->setLayout('admin_default');
+    }
+
+    /**
+     * @param string|null $id Author ID
+     * @return void
+     */
+    public function viewAuthor(?string $id = null)
+    {
+        $author = $this->Blogs->BlogAuthors->get($id);
+        $this->set('author', $author);
+        $this->set('titleForLayout', __('Author - {0}', [
+            $author->first_name
+        ]));
         $this->viewBuilder()->setLayout('admin_default');
     }
 
@@ -217,7 +245,7 @@ class BlogsController extends AppController
                     $author->first_name
                 ]));
                 return $this->redirect(Router::url([
-                    'action' => 'view',
+                    'action' => 'viewAuthor',
                     $author->id,
                 ]));
             } else {
