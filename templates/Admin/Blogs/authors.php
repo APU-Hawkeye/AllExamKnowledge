@@ -113,7 +113,11 @@ function getWords($sentence, $count = 10) {
                 <?php /** @var \App\Model\Entity\BlogAuthor $author*/
                 foreach ($authors as $author) {?>
                     <tr>
-                        <td><a href=""> <i class="fa fa-search"></i> </a>
+                        <td><a href="<?php echo $this->Url->build([
+                                'controller' => 'Blogs',
+                                'action' => 'viewAuthor',
+                                $author->id,
+                            ])?>"><?php echo 'view' ?></a>
                         </td>
                         <td><?php echo $author->first_name ;?></td>
                         <td><?php echo $author->last_name ;?></td>
@@ -121,7 +125,6 @@ function getWords($sentence, $count = 10) {
                         <td><?php echo $author->disabled ?? __('Active') ;?></td>
                     </tr>
                 <?php } ?>
-
                 </tbody>
             </table>
         </div>
@@ -181,7 +184,6 @@ function getWords($sentence, $count = 10) {
         </div>
     </div>
 </div>
-
 
 <?php $this->Html->script([
     'jquery.mask.min',

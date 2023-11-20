@@ -112,7 +112,11 @@ function getWords($sentence, $count = 10) {
                     <?php /** @var \App\Model\Entity\BlogCategory $category*/
                     foreach ($blogCategories as $category) {?>
                         <tr>
-                            <td><a href=""> <i class="fa fa-search"></i> </a>
+                            <td><a href="<?php echo $this->Url->build([
+                                    'controller' => 'Blogs',
+                                    'action' => 'viewCategory',
+                                    $category->id,
+                                ])?>"><?php echo 'view' ?></a>
                             </td>
                             <td><?php echo $category->code ;?></td>
                             <td><?php echo $category->title ;?></td>
