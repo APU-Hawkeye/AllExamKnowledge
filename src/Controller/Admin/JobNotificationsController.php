@@ -31,6 +31,7 @@ class JobNotificationsController extends AppController
         $this->JobNotifications = $notifications;
         parent::beforeFilter($event);
     }
+
     /**
      * @return void
      */

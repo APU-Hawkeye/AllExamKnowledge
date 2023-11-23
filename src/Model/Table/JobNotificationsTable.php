@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Model\Table;
 
+use App\Model\Behavior\AttachmentFilesBehavior;
 use App\Model\Behavior\SwitchBehavior;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -26,6 +27,7 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  * @mixin SwitchBehavior
+ * @mixin AttachmentFilesBehavior
  */
 class JobNotificationsTable extends Table
 {
