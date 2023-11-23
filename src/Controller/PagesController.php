@@ -28,6 +28,7 @@ use Cake\ORM\TableRegistry;
  * @link https://book.cakephp.org/4/en/controllers/pages-controller.html
  * @property \App\Model\Table\StudyMaterialsTable $StudyMaterials
  * @property \App\Model\Table\JobNotificationsTable $JobNotifications
+ * @property \App\Model\Table\NewsEventsTable $NewsEvents
  */
 class PagesController extends AppController
 {
@@ -47,6 +48,9 @@ class PagesController extends AppController
         /** @var  \App\Model\Table\JobNotificationsTable $jobNotifications */
         $jobNotifications = TableRegistry::getTableLocator()->get('JobNotifications');
         $this->JobNotifications = $jobNotifications;
+        /** @var  \App\Model\Table\NewsEventsTable $newsEvents */
+        $newsEvents = TableRegistry::getTableLocator()->get('NewsEvents');
+        $this->NewsEvents = $newsEvents;
         parent::beforeFilter($event);
 
         $cate = $this->StudyMaterials->SubCategories->Categories->find()->find('enabled')->all();
@@ -72,10 +76,13 @@ class PagesController extends AppController
         ])->all();
         $notifications = $this->JobNotifications->find()->find('enabled')
             ->orderDesc('created')->all();
+        $newsEvents = $this->NewsEvents->find()->find('enabled')
+            ->orderDesc('created')->all();
         $this->set('categories', $categories);
         $this->set('subCategories', $subCategories);
         $this->set('notes', $notes);
         $this->set('notifications', $notifications);
+        $this->set('newsEvents', $newsEvents);
         $this->set('titleForLayout', __('All Exam Knowledge'));
     }
 
