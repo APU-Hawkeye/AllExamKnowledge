@@ -1,7 +1,7 @@
 <?php
 /**
  * @var App\View\AppView $this
- * @var \Cake\Datasource\ResultSetInterface $newEvents
+ * @var \Cake\Datasource\ResultSetInterface $newsEvents
  */
 function getWords($sentence, $count = 10) {
     preg_match("/(?:\w+(?:\W+|$)){0,$count}/", $sentence, $matches);
@@ -119,9 +119,9 @@ function getWords($sentence, $count = 10) {
                 </tr>
                 </thead>
                 <tbody>
-                <?php if ($newEvents->isEmpty() === false) { ?>
+                <?php if ($newsEvents->isEmpty() === false) { ?>
                     <?php /** @var \App\Model\Entity\NewsEvent $event*/
-                    foreach ($newEvents as $event) {?>
+                    foreach ($newsEvents as $event) {?>
                         <tr>
                             <td><a href="<?php echo $this->Url->build([
                                     'controller' => 'NewsEvents',
