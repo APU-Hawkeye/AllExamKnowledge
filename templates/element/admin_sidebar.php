@@ -26,11 +26,13 @@
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'JobNotifications',
                 'action' => 'index'
-            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Job Notifications')?></span></a></li>
-<!--        <li><a href="--><?php //echo $this->Url->build([
-//                'controller' => 'News',
-//                'action' => 'index'
-//            ]); ?><!--" class="waves-effect"><i class="fa fa-server"></i><span>--><?php //echo __('News')?><!--</span></a></li>-->
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('Job Notifications')?></span></a>
+        </li>
+        <li><a href="<?php echo $this->Url->build([
+                'controller' => 'NewsEvents',
+                'action' => 'index'
+            ]); ?>" class="waves-effect"><i class="fa fa-server"></i><span><?php echo __('News Events')?></span></a>
+        </li>
         <li><a href="<?php echo $this->Url->build([
                 'controller' => 'Categories',
                 'action' => 'index'
