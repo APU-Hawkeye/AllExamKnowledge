@@ -53,6 +53,7 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'index']);
         $builder->connect('/about-us', ['controller' => 'Pages', 'action' => 'aboutUs']);
         $builder->connect('/contact-us', ['controller' => 'Pages', 'action' => 'contactUs']);
+        $builder->connect('/blogs', ['controller' => 'Blogs', 'action' => 'index']);
         $builder->connect('/ads.txt', ['controller' => 'Pages', 'action' => 'adsFile']);
         $builder->connect('/:filename', ['controller' => 'Pages', 'action' => 'download'])
             ->setPass(['filename']);
