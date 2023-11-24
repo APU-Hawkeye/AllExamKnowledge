@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Model\Table;
 
 use App\Model\Behavior\AttachmentFilesBehavior;
+use App\Model\Behavior\SwitchBehavior;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
@@ -29,6 +30,7 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  * @mixin AttachmentFilesBehavior
+ * @mixin SwitchBehavior
  */
 class StudyMaterialsTable extends Table
 {
@@ -47,6 +49,7 @@ class StudyMaterialsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Switch');
         $this->addBehavior('AttachmentFiles', [
             'fields' => ['file']
         ]);
