@@ -50,6 +50,9 @@ class BlogArticlesTable extends Table
 
         $this->addBehavior('Timestamp');
         $this->addBehavior('Switch');
+        $this->addBehavior('AttachmentFiles', [
+            'fields' => ['image']
+        ]);
 
         $this->belongsTo('BlogAuthors', [
             'foreignKey' => 'blog_author_id',
@@ -87,9 +90,17 @@ class BlogArticlesTable extends Table
             ->allowEmptyString('body');
 
         $validator
-            ->scalar('image')
-            ->maxLength('image', 1048576)
-            ->allowEmptyFile('image');
+            ->allowEmptyFile('image')
+            ->add('image', [
+                'mimeType' => [
+                    'rule' => ['mimeType', ['image/png', 'image/jpg', 'image/jpeg']],
+                    'message' => __('Please upload images only (gif, png and jpg are supported).'),
+                ],
+                'fileSize' => [
+                    'rule' => [ 'fileSize', '<=', '150MB' ],
+                    'message' => __('Image file size should be less than 150MB.'),
+                ],
+            ]);
 
         $validator
             ->integer('read_time')
