@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace App\Controller\Admin;
 
+use Cake\Database\Expression\QueryExpression;
 use Cake\Event\EventInterface;
 use Cake\Routing\Router;
 
@@ -38,9 +39,19 @@ class BlogsController extends AppController
             'BlogCategories',
             'BlogAuthors',
         ]);
+        if ($this->getRequest()->getQuery('category')) {
+            $query->where(function (QueryExpression $expression) {
+                return $expression->or([
+                    $this->Blogs->aliasField('category_id') . ' IS' =>
+                        $this->getRequest()->getQuery('category'),
+                ]);
+            });
+        }
+        $categories = $this->Blogs->BlogCategories->find('list')->all();
         $articles = $this->paginate($query);
         $this->set('titleForLayout', __('Articles'));
         $this->set('articles', $articles);
+        $this->set('categories', $categories);
         $this->viewBuilder()->setLayout('admin_default');
     }
 
@@ -50,7 +61,15 @@ class BlogsController extends AppController
      */
     public function view(?string $id = null)
     {
-
+        $article = $this->Blogs->get($id, [
+            'contain' => [
+                'BlogCategories',
+                'BlogAuthors',
+            ],
+        ]);
+        $this->set('article', $article);
+        $this->viewBuilder()->setLayout('admin_default');
+        $this->set('titleForLayout', __('Articles'));
     }
 
     /**
@@ -59,7 +78,7 @@ class BlogsController extends AppController
     public function createArticle()
     {
         $article = $this->Blogs->newEmptyEntity();
-        if ($this->getRequest()->is(['post', 'ajax'])) {
+        if ($this->getRequest()->is(['post'])) {
             /** @var array $postData */
             $postData = $this->getRequest()->getData();
             $article = $this->Blogs->patchEntity($article, $postData);
@@ -73,10 +92,24 @@ class BlogsController extends AppController
                 $this->response = $this->response->withStatus(400);
                 $this->Flash->error(__('Something went wrong, please try to add again'));
             }
+
             return $this->redirect(Router::url([
                 'action' => 'index'
             ]));
         }
+        $authors = $this->Blogs->BlogAuthors->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'first_name'
+        ])->find('enabled')->all();
+        $categories = $this->Blogs->BlogCategories->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'title'
+        ])->find('enabled')->all();
+        $this->set('categories', $categories,);
+        $this->set('authors', $authors,);
+        $this->set('article', $article,);
+        $this->set('titleForLayout', __('Add Blog Article'));
+        $this->viewBuilder()->setLayout('admin_default');
     }
 
     /**
@@ -85,7 +118,40 @@ class BlogsController extends AppController
      */
     public function editArticle(?string $id = null)
     {
+        $blog = $this->Blogs->get($id);
+        if ($this->getRequest()->is(['post', 'put', 'patch', 'ajax'])) {
+            /** @var array $postData */
+            $postData = $this->getRequest()->getData();
+            $blog = $this->Blogs->patchEntity($blog, $postData);
+            if ($this->Blogs->save($blog)) {
+                $this->Flash->success(__('{0} has been edited successfully', [
+                    $blog->title
+                ]));
 
+                return $this->redirect(Router::url([
+                    'action' => 'view',
+                    $blog->id,
+                ]));
+            } else {
+                $this->response = $this->response->withStatus(400);
+                $this->Flash->error(__('Something went wrong, please try to add again'));
+            }
+
+            return $this->redirect($this->referer());
+        }
+        $authors = $this->Blogs->BlogAuthors->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'first_name'
+        ])->find('enabled')->all();
+        $categories = $this->Blogs->BlogCategories->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'title'
+        ])->find('enabled')->all();
+        $this->set('categories', $categories,);
+        $this->set('authors', $authors,);
+        $this->set('blog', $blog,);
+        $this->set('titleForLayout', __('Edit Blog Article'));
+        $this->viewBuilder()->setLayout('admin_default');
     }
 
     public function dashboard()
