@@ -2,6 +2,7 @@
 /**
  * @var App\View\AppView $this
  * @var \Cake\Datasource\ResultSetInterface $articles
+ * @var \Cake\Datasource\ResultSetInterface $categories
  */
 
 function getWords($sentence, $count = 10) {
@@ -24,9 +25,11 @@ function getWords($sentence, $count = 10) {
             </li>
             <h5 class="text-dark mb-0"><?php echo __('Blog Articles'); ?></h5>
         </ul>
-        <button data-toggle="modal" class="btn btn-outline-primary btn-sm waves-effect waves-light m-1" data-target="#addModal">
-            <i class="fa fa-plus"></i>
-        </button>
+        <a href="<?php echo $this->Url->build([
+            'controller' => 'Blogs',
+            'action' => 'createArticle',
+        ])?>" class="btn btn-outline-primary btn-sm waves-effect waves-light m-1"><i class="fa fa-plus"></i>
+        </a>
     </nav>
 </div>
 <div class="content-wrapper pl-0 pr-0 mt-n2">
@@ -60,6 +63,29 @@ function getWords($sentence, $count = 10) {
                         ]) ?>
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <?php echo $this->Form->end(); ?>
+                </div>
+                <div class="px-3">
+                    <?php echo $this->Form->create(null, [
+                        'type' => 'GET',
+                        'templates' => [
+                            'inputContainer' => '{{content}}',
+                        ],
+                        'valueSources' => ['query']
+                    ]); ?>
+                    <div class="input-group w-100">
+                        <?php echo $this->Form->control('category', [
+                            'type' => 'select',
+                            'class' => 'form-control ui dropdown',
+                            'empty' => __("Category"),
+                            'id' => 'category',
+                            'options' => $categories,
+                            'label' => false,
+                        ]) ?>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary btn-block tx-spacing-2"><i data-feather="search"></i></button>
                         </div>
                     </div>
                     <?php echo $this->Form->end(); ?>
@@ -105,25 +131,38 @@ function getWords($sentence, $count = 10) {
                     <th><?php echo __("Title") ?></th>
                     <th><?php echo __("Category") ?></th>
                     <th><?php echo __("Author") ?></th>
-                    <th><?php echo __("Read time") ?></th>
+                    <th><?php echo __("Description") ?></th>
                     <th><?php echo __("Status") ?></th>
                 </tr>
                 </thead>
                 <tbody>
-
-                <?php /** @var \App\Model\Entity\BlogArticle $article*/
-                foreach ($articles as $article) {?>
+                <?php if ($articles->isEmpty() === false) { ?>
+                    <?php /** @var \App\Model\Entity\BlogArticle $article*/
+                    foreach ($articles as $article) {?>
+                        <tr>
+                            <td><a href="<?php echo $this->Url->build([
+                                    'controller' => 'Blogs',
+                                    'action' => 'view',
+                                    $article->id,
+                                ])?>"> <i class="fa fa-search"></i> </a>
+                            </td>
+                            <td><?php echo $article->title ;?></td>
+                            <td><?php echo $article->blog_category->title ;?></td>
+                            <td><?php echo $article->blog_author->first_name ;?></td>
+                            <td><?php echo $article->body ? getWords($article->body) : 'Not Available';?></td>
+                            <td><?php echo $article->disabled ?? __('Active') ;?></td>
+                        </tr>
+                    <?php } ?>
+                <?php } else { ?>
                     <tr>
-                        <td><a href=""> <i class="fa fa-search"></i> </a>
+                        <td colspan="10">
+                            <div class="p-5 text-center">
+                                <h1 class="text-muted"><i class="mdi mdi-alert"></i></h1>
+                                <h4 class="text-muted"><?php echo __("No records were found") ?></h4>
+                            </div>
                         </td>
-                        <td><?php echo $article->title ;?></td>
-                        <td><?php echo $article->blog_category->title ;?></td>
-                        <td><?php echo $article->blog_author->first_name.' '.$article->blog_author->last_name ;?></td>
-                        <td><?php echo $article->read_time ?: 'Not Available' ;?></td>
-                        <td><?php echo $article->disabled ?? __('Active') ;?></td>
                     </tr>
                 <?php } ?>
-
                 </tbody>
             </table>
         </div>
@@ -140,43 +179,6 @@ function getWords($sentence, $count = 10) {
         </div>
     </div>
 </div>
-<div class="modal fade" id="addModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"><i class="fa fa-server"></i><?php echo __(' Add Author')?></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <?php echo $this->Form->create(null, [
-                    'url' => [
-                        'controller' => 'Blogs',
-                        'action' => 'createArticle'
-                    ],
-                    'templates' => [
-                        'inputContainer' => '<div class="form-group">{{content}}</div>',
-                        'formGroup' => '{{label}}{{input}}{{errorDiv}}{{help}}',
-                        'label' => '<label class="font-weight-bold tx-spacing-2"{{attrs}}>{{text}}</label>',
-                    ],
-                    'autocomplete' => 'off',
-                    'novalidate'
-                ])?>
-
-                <?php echo $this->Form->control('body', [
-                    'type' => 'textarea',
-                    'class' => 'form-control tx-spacing-2'
-                ])?>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary tx-spacing-2"><i class="fa fa-check-square-o"></i><?php echo __("Save"); ?></button>
-                <?php echo $this->Form->end(); ?>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <?php $this->Html->script([
     'jquery.mask.min',
