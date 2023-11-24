@@ -184,7 +184,7 @@ if ($studyMaterial->disabled) {
             $studyMaterial->id
         ],
         'title' => __("Warning"),
-        'content' => __("Are you sure, you want to enable {0}", '<strong>'.$studyMaterial->title.'</strong>')
+        'content' => __("Are you sure, you want to disable {0}", '<strong>'.$studyMaterial->title.'</strong>')
     ]);
 }
 ?>
