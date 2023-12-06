@@ -22,7 +22,7 @@
                             <div class="blog-user col-md-8">
                                 <span class="blog-user-icon mr-3">
                                     <?php echo $this->Html->image('blog_author_avatar.png', ['class'=>'img-fluid']);?></span>
-                                <span><?php echo __('Author');?><br><small><?php echo __('Sep - 2:30 Minutes');?></small></span>
+                                <span><?php echo $blog->blog_author->first_name.' '.$blog->blog_author->last_name;?><br><small><?php echo $blog->read_time.' minutes' ?: '';?></small></span>
 
                             </div>
                             <div class="blog-social col-md-4 text-right">
@@ -60,7 +60,7 @@
                         <?php echo $blog->body ?>
                     </p>
                     <p class="mt-4">
-                        <span class="text-muted"><small><?php echo $blog->read_time ?: '';?></small>
+                        <span class="text-muted"><small><?php echo $blog->read_time. ' minutes' ?: '';?></small>
                         </span>
                     </p>
 
